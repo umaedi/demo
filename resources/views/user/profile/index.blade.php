@@ -106,7 +106,7 @@
                       <div class="form-group">
                         <label for="gender">Participant Type</label>
                         <select class="form-control" id="gender" name="type_user" tabindex="7" value="{{ auth()->user()->type_user }}">
-                          <option value="Presenter" {{ auth()->user()->type_user == 'Persenter' ? 'selected' : '' }}>Presenter</option>
+                          <option value="Presenter" {{ auth()->user()->type_user == 'Persenter' ? 'selected' : '' }}>Presenter (Oral/Poster)</option>
                           <option value="Participant" {{ auth()->user()->type_user == 'Participant' ? 'selected' : '' }}>Participant Only</option>
                         </select>
                         @error('type_user')

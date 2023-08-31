@@ -35,7 +35,7 @@
                         </label>
                         <input id="email" name="email" type="email" autocomplete="email" required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Example: wahyuaji@gmail.com"
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" />
+                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" name="email"/>
                         <span
                             class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
                             Please enter a valid email address
@@ -61,7 +61,7 @@
                         <label class="label" for="re-enter-password">
                             <span class="label-text">Re-enter Password</span>
                         </label>
-                        <input id="re-enter-password" name="re-enter-password" type="password" required pattern=".{8,}"
+                        <input id="re-enter-password" name="password_confirmation" type="password" required pattern=".{8,}"
                             placeholder="********"
                             class="input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" />
                     </div>
@@ -71,13 +71,13 @@
                         <label class="label">
                             <span class="label-text">Salutation</span>
                         </label>
-                        <select class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" required>
+                        <select name="salutation" class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" required>
                             <option disabled selected>Please select...</option>
-                            <option>Mr.</option>
-                            <option>Mrs.</option>
-                            <option>Ms.</option>
-                            <option>Prof. Dr.</option>
-                            <option>Dr.</option>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option value="Ms.">Ms.</option>
+                            <option value="Prof. Dr.">Prof. Dr.</option>
+                            <option value="Dr.">Dr.</option>
                         </select>
                         <span
                             class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
@@ -103,10 +103,10 @@
                         <label class="label">
                             <span class="label-text">Gender</span>
                         </label>
-                        <select class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" required>
+                        <select name="gender" class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" required>
                             <option disabled selected>Please select...</option>
-                            <option>Male</option>
-                            <option>Female</option>
+                            <option value="L">Male</option>
+                            <option value="P">Female</option>
                         </select>
                         <span
                             class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
@@ -119,8 +119,8 @@
                         <label class="label">
                             <span class="label-text">Affiliation / Institution</span>
                         </label>
-                        <input type="text" placeholder="" required
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" />
+                        <input type="text" name="institution" placeholder="" required
+                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" />
                         <span
                             class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
                             Please enter yout Affiliation / Intitution
@@ -132,8 +132,8 @@
                         <label class="label">
                             <span class="label-text">Country of Institution</span>
                         </label>
-                        <input type="text" placeholder="" required
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" />
+                        <input type="text" name="country" placeholder="" required
+                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" />
                         <span
                             class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
                             Please enter your country of intitution
@@ -145,7 +145,7 @@
                         <label class="label">
                             <span class="label-text">Mobile Number / Whatsapp</span>
                         </label>
-                        <input type="text" placeholder="Example: (+62)81108110811" required
+                        <input type="text" name="no_tlp" placeholder="Example: (+62)81108110811" required
                             class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" />
                         <label class="label">
                             <span class="label-text">Please fill your country code first</span>
@@ -161,10 +161,10 @@
                         <label class="label">
                             <span class="label-text">Participant Type</span>
                         </label>
-                        <select class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" required>
+                        <select name="type_user" class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" required>
                             <option disabled selected>Please select...</option>
-                            <option>Participant Only</option>
-                            <option>Presenter (Oral/Poster)</option>
+                            <option value="Participant">Participant Only</option>
+                            <option value="Presenter">Presenter (Oral/Poster)</option>
                         </select>
                         <span
                             class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">

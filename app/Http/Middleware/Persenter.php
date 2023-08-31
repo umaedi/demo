@@ -18,7 +18,7 @@ class Persenter
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->type_user == "Oral/Poster") {
+        if (Auth::user()->type_user == "Presenter") {
             return $next($request);
         }
         return redirect(RouteServiceProvider::HOME);
