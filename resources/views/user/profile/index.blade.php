@@ -29,7 +29,7 @@
                         @csrf
                       <div class="form-group">
                         <label for="img">Photo</label>
-                        <input id="image" type="file" class="form-control" name="img" tabindex="1" value="" onchange="previewImage()">
+                        <input id="image" type="file" class="form-control" name="img" tabindex="1" value="" onchange="previewImage()" accept=".jpg, .jpeg, .png">
                       </div>
                       <div class="form-group">
                         <label for="name">Name</label>
