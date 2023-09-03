@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('submissions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->string('registrasi_id');
             $table->string('title');
             $table->text('abstract');
             $table->string('keyword');
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->string('end_on')->nullable();
             $table->string('status')->default('revised');
             $table->string('message')->nullable();
+            $table->string('histories')->default('1');
             $table->timestamps();
         });
     }

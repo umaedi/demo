@@ -186,12 +186,12 @@
                 <div data-aos="fade-right" class="left-content lg:w-1/2 gap-3 hidden md:flex md:h-[400px] lg:h-[600px]">
                     <div class="md:w-full md:h-full flex flex-col gap-3">
                         <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                            style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-1.jpg);"></div>
+                            style="background-image: url(./dist/img/bg-about-event-home-1.jpg);"></div>
                         <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                            style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-2.jpg);"></div>
+                            style="background-image: url(./dist/img/bg-about-event-home-2.jpg);"></div>
                     </div>
                     <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                        style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-3.jpg);">
+                        style="background-image: url(./dist/img/bg-about-event-home-3.jpg);">
                     </div>
                 </div>
     
@@ -200,11 +200,11 @@
                     class="right-content md:px-28 lg:px-0 lg:w-1/2 lg:h-[600px] lg:pl-3 flex flex-col gap-3 overflow-scroll">
                     <div class="flex flex-col gap-1">
                         <p class="uppercase text-primary text-xs lg:text-base font-semibold">about event</p>
-                        <h1 class="uppercase text-mydark font-bold text-2xl md:text-5xl">welcome to the
+                        <h1 class="uppercase text-mydark font-bold text-3xl md:text-5xl">welcome to the
                             international conference</h1>
                     </div>
                     <div>
-                        <p class="text-xs lg:text-base text-mydark text-justify">
+                        <p class="text-base text-mydark text-justify">
                             Berdasarkan Undang-undang nomor 14 tahun 2005 pasal 1 ayat 2, dosen adalah pendidik professional
                             dan ilmuan dengan tugas utama mentransformasikan, mengembangkan dan menyebarluaskan pengetahuan,
                             teknologi dan seni melalui pendidikan kepada masyarakat. Seorang dosen dituntut untuk selalu
@@ -224,7 +224,7 @@
                         </p>
                     </div>
                     <div>
-                        <a href="{{ asset('dist') }}/pages/about-event.html"
+                        <a href="./dist/pages/about-event.html"
                             class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                             Learn More
                         </a>
@@ -310,36 +310,36 @@
             <div class="container pt-20 pb-20 flex flex-col gap-10">
                 <div data-aos="fade-down" class="section-4-title">
                     <div class="flex flex-col gap-1 items-center">
-                        <p class="uppercase text-primary text-xs lg:text-base font-semibold">international conference</p>
-                        <h1 class="uppercase text-mydark font-bold text-2xl md:text-5xl">keynote speakers</h1>
+                        <p class="uppercase text-primary text-sm lg:text-base font-semibold">international conference</p>
+                        <h1 class="uppercase text-mydark font-bold text-3xl md:text-5xl">keynote speakers</h1>
                     </div>
                 </div>
     
-                <div data-aos="flip-down" class="wrapper flex flex-wrap gap-8 lg:justify-between justify-center">
+                <div data-aos="flip-down" class="wrapper flex flex-wrap gap-5 lg:justify-between justify-center">
                     <!-- Speaker Card 1 -->
-                    <div class="w-[220px] md:w-[260px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
-                        <div class="card-img w-full h-[260px] md:h-[280px] overflow-hidden">
+                    <div class="w-[300px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
+                        <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                src="{{ asset('dist') }}/img/speaker-1.png" alt="photo of the speaker">
+                                src="./dist/img/speaker-1.png" alt="photo of the speaker">
                         </div>
                         <div class="py-3 px-1 flex flex-col justify-center items-center">
-                            <p class="font-bold text-primary text-base md:text-lg">Grace Mange</p>
+                            <p class="font-bold text-primary text-xl">Grace Mange</p>
                             <p class="text-sm md:text-base text-mydark">Monash University</p>
                             <div class="w-full py-3">
                                 <hr class="w-full text-disabled">
                             </div>
-                            <p class="text-xs text-mydark text-center">Clinical trial of Stem Cell Therapy</p>
+                            <p class="text-sm text-mydark text-center">Clinical trial of Stem Cell Therapy</p>
                         </div>
                     </div>
     
                     <!-- Speaker Card 2 -->
-                    <div class="w-[220px] md:w-[260px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
-                        <div class="card-img w-full h-[260px] md:h-[280px] overflow-hidden">
+                    <div class="w-[300px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
+                        <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                src="{{ asset('dist') }}/img/speaker-2.png" alt="photo of the speaker">
+                                src="./dist/img/speaker-2.png" alt="photo of the speaker">
                         </div>
                         <div class="py-3 px-1 flex flex-col justify-center items-center">
-                            <p class="font-bold text-primary text-base md:text-lg">dr. Arif Suriawinata, Ph.D.</p>
+                            <p class="font-bold text-primary text-xl">dr. Arif Suriawinata, Ph.D.</p>
                             <p class="text-sm md:text-base text-mydark">Mc Dermot University</p>
                             <div class="w-full py-3">
                                 <hr class="w-full text-disabled">
@@ -351,13 +351,13 @@
                     </div>
     
                     <!-- Speaker Card 3 -->
-                    <div class="w-[220px] md:w-[260px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
-                        <div class="card-img w-full h-[260px] md:h-[280px] overflow-hidden">
+                    <div class="w-[300px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
+                        <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                src="{{ asset('dist') }}/img/speaker-3.png" alt="photo of the speaker">
+                                src="./dist/img/speaker-3.png" alt="photo of the speaker">
                         </div>
                         <div class="py-3 px-1 flex flex-col justify-center items-center">
-                            <p class="font-bold text-primary text-sm md:text-base">dr. Rusdy Mauleka, Ph.D, Sp.S</p>
+                            <p class="font-bold text-primary text-xl">dr. Rusdy Mauleka, Ph.D, Sp.S</p>
                             <p class="text-sm md:text-base text-mydark">University of Lampung</p>
                             <div class="w-full py-3">
                                 <hr class="w-full text-disabled">
@@ -368,13 +368,13 @@
                     </div>
     
                     <!-- Speaker Card 4 -->
-                    <div class="w-[220px] md:w-[260px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
-                        <div class="card-img w-full h-[260px] md:h-[280px] overflow-hidden">
+                    <div class="w-[300px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
+                        <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                src="{{ asset('dist') }}/img/speaker-4.png" alt="photo of the speaker">
+                                src="./dist/img/speaker-4.png" alt="photo of the speaker">
                         </div>
                         <div class="py-3 px-1 flex flex-col justify-center items-center">
-                            <p class="font-bold text-primary text-base md:text-lg">Dr. Lisa Barrett</p>
+                            <p class="font-bold text-primary text-xl">Dr. Lisa Barrett</p>
                             <p class="text-sm md:text-base text-mydark">Delhousie University</p>
                             <div class="w-full py-3">
                                 <hr class="w-full text-disabled">

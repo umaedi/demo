@@ -16,7 +16,7 @@
                 @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
                 @endif
-                <div class="card-body" id="dataTable">
+                <div class="card-body table-responsive" id="dataTable">
                     <button class="btn btn-primary btn-block btn-lg" type="button" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Please wait...

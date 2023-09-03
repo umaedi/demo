@@ -63,7 +63,11 @@
                         </div>
                         <div class="form-group">
                           <label for="topic">Topic</label>
-                          <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" value="{{ old('topic') }}">
+                          <select name="topic" class="form-control  @error('topic') is-invalid @enderror" id="gender" name="topic" tabindex="4" value="{{ old('topic') }}">
+                            <option value="Biomolecular">Biomolecular</option>
+                            <option value="Genetic">Genetic</option>
+                            <option value="Degenerative Desease">Degenerative Desease</option>
+                          </select>
                           @error('topic')
                           <div class="invalid-feedback">
                             {{ $message }}

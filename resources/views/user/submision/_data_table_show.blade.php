@@ -18,8 +18,8 @@
                 <td>not set</td>
                 <td>not set</td>
                 <td>not set</td>
-                <td><span class="badge badge-warning">not set</span></td>
-                <td><a href="/user/submission/show/{{ $tb->registrasi_id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
+                <td><span class="badge badge-warning">Revised</span></td>
+                <td><a href="/user/submission/edit/{{ $tb->id }}" class="badge badge-success"><i class="fa fa-eye"></i></a></td>
             </tr>
         @empty
             <tr>

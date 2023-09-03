@@ -49,7 +49,7 @@
                 <h4>Certificate</h4>
               </div>
               <div class="card-body">
-                1
+                0
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@
                 <h4>Submission</h4>
               </div>
               <div class="card-body">
-                1
+                {{ $submission }}
               </div>
             </div>
           </div>
@@ -88,7 +88,7 @@
         <div class="col-lg-8 col-md-12 col-12 col-sm-12">
           <div class="card">
             <div class="card-header">
-              <h4>Certificate</h4>
+              <h4>CERTIFICATE</h4>
               @if (auth()->user()->sertifikat !== NULL)
               <div class="card-header-action">
                 <a href="/user/download-sertifikat" class="btn btn-primary">Download</a>

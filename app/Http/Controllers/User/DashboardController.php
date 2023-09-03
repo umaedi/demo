@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Submission;
 
 class DashboardController extends Controller
 {
@@ -32,6 +33,7 @@ class DashboardController extends Controller
             imagedestroy($image);
         }
 
-        return view('user.dashboard.index');
+        $data['submission'] = Submission::where('user_id', auth()->user()->id)->where('histories', '=', '1')->count();
+        return view('user.dashboard.index', $data);
     }
 }

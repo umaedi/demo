@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class SubmisionController extends Controller
@@ -20,7 +21,7 @@ class SubmisionController extends Controller
     public function index()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('user_id', auth()->user()->id)->get();
+            $data['table'] = $this->submission->Query()->where('user_id', auth()->user()->id)->where('histories', 1)->get();
             return view('user.submision._data_table', $data);
         }
 
@@ -43,14 +44,22 @@ class SubmisionController extends Controller
             'topic'     => 'required',
         ]);
 
-        $paper = $this->submission->Query()->where('id', $request->id)->where('user_id', auth()->user()->id)->pluck('paper');
         $data = $request->except('_token');
         $data['user_id'] = auth()->user()->id;
+
+
+        if (isset($request->id)) {
+            $submission = $this->submission->Query()->where('id', $request->id)->where('user_id', auth()->user()->id)->first();
+            $data['histories'] = $submission->histories + 1;
+            $data['registrasi_id'] = $submission->registrasi_id;
+        } else {
+            $data['registrasi_id'] = strtoupper(Str::random(16));
+        }
 
         if (isset($request->paper)) {
             $data['paper'] = Storage::putFile('public/paper', $request->paper);
         } else {
-            $data['paper'] = $paper;
+            $data['paper'] = $submission->paper;
         }
 
         DB::beginTransaction();
@@ -58,7 +67,7 @@ class SubmisionController extends Controller
             $this->submission->store($data);
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            return throw $th;
         }
         DB::commit();
 
@@ -67,6 +76,18 @@ class SubmisionController extends Controller
         } else {
             return redirect('/user/submission')->with('message', 'Submission has ben created');
         }
+    }
+
+    public function show($id)
+    {
+        if (\request()->ajax()) {
+            $data['table'] = $this->submission->Query()->where('user_id', auth()->user()->id)->where('registrasi_id', $id)->get();
+            return view('user.submision._data_table_show', $data);
+        }
+
+        $data['submission'] = $this->submission->Query()->where('registrasi_id', $id)->where('user_id', auth()->user()->id)->first();
+        $data['title'] = "Edit Submission";
+        return view('user.submision.show', $data);
     }
 
     public function edit($id)

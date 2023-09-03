@@ -1,5 +1,13 @@
-@extends('layouts.landingpage')
-@section('content')
+<!DOCTYPE html>
+<html lang="en" class="font-inter scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('dist') }}/style.css" rel="stylesheet">
+    <title>Register | ICOMESH 2023</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('dist') }}/img/favicon.ico">
+</head>
 <body class="bg-white">
     <div class="container p-2 flex md:flex-col lg:flex-row h-screen overflow-hidden">
         <!-- Images -->
@@ -24,8 +32,8 @@
             </div>
 
             <form action="/register" method="POST" class="input-area group flex flex-col gap-10" novalidate>
+                @csrf
                 <!-- Input -->
-               @csrf
                 <div class="wrapper flex flex-col gap-2">
 
                     <!-- Email -->
@@ -33,13 +41,14 @@
                         <label for="email" class="label">
                             <span class="label-text">Email</span>
                         </label>
-                        <input id="email" name="email" type="email" autocomplete="email" required
+                        <input id="email" name="email" value="{{ old('email') }}" type="email" autocomplete="email" required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Example: wahyuaji@gmail.com"
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" name="email"/>
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            Please enter a valid email address
+                            class="peer input input-bordered input-accent w-full text-sm @error('email') invalid:border-red-500 @enderror" />
+                        @error('email')
+                        <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                           {{ $message }}
                         </span>
+                        @enderror
                     </div>
 
                     <!-- Password -->
@@ -47,13 +56,14 @@
                         <label class="label" for="password">
                             <span class="label-text">Password</span>
                         </label>
-                        <input id="password" name="password" type="password" autocomplete="current-password" required
-                            pattern=".{8,}" placeholder="********"
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" />
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            At least 8 character
+                        <input id="password" name="password" value="{{ old('password') }}" type="password"  autocomplete="current-password" required
+                        pattern=".{6,}" placeholder="********"
+                        class="peer input input-bordered input-accent w-full text-sm @error('password') invalid:border-red-500 @enderror" />
+                        @error('password')
+                        <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                            {{ $message }}
                         </span>
+                        @enderror
                     </div>
 
                     <!-- Re-enter Password -->
@@ -61,9 +71,14 @@
                         <label class="label" for="re-enter-password">
                             <span class="label-text">Re-enter Password</span>
                         </label>
-                        <input id="re-enter-password" name="password_confirmation" type="password" required pattern=".{8,}"
+                        <input id="re-enter-password" name="password_confirmation" value="{{ old('password_confirmation') }}" type="password" required pattern=".{6,}"
                             placeholder="********"
-                            class="input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" />
+                            class="peer input input-bordered input-accent w-full text-sm @error('password') invalid:border-red-500 @enderror" />
+                            @error('password_confirmation')
+                        <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                            {{ $message }}
+                        </span>
+                        @enderror
                     </div>
 
                     <!-- Salutation -->
@@ -71,18 +86,19 @@
                         <label class="label">
                             <span class="label-text">Salutation</span>
                         </label>
-                        <select name="salutation" class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" required>
-                            <option disabled selected>Please select...</option>
+                        <select name="salutation" class="peer select select-bordered select-accent @error('password') invalid:border-red-500 @enderror" required>
+                            <option value="">Please select...</option>
                             <option value="Mr.">Mr.</option>
                             <option value="Mrs.">Mrs.</option>
                             <option value="Ms.">Ms.</option>
                             <option value="Prof. Dr.">Prof. Dr.</option>
                             <option value="Dr.">Dr.</option>
                         </select>
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            Please select your salutation
+                        @error('salutation')
+                        <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                            {{ $message }}
                         </span>
+                        @enderror
                     </div>
 
                     <!-- Name -->
@@ -90,12 +106,13 @@
                         <label class="label">
                             <span class="label-text">Full Name</span>
                         </label>
-                        <input type="text" name="name" id="name" placeholder="Please input your name" required
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" />
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            Please enter your name
-                        </span>
+                        <input type="text" name="name" value="{{ old('name') }}" id="name" placeholder="Full Name" required
+                            class="peer input input-bordered input-accent w-full text-sm @error('password') invalid:border-red-500 @enderror" />
+                            @error('name')
+                            <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                                {{ $message }}
+                            </span>
+                            @enderror
                     </div>
 
                     <!-- Gender -->
@@ -103,15 +120,16 @@
                         <label class="label">
                             <span class="label-text">Gender</span>
                         </label>
-                        <select name="gender" class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" required>
+                        <select name="gender" {{ old('gender') }} class="peer select select-bordered select-accent @error('password') invalid:border-red-500 @enderror" required>
                             <option disabled selected>Please select...</option>
                             <option value="L">Male</option>
                             <option value="P">Female</option>
                         </select>
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            Please select your gender
-                        </span>
+                        @error('gender')
+                        <label class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                            {{ $message }}
+                        </label>
+                        @enderror
                     </div>
 
                     <!-- Affiliation / Institution -->
@@ -119,12 +137,13 @@
                         <label class="label">
                             <span class="label-text">Affiliation / Institution</span>
                         </label>
-                        <input type="text" name="institution" placeholder="" required
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" />
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            Please enter yout Affiliation / Intitution
+                        <input name="institution" value="{{ old('institution') }}" type="text" placeholder="" required
+                            class="peer input input-bordered input-accent w-full text-sm @error('institution') invalid:border-red-500 @enderror" />
+                            @error('institution')
+                        <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                            {{ $message }}
                         </span>
+                        @enderror
                     </div>
 
                     <!-- Country of Institution -->
@@ -132,12 +151,13 @@
                         <label class="label">
                             <span class="label-text">Country of Institution</span>
                         </label>
-                        <input type="text" name="country" placeholder="" required
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500" />
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            Please enter your country of intitution
+                        <input type="text" name="country" value="{{ old('country') }}" placeholder="" required
+                            class="peer input input-bordered input-accent w-full text-sm @error('country') invalid:border-red-500 @enderror" />
+                            @error('country')
+                        <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                            {{ $message }}
                         </span>
+                        @enderror
                     </div>
 
                     <!-- Mobile Number / Whatsapp -->
@@ -145,31 +165,32 @@
                         <label class="label">
                             <span class="label-text">Mobile Number / Whatsapp</span>
                         </label>
-                        <input type="text" name="no_tlp" placeholder="Example: (+62)81108110811" required
-                            class="peer input input-bordered input-accent w-full text-sm invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" />
-                        <label class="label">
-                            <span class="label-text">Please fill your country code first</span>
-                        </label>
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            Please enter your mobile number
+                        <input type="text" name="no_tlp" value="{{ old('no_tlp') }}" placeholder="Example: (+62)81108110811" required
+                            class="peer input input-bordered input-accent w-full text-sm @error('password') invalid:border-red-500 @enderror" />
+                        @error('no_tlp')
+                        <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                            {{ $message }}
                         </span>
+                        @enderror
                     </div>
 
-                    <!-- Participant Type -->
-                    <div class="form-control w-full">
+                     <!-- Participant Type -->
+                     <div class="form-control w-full">
                         <label class="label">
                             <span class="label-text">Participant Type</span>
                         </label>
-                        <select name="type_user" class="peer select select-bordered select-accent invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"" required>
+                        <select name="type_user" class="peer select select-bordered select-accent @error('type_user')  invalid:border-red-500 @enderror" required>
                             <option disabled selected>Please select...</option>
-                            <option value="Participant">Participant Only</option>
+                            <option value="Participant Only">Participant Only</option>
                             <option value="Presenter">Presenter (Oral/Poster)</option>
                         </select>
-                        <span
-                            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-                            Please select participant type
-                        </span>
+                        @error('type_user')
+                        <label class=" label invisible peer-invalid:visible text-red-500 font-light text-xs
+                        md:text-sm">
+                        Please select participant type
+                        </label>
+                        @enderror
+                    
                     </div>
                 </div>
 
@@ -179,7 +200,7 @@
                         class="w-full py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base group-invalid:pointer-events-none group-invalid:opacity-50">
                         Sign Up
                     </button>
-                    
+
                     <div class="divider text-xs">OR</div>
 
                     <button type="button"
@@ -217,5 +238,7 @@
             </div>
         </div>
     </div>
+    <script src="../script.js"></script>
+</body>
 
-@endsection
+</html>

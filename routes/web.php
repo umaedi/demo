@@ -22,10 +22,6 @@ Route::middleware('guest')->group(function () {
     });
 });
 
-
-//route register & login
-
-
 //route for admin
 Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -39,6 +35,7 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/submission', [User\SubmisionController::class, 'index']);
     Route::get('/submission/create', [User\SubmisionController::class, 'create']);
     Route::post('/submission/store', [User\SubmisionController::class, 'store']);
+    Route::get('/submission/show/{id}', [User\SubmisionController::class, 'show']);
     Route::get('/submission/edit/{id}', [User\SubmisionController::class, 'edit']);
 
     //route for profile
