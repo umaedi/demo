@@ -5,41 +5,44 @@
       <div class="section-header">
         <h1>Submission</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="/user/dashboard">Dashboard</a></div>
-            <div class="breadcrumb-item active"><a href="/user/submission">Submission</a></div>
+            <div class="breadcrumb-item active"><a href="/reviewer/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="/reviewer/submission">Submission</a></div>
             <div class="breadcrumb-item">Show Submission</div>
           </div>
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" value="{{ auth()->user()->salutation . auth()->user()->name }}" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="name">Gender</label>
-                      <input type="text" class="form-control" id="name" value="{{ auth()->user()->gender == 'L' ? 'Male' : 'Female' }}" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="country">Country</label>
-                      <input type="text" class="form-control" id="country" value="{{ auth()->user()->country }}" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="no_tlp">Mobile Number / Whatsapp</label>
-                      <input type="number" class="form-control" id="no_tlp" name="institution" value="{{ auth()->user()->no_tlp }}" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="institution">Institution</label>
-                      <input type="text" class="form-control" id="institution" name="institution" value="{{ auth()->user()->institution }}" readonly>
-                    </div>
+          @if (session('message'))
+          <div class="alert alert-success">{{ session('message') }}</div>
+          @endif
+          <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" value="{{ $submission->user->name }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="name">Gender</label>
+                  <input type="text" class="form-control" id="name" value="{{ $submission->user->gender == 'L' ? 'Male' : 'Female' }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <input type="text" class="form-control" id="country" value="{{ $submission->user->country }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" value="{{ $submission->user->email }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="no_tlp">Mobile Number / Whatsapp</label>
+                  <input type="number" class="form-control" id="no_tlp" name="institution" value="{{ $submission->user->no_tlp }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="institution">Institution</label>
+                  <input type="text" class="form-control" id="institution" name="institution" value="{{ $submission->user->institution }}" readonly>
                 </div>
             </div>
+        </div>
           <div class="card my-3">
             <div class="alert alert-primary"><h6>SUBMISSION HISTORIES</h6></div>
               <div class="card-body table-responsive" id="dataTable">

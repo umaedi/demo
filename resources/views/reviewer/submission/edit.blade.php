@@ -5,8 +5,8 @@
       <div class="section-header">
         <h1>Submission</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="/user/dashboard">Dashboard</a></div>
-            <div class="breadcrumb-item active"><a href="/user/submission">Submission</a></div>
+            <div class="breadcrumb-item active"><a href="/reviewer/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="/reviewer/submission">Submission</a></div>
             <div class="breadcrumb-item">Edit Submission</div>
           </div>
       </div>
@@ -22,27 +22,27 @@
                 <div class="card-body">
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" value="{{ auth()->user()->salutation . auth()->user()->name }}" readonly>
+                      <input type="text" class="form-control" id="name" value="{{ $submission->user->name }}" readonly>
                     </div>
                     <div class="form-group">
                       <label for="name">Gender</label>
-                      <input type="text" class="form-control" id="name" value="{{ auth()->user()->gender == 'L' ? 'Male' : 'Female' }}" readonly>
+                      <input type="text" class="form-control" id="name" value="{{ $submission->user->gender == 'L' ? 'Male' : 'Female' }}" readonly>
                     </div>
                     <div class="form-group">
                       <label for="country">Country</label>
-                      <input type="text" class="form-control" id="country" value="{{ auth()->user()->country }}" readonly>
+                      <input type="text" class="form-control" id="country" value="{{ $submission->user->country }}" readonly>
                     </div>
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
+                      <input type="email" class="form-control" id="email" name="email" value="{{ $submission->user->email }}" readonly>
                     </div>
                     <div class="form-group">
                       <label for="no_tlp">Mobile Number / Whatsapp</label>
-                      <input type="number" class="form-control" id="no_tlp" name="institution" value="{{ auth()->user()->no_tlp }}" readonly>
+                      <input type="number" class="form-control" id="no_tlp" name="institution" value="{{ $submission->user->no_tlp }}" readonly>
                     </div>
                     <div class="form-group">
                       <label for="institution">Institution</label>
-                      <input type="text" class="form-control" id="institution" name="institution" value="{{ auth()->user()->institution }}" readonly>
+                      <input type="text" class="form-control" id="institution" name="institution" value="{{ $submission->user->institution }}" readonly>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <div class="form-group">
                       <label for="paper">Abstract/Full Paper</label>
                       <input type="file" class="form-control mb-2 @error('paper') is-invalid @enderror" id="paper" name="paper">
-                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Lihat abstark/Paper yang sudah diperbaiki</a>
+                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Lihat abstark/Paper</a>
                       @error('paper')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -124,7 +124,7 @@
                           @elseif($submission->status == '3')
                           <td>Rejected</td>
                           @else
-                          <td>Accepted</td>
+                          <td>No set</td>
                           @endif
                           @if ($submission->status == '2')
                           <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->loa) }}" target="_blank">Download LOA</a></td>
@@ -153,6 +153,20 @@
                   <div class="form-group">
                     <label for="name">Reviewer Comments</label>
                     <textarea type="text" name="comment" class="form-control mb-2" style="height: 100px" id="name">{{ $submission->comment }}</textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Submission Status</label>
+                    <select onchange="getStatus(this.value)" name="status" class="form-control @error('status') is-invalid @enderror" id="exampleFormControlSelect1">
+                      <option value="">--Select one--</option>
+                      <option value="1">Revised</option>
+                      <option value="2">Accepted</option>
+                      <option value="3">Rejected</option>
+                    </select>
+                    @error('status')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                    @enderror
                   </div>
                   <div id="loa" class="form-group d-none">
                     <label for="loa">LOA</label>

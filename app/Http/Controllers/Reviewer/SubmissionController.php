@@ -38,6 +38,7 @@ class SubmissionController extends Controller
         }
 
         $data['title'] = 'Reviewer Submission Show';
+        $data['submission'] = $this->submission->Query()->where('registrasi_id', $id)->first();
         return view('reviewer.submission.show', $data);
     }
 
@@ -100,7 +101,7 @@ class SubmissionController extends Controller
             return throw $th;
         }
         DB::commit();
-        return back()->with('message', 'Submission has ben updated');
+        return redirect('/reviewer/submission/show/' . $submission->registrasi_id)->with('message', 'Submission has ben updated');
     }
 
     public function revised()

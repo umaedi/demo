@@ -12,10 +12,10 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
             <a href="/user/submission/create" class="btn btn-primary mb-3">CREATE SUBMISSION</a>
+            @if (session('msg.persentation'))
+            <div class="alert alert-success">{{ session('msg.persentation') }}</div>
+            @endif
             <div class="card">
-                @if (session('msg.persentation'))
-                <div class="alert alert-success">{{ session('msg.persentation') }}</div>
-                @endif
                 <div class="card-header">
                     <h4>SUBMISSION</h4>
                   </div>
