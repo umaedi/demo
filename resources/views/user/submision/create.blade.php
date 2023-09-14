@@ -13,22 +13,35 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
             <div class="card">
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                          <label for="name">Name</label>
-                          <input type="text" class="form-control" id="name" name="name" value="{{ auth()->user()->name }}" readonly>
-                        </div>
-                        <div class="form-group">
-                          <label for="email">Email</label>
-                          <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
-                        </div>
-                        <div class="form-group">
-                          <label for="institution">Institution</label>
-                          <input type="institution" class="form-control" id="institution" name="institution" value="{{ auth()->user()->institution }}" readonly>
-                        </div>
-                    </form>
+              <div class="card-header">
+                <h4>CREATE SUBMISSION</h4>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" value="{{ auth()->user()->salutation . auth()->user()->name }}" readonly>
                 </div>
+                <div class="form-group">
+                  <label for="name">Gender</label>
+                  <input type="text" class="form-control" id="name" value="{{ auth()->user()->gender == 'L' ? 'Male' : 'Female' }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <input type="text" class="form-control" id="country" value="{{ auth()->user()->country }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="no_tlp">Mobile Number / Whatsapp</label>
+                  <input type="number" class="form-control" id="no_tlp" name="institution" value="{{ auth()->user()->no_tlp }}" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="institution">Institution</label>
+                  <input type="text" class="form-control" id="institution" name="institution" value="{{ auth()->user()->institution }}" readonly>
+                </div>
+            </div>
             </div>
             <div class="card mt-3">
                 <div class="card-body">
@@ -64,6 +77,7 @@
                         <div class="form-group">
                           <label for="topic">Topic</label>
                           <select name="topic" class="form-control  @error('topic') is-invalid @enderror" id="gender" name="topic" tabindex="4" value="{{ old('topic') }}">
+                            <option >--Please select one--</option>
                             <option value="Biomolecular">Biomolecular</option>
                             <option value="Genetic">Genetic</option>
                             <option value="Degenerative Desease">Degenerative Desease</option>

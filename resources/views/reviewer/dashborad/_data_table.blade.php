@@ -2,10 +2,10 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Title</th>
+            <th scope="col">Name</th>
+            <th scope="col">Submisson Title</th>
             <th scope="col">Topic</th>
             <th scope="col">Submited At</th>
-            <th scope="col">Stataus</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -13,17 +13,11 @@
         @forelse ($table as $key => $tb)
             <tr>
                 <td>{{ $key + 1 }}</td>
+                <td>{{ $tb->user->name }}</td>
                 <td>{{ $tb->title }}</td>
                 <td>{{ $tb->topic }}</td>
                 <td>{{ \Carbon\Carbon::parse($tb->created_at)->isoFormat('D MMMM Y') }}</td>
-                @if ($tb->status == '1')
-                <td><span class="badge badge-warning">Revised</span></td>
-                @elseif($tb->status == '2')
-                <td><span class="badge badge-success">Accepted</span></td>
-                @else
-                <td><span class="badge badge-warning">no set</span></td>
-                @endif
-                <td><a href="/user/submission/edit/{{ $tb->id }}" class="badge badge-success"><i class="fa fa-eye"></i></a></td>
+                <td><a href="/reviewer/submission/show/{{ $tb->registrasi_id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
             </tr>
         @empty
             <tr>
@@ -38,7 +32,7 @@
                                 <line x1="3" y1="3" x2="21" y2="21"></line>
                             </svg>
                         </div>
-                        <p class="empty-title">Tidak ada data yang tersedia</p>
+                        <p class="empty-title">No data available</p>
                         <div class="empty-action">
                             <button onclick="loadData()" class="btn btn-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh" width="18" height="18" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -55,11 +49,6 @@
         @endforelse
     </tbody>
 </table>
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        {{ $table->links('pagination.stisla-paging') }}
-    </div>
-</div> --}}
 
 
 

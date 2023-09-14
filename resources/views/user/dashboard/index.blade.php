@@ -80,7 +80,7 @@
               <h4>TICKET</h4>
             </div>
                 <div class="card-body img-fluid" id="qrcode">
-                  {!! QrCode::size(300)->generate(env('APP_URL'). '?qrcode='. auth()->user()->qrcode); !!}       
+                  {!! QrCode::size(300)->generate(env('APP_URL'). '/?qrcode='. auth()->user()->qrcode); !!}       
                 </div>
               <a href="/user/scan-qr" class="btn btn-primary">SCAN ME</a>
           </div>
@@ -111,8 +111,21 @@
 @push('js')
     <script type="text/javascript">
       $(document).ready(function() {
+        loadSertifikat();
         $('#qrcode svg').attr('width', '100%');
         $('#qrcode svg').attr('height', '100%');
       });
+
+      async function loadSertifikat()
+      {
+          var param = {
+              method: 'GET',
+              url: '{{ url()->current() }}',
+          }
+
+          await transAjax(param).then((result) => {
+            console.log('sertifikat successfully generate');
+          });
+      }
     </script>
 @endpush

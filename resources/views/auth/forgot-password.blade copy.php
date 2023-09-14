@@ -12,25 +12,14 @@
           <div class="alert alert-success">{{ session('status') }}</div>
           @endif
           <div class="card card-primary">
-            <div class="card-header"><h4>Ganti Password</h4></div>
+            <div class="card-header"><h4>Lupa Password</h4></div>
             <div class="card-body">
-              <form method="POST" action="/reset-password">
+              <form method="POST" action="/forgot-password">
                 @csrf
                 <div class="form-group">
-                  <label for="password">New Password</label>
-                  <input type="hidden" name="token" value="{{ request()->route('token') }}">
-                  <input type="hidden" name="email" value="{{ request('email') }}">
-                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" tabindex="1" required autofocus>
-                    @error('password')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                  <label for="password_confirmation">Confirm Password</label>
-                  <input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="{{ old('password_confirmation') }}" tabindex="1" required>
-                    @error('password_confirmation')
+                  <label for="email">Email</label>
+                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" tabindex="1" required autofocus>
+                    @error('email')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -38,7 +27,7 @@
                 </div>
                 <div class="form-group">
                   <button type="submit" id="btn" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                    Ganti Password
+                    Reset Password
                   </button>
                 </div>
               </form>

@@ -2,7 +2,10 @@
 
 namespace App\Services;
 
+use App\Models\Registration;
 use App\Models\Submission;
+use Illuminate\Contracts\Cache\Store;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 class SubmissionService
@@ -19,9 +22,17 @@ class SubmissionService
         return $model;
     }
 
+    public function update($id, $data)
+    {
+        $model = $this->submission->find($id);
+        $model->update($data);
+        return $model;
+    }
+
     public function find($id)
     {
         $model = $this->submission->find($id);
+        return $model;
     }
 
     public function Query()

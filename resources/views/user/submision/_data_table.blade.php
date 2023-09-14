@@ -3,10 +3,8 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
-            <th scope="col">Persentation</th>
-            <th scope="col">Review Started On</th>
-            <th scope="col">Review Ends On</th>
-            <th scope="col">Stataus</th>
+            <th scope="col">Topic</th>
+            <th scope="col">Submited At</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -15,10 +13,8 @@
             <tr>
                 <td>{{ $key + 1 }}</td>
                 <td>{{ $tb->title }}</td>
-                <td>not set</td>
-                <td>not set</td>
-                <td>not set</td>
-                <td><span class="badge badge-warning">not set</span></td>
+                <td>{{ $tb->topic }}</td>
+                <td>{{ \Carbon\Carbon::parse($tb->created_at)->isoFormat('D MMMM Y') }}</td>
                 <td><a href="/user/submission/show/{{ $tb->registrasi_id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
             </tr>
         @empty

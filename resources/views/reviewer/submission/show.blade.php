@@ -12,8 +12,6 @@
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
-          {{-- <button class="btn btn-danger mb-3">Withdraw</button>
-          <button class="btn btn-warning mb-3">Delete</button> --}}
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
@@ -43,6 +41,29 @@
                 </div>
             </div>
           <div class="card my-3">
+            <div class="alert alert-primary"><h6>PERSENTATION & PAPER</h6></div>
+              <div class="card-body table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th scope="col">Persentation</th>
+                          <th scope="col">Full Paper</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <a href="" target="_blank">Download Persentation</a>
+                      </td>
+                      <td>
+                        <a href="" target="_blank">Download Full Paper</a>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card my-3">
             <div class="alert alert-primary"><h6>SUBMISSION HISTORIES</h6></div>
               <div class="card-body table-responsive" id="dataTable">
                 <button class="btn btn-primary btn-block btn-lg" type="button" disabled>
@@ -50,24 +71,7 @@
                     Please wait...
                 </button>
             </div>
-        </div>
-          <div class="card my-3">
-            <div class="alert alert-primary"><h6>UPLOAD PERSENTATION & FULL PAPER</h6></div>
-              <div class="card-body">
-                <form action="/user/persentation" method="POST">
-                  @csrf
-                  <div class="form-group">
-                    <label for="persentation">Persentation</label>
-                    <input type="file" class="form-control" id="persentation">
-                  </div>
-                  <div class="form-group">
-                    <label for="persentation">Full Paper</label>
-                    <input type="file" class="form-control" id="persentation">
-                  </div>
-                  <button type="submit" class="btn btn-primary">SUBMIT</button>
-                </form>
-            </div>
-        </div>
+          </div>
     </div>
 </div>
 @endsection

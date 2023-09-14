@@ -27,6 +27,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'institution' => ['required', 'string', 'max:255'],
             'no_tlp' => ['required', 'string', 'max:255'],
             'type_user' => ['required', 'string', 'max:255'],
+            'img' => ['image', 'max:2048', 'mimes:jpg,jpeg,png'],
             'email' => [
                 'required',
                 'string',

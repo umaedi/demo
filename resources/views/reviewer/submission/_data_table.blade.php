@@ -5,7 +5,7 @@
             <th scope="col">Title</th>
             <th scope="col">Topic</th>
             <th scope="col">Submited At</th>
-            <th scope="col">Stataus</th>
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -14,16 +14,16 @@
             <tr>
                 <td>{{ $key + 1 }}</td>
                 <td>{{ $tb->title }}</td>
-                <td>{{ $tb->topic }}</td>
+                <td>{{  $tb->topic  }}</td>
                 <td>{{ \Carbon\Carbon::parse($tb->created_at)->isoFormat('D MMMM Y') }}</td>
-                @if ($tb->status == '1')
+                @if ($tb->status == "1")
                 <td><span class="badge badge-warning">Revised</span></td>
-                @elseif($tb->status == '2')
-                <td><span class="badge badge-success">Accepted</span></td>
+                @elseif($tb->status == "2")
+                <td><span class="badge badge-success">Accpeted</span></td>
                 @else
                 <td><span class="badge badge-warning">no set</span></td>
                 @endif
-                <td><a href="/user/submission/edit/{{ $tb->id }}" class="badge badge-success"><i class="fa fa-eye"></i></a></td>
+                <td><a href="/reviewer/submission/edit/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
             </tr>
         @empty
             <tr>

@@ -1,51 +1,78 @@
 @extends('layouts.auth')
 @section('content')
-<section class="section">
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-          <div class="login-brand">
-            <img src="../assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
-          </div>
+<div class="container p-2 flex h-screen overflow-hidden">
+  <!-- Images -->
+  <div class="left-content hidden md:flex md:w-1/2 justify-center items-center">
+      <img src="{{ asset('dist') }}/img/public-talk.gif" alt="International Conference" class="w-[500px] h-[500px]">
+  </div>
 
-          @if (session('status'))
-          <div class="alert alert-success">{{ session('status') }}</div>
-          @endif
-          <div class="card card-primary">
-            <div class="card-header"><h4>Lupa Password</h4></div>
-            <div class="card-body">
-              <form method="POST" action="/forgot-password">
-                @csrf
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" tabindex="1" required autofocus>
-                    @error('email')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                  <button type="submit" id="btn" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                    Reset Password
-                  </button>
-                </div>
-              </form>
+  <!-- Form -->
+  <div class="right-content w-full md:w-1/2 overflow-scroll py-10 px-4 md:p-10 flex flex-col gap-5">
+      <div class="wrapper">
+          <div
+              class="wrapper w-[240px] md:w-[120px] lg:w-[240px] h-[80px] md:h-[40px] lg:h-[80px] rounded-md overflow-hidden group shadow-md hover:shadow-lg">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                  src="{{ asset('dist') }}/img/logo-icomesh.png" alt="logo icomesh">
+          </div>
+      </div>
+      <div class="flex flex-col gap-1 items-start md:items-start">
+          <h1 class="text-mydark font-bold text-2xl md:text-3xl">Forgot Password</h1>
+          <p class="text-primary text-xs lg:text-base font-semibold">Please give us your registered email & we'll
+              send you a link to reset your password</p>
+      </div>
+
+      <form action="/forgot-password" method="POST" class="input-area flex flex-col gap-10 group">
+        @csrf  
+        <!-- Input -->
+        <div class="alert alert-error flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-white shrink-0 h-6 w-6" fill="none"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="text-sm text-white">Invalid Email or Password!</span>
+      </div>
+          <div class="wrapper flex flex-col gap-2">
+
+              <!-- Email -->
+              <div class="form-control w-full">
+                <label for="email" class="label">
+                    <span class="label-text">Email</span>
+                </label>
+                <input id="email" name="email" type="email" autocomplete="email" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Example: wahyuaji@gmail.com"
+                    class="peer input input-bordered input-accent @error('email') invalid:border-red-500 @enderror w-full text-sm" />
+                @error('email')
+                <label class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
+                 {{ $message }}
+                </label>
+                @enderror
+                   
             </div>
           </div>
-          {{-- <div class="simple-footer">
-            Copyright &copy; Stisla 2018
-          </div> --}}
-        </div>
+
+          <!-- Button Sign In -->
+          <div class="wrapper flex flex-col gap-0">
+              <button type="submit"
+                  class="w-full py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                  Submit
+              </button>
+          </div>
+      </form>
+
+      <p class="text-sm text-mydark text-center">Remember your password? <span
+              class="text-primary hover:text-mydark"><a href="/login">Login</a></span></p>
+
+      <div class="wrapper w-fit">
+          <a href="/" class="text-mydark hover:text-primary text-sm flex gap-1 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                      d="M14.8586 7.33333V8.66667H5.20129L7.36329 10.8287L6.42063 11.7713L2.64929 8L6.41996 4.22867L7.36263 5.17133L5.20129 7.33333H14.8586ZM1.99996 12V4H0.666626V12H1.99996Z"
+                      fill="#343741" />
+              </svg>
+              <span>Back Home</span>
+          </a>
       </div>
-    </div>
-  </section>
+  </div>
+</div>
 @endsection
-@push('js')
-    <script type="text/javascript">
-        // let btn = document.getEelementById('btn');
-        // btn.click(function() {
-        //     console.log('ok');
-        // });
-    </script>
-@endpush

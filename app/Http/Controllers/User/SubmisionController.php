@@ -21,7 +21,7 @@ class SubmisionController extends Controller
     public function index()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('user_id', auth()->user()->id)->where('histories', 1)->get();
+            $data['table'] = $this->submission->Query()->where('user_id', auth()->user()->id)->latest()->where('histories', 1)->get();
             return view('user.submision._data_table', $data);
         }
 
@@ -47,17 +47,20 @@ class SubmisionController extends Controller
         $data = $request->except('_token');
         $data['user_id'] = auth()->user()->id;
 
-
-        if (isset($request->id)) {
-            $submission = $this->submission->Query()->where('id', $request->id)->where('user_id', auth()->user()->id)->first();
+        if ($request->id) {
+            $submission = $this->submission->Query()->whereId($request->id)->where('user_id', auth()->user()->id)->first();
+            if (is_null($submission->reviewer_id)) {
+                return back()->with(['msg' => 'Submission Anda masih dalam antrean!']);
+            }
+            $data['reviewer_id'] = $submission->reviewer_id;
             $data['histories'] = $submission->histories + 1;
             $data['registrasi_id'] = $submission->registrasi_id;
         } else {
             $data['registrasi_id'] = strtoupper(Str::random(16));
         }
 
-        if (isset($request->paper)) {
-            $data['paper'] = Storage::putFile('public/paper', $request->paper);
+        if (isset($data['paper'])) {
+            $data['paper'] = Storage::putFile('public/paper', $data['paper']);
         } else {
             $data['paper'] = $submission->paper;
         }

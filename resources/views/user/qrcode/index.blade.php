@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.page')
 @section('content')
 <section class="section">
     <div class="container mt-5">
@@ -10,7 +10,7 @@
                     {!! QrCode::size(300)->generate(env('APP_URL'). '?qrcode='. auth()->user()->qrcode); !!}       
                 </div>
             </div>
-            <button class="btn btn-primary" disabled>SCAN ME</button>
+            <button class="btn btn-primary">SCAN ME</button>
           </div>
           {{-- <div class="simple-footer">
             Copyright &copy; Stisla 2018

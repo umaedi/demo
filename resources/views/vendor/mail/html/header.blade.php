@@ -3,7 +3,7 @@
 <td class="header">
 <a href="{{ $url }}" style="display: inline-block;">
 @if (trim($slot) === 'Laravel')
-<img src="{{ asset('img') }}/logo/logo-icomesh.png" class="logo" alt="UNILA Logo">
+<img src="https://demo.icomesh-unila.com/img/logo/logo-icomesh.png" class="logo" alt="UNILA Logo">
 @else
 {{ $slot }}
 @endif

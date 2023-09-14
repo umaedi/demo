@@ -10,14 +10,18 @@ class Submission extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
+        'reviewer_id',
         'registrasi_id',
         'title',
         'abstract',
         'keyword',
         'topic',
         'paper',
+        'status',
         'message',
-        'histories'
+        'comment',
+        'histories',
+        'loa'
     ];
 
     public function user()

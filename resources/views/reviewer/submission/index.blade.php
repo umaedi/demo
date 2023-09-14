@@ -5,13 +5,12 @@
       <div class="section-header">
         <h1>Submission</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="/user/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="/reviewer/dashboard">Dashboard</a></div>
             <div class="breadcrumb-item">Submission</div>
           </div>
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
-            <a href="/user/submission/create" class="btn btn-primary mb-3">CREATE SUBMISSION</a>
             <div class="card">
                 <div class="card-header">
                     <h4>SUBMISSION</h4>

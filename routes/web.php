@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +21,29 @@ Route::middleware('guest')->group(function () {
     });
 });
 
+//route viewer
+Route::middleware('auth')->prefix('reviewer')->group(function () {
+    Route::get('/dashboard', [Reviewer\DashboardController::class, 'index']);
+
+    Route::get('/submission', [Reviewer\SubmissionController::class, 'index']);
+    Route::get('/submission/show/{id}', [Reviewer\SubmissionController::class, 'show']);
+    Route::get('/submission/edit/{id}', [Reviewer\SubmissionController::class, 'edit']);
+    Route::get('/submission/review/{id}', [Reviewer\SubmissionController::class, 'review']);
+    Route::put('/submission/update/{id}', [Reviewer\SubmissionController::class, 'update']);
+
+    Route::get('submission/revised', [Reviewer\SubmissionController::class, 'revised']);
+    Route::get('submission/accepted', [Reviewer\SubmissionController::class, 'accepted']);
+    Route::get('submission/rejected', [Reviewer\SubmissionController::class, 'rejected']);
+
+    //route for profile
+    Route::get('/profile', Reviewer\ProfileController::class);
+});
+
 //route for admin
 Route::middleware('admin')->prefix('admin')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [Admin\DashboardController::class, 'index']);
+
+    Route::post('/scan', Admin\SacanQrcdeController::class);
 });
 
 //route for user

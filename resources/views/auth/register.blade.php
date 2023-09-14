@@ -46,7 +46,7 @@
                             class="peer input input-bordered input-accent w-full text-sm @error('email') invalid:border-red-500 @enderror" />
                         @error('email')
                         <span class="label invisible peer-invalid:visible text-red-500 font-light text-xs md:text-sm">
-                           {{ $message }}
+                            {{ $message }}
                         </span>
                         @enderror
                     </div>

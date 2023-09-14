@@ -1,25 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>{{ $title ?? 'Login' }}</title>
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="theme-color" content="#00bfb3"/>
+<html lang="en" class="font-inter scroll-smooth">
 
-  <!-- General CSS Files -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="{{ asset('css') }}/style.css">
-  @stack('css')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('dist') }}/style.css" rel="stylesheet">
+    <title>Login | ICOMESH 2023</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('dist') }}/img/favicon.ico">
 </head>
 
-<body>
-  <div id="app">
+<body class="bg-white">
     @yield('content')
-  </div>
+    <script src="{{ asset('dist') }}/script.js"></script>
 </body>
 
-@stack('js')
 </html>

@@ -5,7 +5,7 @@
       <div class="section-header">
         <h1>Profile</h1>
         <div class="section-header-breadcrumb">
-          <div class="breadcrumb-item active"><a href="/user/dashboard">Dashboard</a></div>
+          <div class="breadcrumb-item active"><a href="/reviewer/dashboard">Dashboard</a></div>
           <div class="breadcrumb-item">Profile</div>
         </div>
       </div>
@@ -104,30 +104,9 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="country">Country of Institution</label>
-                      <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" tabindex="5" value="{{ auth()->user()->country }}">
-                      @error('country')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
-                      @enderror
-                    </div>
-                    <div class="form-group">
                       <label for="no_tlp">Mobile Number/WhatsApp</label>
                       <input id="no_tlp" type="number" class="form-control @error('no_tlp') is-invalid @enderror" name="no_tlp" tabindex="6" value="{{ auth()->user()->no_tlp }}">
                       @error('no_tlp')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
-                      @enderror
-                    </div>
-                    <div class="form-group">
-                      <label for="gender">Participant Type</label>
-                      <select class="form-control @error('type_user') is-invalid @enderror" id="gender" name="type_user" tabindex="7" value="{{ auth()->user()->type_user }}">
-                        <option value="Presenter" {{ auth()->user()->type_user == 'Persenter' ? 'selected' : '' }}>Presenter (Oral/Poster)</option>
-                        <option value="Participant" {{ auth()->user()->type_user == 'Participant' ? 'selected' : '' }}>Participant Only</option>
-                      </select>
-                      @error('type_user')
                       <div class="invalid-feedback">
                         {{ $message }}
                       </div>
