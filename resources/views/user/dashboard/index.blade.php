@@ -49,7 +49,7 @@
                 <h4>Certificate</h4>
               </div>
               <div class="card-body">
-                0
+                {{ $sertifikat }}
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
               <h4>TICKET</h4>
             </div>
                 <div class="card-body img-fluid" id="qrcode">
-                  {!! QrCode::size(300)->generate(env('APP_URL'). '/?qrcode='. auth()->user()->qrcode); !!}       
+                  {!! QrCode::size(300)->generate(env('APP_URL'). '/user/qr_code/validation?='. auth()->user()->qrcode); !!}       
                 </div>
               <a href="/user/scan-qr" class="btn btn-primary">SCAN ME</a>
           </div>

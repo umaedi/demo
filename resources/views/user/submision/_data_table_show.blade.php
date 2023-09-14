@@ -20,6 +20,8 @@
                 <td><span class="badge badge-warning">Revised</span></td>
                 @elseif($tb->status == '2')
                 <td><span class="badge badge-success">Accepted</span></td>
+                @elseif($tb->status == '3')
+                <td><span class="badge badge-danger">Rejected</span></td>
                 @else
                 <td><span class="badge badge-warning">no set</span></td>
                 @endif

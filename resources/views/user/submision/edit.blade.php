@@ -74,6 +74,37 @@
                     </div>
                   </div>
                </div>
+               <div class="card my-3">
+                <div class="alert alert-primary"><h6>SUBMISSION INFORMATION</h6></div>
+                  <div class="card-body">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Submission Status</th>
+                          <th scope="col">LOA</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          @if ($submission->status == '1')
+                          <td>Revised</td>
+                          @elseif($submission->status == '2')
+                          <td>Accepted</td>
+                          @elseif($submission->status == '3')
+                          <td>Rejected</td>
+                          @else
+                          <td>No set</td>
+                          @endif
+                          @if ($submission->status == '2')
+                          <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->loa) }}" target="_blank">Download LOA</a></td>
+                          @else
+                          <td>Not yet available</td>
+                          @endif
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
                <div class="card mt-3">
                  <div class="alert alert-primary"><h6>REVIEWER</h6></div>
                  <div class="card-body">
@@ -82,37 +113,6 @@
                     <textarea type="text" class="form-control mb-2" style="height: 100px" id="name" readonly>{{ $submission->comment }}</textarea>
                     <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">See what's in correction</a>
                   </div>
-              </div>
-            </div>
-            <div class="card my-3">
-              <div class="alert alert-primary"><h6>SUBMISSION INFORMATION</h6></div>
-                <div class="card-body">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th scope="col">Submission Status</th>
-                        <th scope="col">LOA</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        @if ($submission->status == '1')
-                        <td>Revised</td>
-                        @elseif($submission->status == '2')
-                        <td>Accepted</td>
-                        @elseif($submission->status == '3')
-                        <td>Rejected</td>
-                        @else
-                        <td>Accepted</td>
-                        @endif
-                        @if ($submission->status == '2')
-                        <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->loa) }}" target="_blank">Download LOA</a></td>
-                        @else
-                        <td>Not yet available</td>
-                        @endif
-                      </tr>
-                    </tbody>
-                  </table>
               </div>
             </div>
             @if ($submission->acc !== 1)

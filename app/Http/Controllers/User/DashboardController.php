@@ -36,6 +36,7 @@ class DashboardController extends Controller
         }
 
         $data['submission'] = Submission::where('user_id', auth()->user()->id)->where('histories', '=', '1')->count();
+        $data['sertifikat'] = Submission::where('user_id', auth()->user()->id)->where('status', '2')->count();
         return view('user.dashboard.index', $data);
     }
 }
