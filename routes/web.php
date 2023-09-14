@@ -21,6 +21,18 @@ Route::middleware('guest')->group(function () {
     });
 });
 
+Route::get('/root', function () {
+    return view('root.index');
+});
+
+Route::get('/redirect', function () {
+    if (auth()->user()->level == "user") {
+        return redirect('/user/dashboard');
+    } else {
+        return redirect('/reviewer/dashboard');
+    }
+});
+
 //route viewer
 Route::middleware(['auth', 'reviewer'])->prefix('reviewer')->group(function () {
     Route::get('/dashboard', [Reviewer\DashboardController::class, 'index']);

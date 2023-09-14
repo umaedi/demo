@@ -18,7 +18,7 @@ class ReviewerMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role == 'reviewer' || Auth::user()->role == 'admin') {
+        if (Auth::user()->level == 'reviewer' || Auth::user()->level == 'admin') {
             return $next($request);
         }
         return redirect(RouteServiceProvider::HOME);
