@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
 use App\Http\Controllers\Controller;
+use App\Services\PersentationService;
 use Illuminate\Support\Facades\Storage;
 
 class SubmissionController extends Controller
 {
     public $submission;
-    public function __construct(SubmissionService $submissionService)
+    public $persentattion;
+    public function __construct(SubmissionService $submissionService, PersentationService $persentationService)
     {
         $this->submission = $submissionService;
+        $this->persentattion = $persentationService;
     }
 
     public function index()
@@ -40,6 +43,15 @@ class SubmissionController extends Controller
 
     public function edit($id)
     {
+        if (\request()->ajax()) {
+            $data['persentation'] = $this->persentattion->Query()->where('submission_id', $id)->first();
+            if ($data['persentation']) {
+                return view('reviewer.persentation._data_table', $data);
+            } else {
+                return view('reviewer.persentation._nodata_table');
+            }
+        }
+
         $data['title'] = 'Reviewer Submission Edit';
         $data['submission'] = $this->submission->find($id);
         return view('reviewer.submission.edit', $data);

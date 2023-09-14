@@ -22,7 +22,7 @@ Route::middleware('guest')->group(function () {
 });
 
 //route viewer
-Route::middleware('auth')->prefix('reviewer')->group(function () {
+Route::middleware(['auth', 'reviewer'])->prefix('reviewer')->group(function () {
     Route::get('/dashboard', [Reviewer\DashboardController::class, 'index']);
 
     Route::get('/submission', [Reviewer\SubmissionController::class, 'index']);
@@ -56,6 +56,8 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::post('/submission/store', [User\SubmisionController::class, 'store']);
     Route::get('/submission/show/{id}', [User\SubmisionController::class, 'show']);
     Route::get('/submission/edit/{id}', [User\SubmisionController::class, 'edit']);
+
+    Route::post('/persentation', [User\PersentationController::class, 'store']);
 
     //route for profile
     Route::get('/profile', [User\ProfileController::class, 'index']);

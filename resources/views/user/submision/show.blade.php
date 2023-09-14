@@ -14,6 +14,9 @@
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
           {{-- <button class="btn btn-danger mb-3">Withdraw</button>
           <button class="btn btn-warning mb-3">Delete</button> --}}
+          @if (session('msg.persentation'))
+          <div class="alert alert-success">{{ session('msg.persentation') }}</div>
+          @endif
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
@@ -49,23 +52,6 @@
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     Please wait...
                 </button>
-            </div>
-        </div>
-          <div class="card my-3">
-            <div class="alert alert-primary"><h6>UPLOAD PERSENTATION & FULL PAPER</h6></div>
-              <div class="card-body">
-                <form action="/user/persentation" method="POST">
-                  @csrf
-                  <div class="form-group">
-                    <label for="persentation">Persentation</label>
-                    <input type="file" class="form-control" id="persentation">
-                  </div>
-                  <div class="form-group">
-                    <label for="persentation">Full Paper</label>
-                    <input type="file" class="form-control" id="persentation">
-                  </div>
-                  <button type="submit" class="btn btn-primary">SUBMIT</button>
-                </form>
             </div>
         </div>
     </div>

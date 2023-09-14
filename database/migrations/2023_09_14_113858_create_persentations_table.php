@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('persentations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->foreignId('submission_id');
+            $table->string('registrasi_id');
             $table->string('persentation');
             $table->string('paper');
             $table->timestamps();

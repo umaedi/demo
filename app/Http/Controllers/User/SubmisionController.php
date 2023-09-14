@@ -52,6 +52,11 @@ class SubmisionController extends Controller
             if (is_null($submission->reviewer_id)) {
                 return back()->with(['msg' => 'Submission Anda masih dalam antrean!']);
             }
+
+            if ($submission->acc == 1) {
+                return back();
+            }
+
             $data['reviewer_id'] = $submission->reviewer_id;
             $data['histories'] = $submission->histories + 1;
             $data['registrasi_id'] = $submission->registrasi_id;

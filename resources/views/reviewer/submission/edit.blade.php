@@ -105,6 +105,48 @@
                     </div>
                   </div>
                </div>
+               <div class="card my-3">
+                <div class="alert alert-primary"><h6>SUBMISSION INFORMATION</h6></div>
+                  <div class="card-body">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Submission Status</th>
+                          <th scope="col">LOA</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          @if ($submission->status == '1')
+                          <td>Revised</td>
+                          @elseif($submission->status == '2')
+                          <td>Accepted</td>
+                          @elseif($submission->status == '3')
+                          <td>Rejected</td>
+                          @else
+                          <td>Accepted</td>
+                          @endif
+                          @if ($submission->status == '2')
+                          <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->loa) }}" target="_blank">Download LOA</a></td>
+                          @else
+                          <td>Not yet available</td>
+                          @endif
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              @if ($submission->status == "2")
+              <div class="card my-3">
+                <div class="alert alert-primary"><h6>PERSENTATION & PAPER</h6></div>
+                  <div class="card-body table-responsive" id="dataTable">
+                    <button class="btn btn-primary btn-block btn-lg" type="button" disabled>
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Please wait...
+                    </button>
+                </div>
+              </div>
+              @endif
                <div class="card mt-3">
                  <div class="alert alert-primary"><h6>REVIEWER</h6></div>
                  <div class="card-body">
@@ -112,36 +154,13 @@
                     <label for="name">Reviewer Comments</label>
                     <textarea type="text" name="comment" class="form-control mb-2" style="height: 100px" id="name">{{ $submission->comment }}</textarea>
                   </div>
-                  @if ($submission->status == '2')
-                  <div class="form-group">
-                    <label for="name">Status Submission</label>
-                  <input type="text" value="Accepted" class="form-control" readonly>
-                  </div>
-                  <div class="form-group">
-                    <a href="#" class="btn btn-primary">DOWNLOAD LOA</a>
-                  </div>
-                  @else
-                  <div class="form-group">
-                    <label for="name">Status Submission</label>
-                    <select name="status" onchange="getStatus(this.value)" class="form-control  @error('status') is-invalid @enderror" id="gender" tabindex="4" value="{{ old('status') }}">
-                      <option value="">--Please select one--</option>
-                      <option value="1">Revisi</option>
-                      <option value="2">Accpeted</option>
-                    </select>
-                    @error('status')
-                    <div class="invalid-feedback">
-                      {{ $message }}
-                    </div>
-                    @enderror
-                  </div>
-                  @endif
                   <div id="loa" class="form-group d-none">
                     <label for="loa">LOA</label>
                     <input type="file" class="loa form-control" name="loa">
                   </div>
               </div>
             </div>
-            @if ($submission->status !== '2')
+            @if ($submission->acc !== 1)
             <button type="submit" class="btn btn-primary mt-3">UPDATE</button>
             @endif
         </div>
@@ -152,30 +171,67 @@
 @push('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.6.2/tinymce.min.js"></script>
 <script type="text/javascript">
-    var editor_config = {
-        selector: "textarea.content",
-        plugins: [
-            "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-            "searchreplace wordcount visualblocks visualchars code fullscreen",
-            "insertdatetime media nonbreaking save table contextmenu directionality",
-            "emoticons template paste textcolor colorpicker textpattern"
-        ],
-        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
-        relative_urls: false,
-        height: 500
-    };
+  $(document).ready(function() {
+      loadData();
+  });
 
-    tinymce.init(editor_config);
+  async function loadData() {
+      var param = {
+          method: 'GET',
+          url: '{{ url()->current() }}',
+          data: {
+              load: 'table',
+          }
+      }
+      loading(true);
+      await transAjax(param).then((result) => {
+          loading(false);
+          $('#dataTable').html(result)
 
-    function getStatus(value)
-    {
-      if(value == '2') {
-          $('#loa').removeClass('d-none');
-          $('.loa').attr('required', 'true');
-      }else {
-        $('#loa').addClass('d-none');
-        $('.loa').removeAttr('required');
-       }
-    }
+      }).catch((err) => {
+          $('#dataTable').html(`<button class="btn btn-warning btn-lg btn-block">${err.responseJSON.message}</button>`)
+  });
+
+  function loading(state) {
+      if(state) {
+          $('#loading').removeClass('d-none');
+      } else {
+          $('#loading').addClass('d-none');
+      }
+  }
+
+}
+
+//paginate
+function loadPaginate(to) {
+  page = to
+  loadData()
+}
+
+var editor_config = {
+    selector: "textarea.content",
+    plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor colorpicker textpattern"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+    relative_urls: false,
+    height: 500
+};
+
+tinymce.init(editor_config);
+
+function getStatus(value)
+{
+  if(value == '2') {
+      $('#loa').removeClass('d-none');
+      $('.loa').attr('required', 'true');
+  }else {
+    $('#loa').addClass('d-none');
+    $('.loa').removeAttr('required');
+  }
+}
 </script>
 @endpush

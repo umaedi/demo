@@ -82,24 +82,63 @@
                     <textarea type="text" class="form-control mb-2" style="height: 100px" id="name" readonly>{{ $submission->comment }}</textarea>
                     <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">See what's in correction</a>
                   </div>
-                  @if ($submission->status == '2')
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <button class="btn btn-primary btn-block btn-lg">STATUS SUBMISSION: ACCEPTED</button>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->loa) }}" target="_blank" class="btn btn-primary btn-block btn-lg">DOWNLOAD LOA</a>
-                      </div>
-                    </div>
-                  </div>
-                  @endif
+              </div>
+            </div>
+            <div class="card my-3">
+              <div class="alert alert-primary"><h6>SUBMISSION INFORMATION</h6></div>
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Submission Status</th>
+                        <th scope="col">LOA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        @if ($submission->status == '1')
+                        <td>Revised</td>
+                        @elseif($submission->status == '2')
+                        <td>Accepted</td>
+                        @elseif($submission->status == '3')
+                        <td>Rejected</td>
+                        @else
+                        <td>Accepted</td>
+                        @endif
+                        @if ($submission->status == '2')
+                        <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->loa) }}" target="_blank">Download LOA</a></td>
+                        @else
+                        <td>Not yet available</td>
+                        @endif
+                      </tr>
+                    </tbody>
+                  </table>
               </div>
             </div>
             @if ($submission->acc !== 1)
             <button type="submit" class="btn btn-primary mt-3">UPDATE</button>
+            @endif
+            </form>
+            @if ($submission->status == '2')
+            <div class="card my-3">
+              <div class="alert alert-primary"><h6>UPLOAD PERSENTATION & FULL PAPER</h6></div>
+                <div class="card-body">
+                  <form action="/user/persentation" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                      <label for="persentation">Persentation</label>
+                      <input type="hidden" name="submission_id" value="{{ $submission->id }}">
+                      <input type="hidden" name="registrasi_id" value="{{ $submission->registrasi_id }}">
+                      <input type="file" class="form-control" id="persentation" name="persentation">
+                    </div>
+                    <div class="form-group">
+                      <label for="persentation">Full Paper</label>
+                      <input type="file" class="form-control" id="persentation" name="paper">
+                    </div>
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                  </form>
+              </div>
+            </div>
             @endif
         </div>
     </div>
