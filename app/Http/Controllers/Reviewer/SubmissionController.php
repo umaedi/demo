@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Reviewer;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
@@ -88,9 +89,9 @@ class SubmissionController extends Controller
             $data['paper'] = $submission->paper;
         }
 
-        if (isset($data['loa'])) {
-            $data['loa'] = Storage::putFile('public/loa', $data['loa']);
+        if ($data['status'] == "2") {
             $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 1]);
+            $data['loa'] = strtoupper(Str::random(16));
         }
 
         DB::beginTransaction();
@@ -107,7 +108,7 @@ class SubmissionController extends Controller
     public function revised()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 1)->get();
+            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 1)->whereNull('acc')->get();
             return view('reviewer.submission._data_table_show', $data);
         }
         $data['title'] = "Submission Revised";
@@ -120,7 +121,7 @@ class SubmissionController extends Controller
             $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 2)->get();
             return view('reviewer.submission._data_table_show', $data);
         }
-        $data['title'] = "Submission Revised";
+        $data['title'] = "Submission Accepted";
         return view('reviewer.submission.accepted', $data);
     }
 
@@ -130,7 +131,7 @@ class SubmissionController extends Controller
             $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 3)->get();
             return view('reviewer.submission._data_table_show', $data);
         }
-        $data['title'] = "Submission Revised";
+        $data['title'] = "Submission Rejected";
         return view('reviewer.submission.revised', $data);
     }
 }

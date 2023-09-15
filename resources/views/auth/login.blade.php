@@ -72,24 +72,6 @@
                     class="w-full py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base group-invalid:pointer-events-none group-invalid:opacity-50">
                     Login
                 </button>
-                <div class="divider text-xs">OR</div>
-                <button type="button"
-                    class="w-full py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-white hover:bg-disabled/20 text-primary hover:opacity-90 outline-double outline-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path
-                            d="M18.1712 8.36791H17.5V8.33333H9.99996V11.6667H14.7095C14.0225 13.6071 12.1762 15 9.99996 15C7.23871 15 4.99996 12.7612 4.99996 10C4.99996 7.23875 7.23871 5 9.99996 5C11.2745 5 12.4341 5.48083 13.317 6.26625L15.6741 3.90916C14.1858 2.52208 12.195 1.66666 9.99996 1.66666C5.39788 1.66666 1.66663 5.39791 1.66663 10C1.66663 14.6021 5.39788 18.3333 9.99996 18.3333C14.602 18.3333 18.3333 14.6021 18.3333 10C18.3333 9.44125 18.2758 8.89583 18.1712 8.36791Z"
-                            fill="#FFC107" />
-                        <path
-                            d="M2.62744 6.12125L5.36536 8.12916C6.10619 6.295 7.90036 5 9.99994 5C11.2745 5 12.4341 5.48083 13.317 6.26625L15.6741 3.90916C14.1858 2.52208 12.1949 1.66666 9.99994 1.66666C6.79911 1.66666 4.02327 3.47375 2.62744 6.12125Z"
-                            fill="#FF3D00" />
-                        <path
-                            d="M10 18.3333C12.1525 18.3333 14.1084 17.5096 15.5871 16.17L13.008 13.9875C12.1432 14.6452 11.0865 15.0009 10 15C7.83255 15 5.99213 13.6179 5.2988 11.6892L2.5813 13.7829C3.96047 16.4817 6.7613 18.3333 10 18.3333Z"
-                            fill="#4CAF50" />
-                        <path
-                            d="M18.1712 8.36792H17.5V8.33334H10V11.6667H14.7096C14.3809 12.5902 13.7889 13.3972 13.0067 13.9879L13.0079 13.9871L15.5871 16.1696C15.4046 16.3354 18.3333 14.1667 18.3333 10C18.3333 9.44125 18.2758 8.89584 18.1712 8.36792Z"
-                            fill="#1976D2" />
-                    </svg> <span class="ml-4">Login with Google</span>
-                </button>
             </div>
         </form>
 

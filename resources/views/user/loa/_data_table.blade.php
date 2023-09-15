@@ -2,11 +2,10 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Title</th>
+            <th scope="col">Submission Title</th>
             <th scope="col">Topic</th>
             <th scope="col">Submited At</th>
-            <th scope="col">Status</th>
-            <th scope="col">Action</th>
+            <th scope="col">Download LOA</th>
         </tr>
     </thead>
     <tbody>
@@ -14,18 +13,9 @@
             <tr>
                 <td>{{ $key + 1 }}</td>
                 <td>{{ $tb->title }}</td>
-                <td>{{  $tb->topic  }}</td>
+                <td>{{ $tb->topic }}</td>
                 <td>{{ \Carbon\Carbon::parse($tb->created_at)->isoFormat('D MMMM Y') }}</td>
-                @if ($tb->status == "1")
-                <td><span class="badge badge-warning">Revised</span></td>
-                @elseif($tb->status == "2")
-                <td><span class="badge badge-success">Accpeted</span></td>
-                @elseif($tb->status == "3")
-                <td><span class="badge badge-danger">Rejected</span></td>
-                @else
-                <td><span class="badge badge-warning">No set</span></td>
-                @endif
-                <td><a href="/reviewer/submission/edit/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
+                <td  class="text-center"><a href="/user/loa_download/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
             </tr>
         @empty
             <tr>
@@ -40,7 +30,7 @@
                                 <line x1="3" y1="3" x2="21" y2="21"></line>
                             </svg>
                         </div>
-                        <p class="empty-title">Tidak ada data yang tersedia</p>
+                        <p class="empty-title">No data available</p>
                         <div class="empty-action">
                             <button onclick="loadData()" class="btn btn-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh" width="18" height="18" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

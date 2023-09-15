@@ -71,6 +71,10 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
 
     Route::post('/persentation', [User\PersentationController::class, 'store']);
 
+    //route for loa
+    Route::get('/loa', [User\LoaController::class, 'index']);
+    Route::get('/loa_download/{id}', [User\LoaController::class, 'download']);
+
     //route for profile
     Route::get('/profile', [User\ProfileController::class, 'index']);
 

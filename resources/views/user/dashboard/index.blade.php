@@ -6,6 +6,7 @@
         <h1>Dashboard</h1>
       </div>
       <div class="row">
+        @if (auth()->user()->type_user == 'Participant')
         <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
           <a href="/user/profile" style="text-decoration: none">
           <div class="card card-statistic-1">
@@ -23,7 +24,6 @@
           </div>
         </a>
         </div>
-        @if (auth()->user()->type_user == 'Participant')
         <div class="col-lg-8 col-md-6 col-sm-6 col-12 mb-3">
           <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
@@ -39,7 +39,24 @@
           </div>
         </div>
         @else
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+          <a href="/user/profile" style="text-decoration: none">
+          <div class="card card-statistic-1">
+            <div class="card-icon bg-primary">
+              <i class="far fa-user"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Profile</h4>
+              </div>
+              <div class="card-body">
+                {{ auth()->user()->name }}
+              </div>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
           <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
               <i class="far fa-newspaper"></i>
@@ -54,7 +71,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
           <a href="/user/submission" style="text-decoration: none">
           <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
@@ -66,6 +83,22 @@
               </div>
               <div class="card-body">
                 {{ $submission }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <a href="/user/loa" style="text-decoration: none">
+          <div class="card card-statistic-1">
+            <div class="card-icon bg-primary">
+              <i class="far fa-file"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>LOA</h4>
+              </div>
+              <div class="card-body">
+                {{ $loa }}
               </div>
             </div>
           </div>

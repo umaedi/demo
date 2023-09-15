@@ -3,18 +3,15 @@
 <div class="main-content">
     <section class="section">
       <div class="section-header">
-        <h1>Submission Accepted</h1>
+        <h1>LOA</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="/reviewer/dashboard">Dashboard</a></div>
-            <div class="breadcrumb-item">Submission</div>
+            <div class="breadcrumb-item active"><a href="/user/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item">LOA</div>
           </div>
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
             <div class="card">
-                @if (session('message'))
-                <div class="alert alert-success">{{ session('message') }}</div>
-                @endif
                 <div class="card-body table-responsive" id="dataTable">
                     <button class="btn btn-primary btn-block btn-lg" type="button" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

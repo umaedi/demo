@@ -147,13 +147,13 @@
               <div class="card-header">
                 <h4>UPDATE PASSWORD</h4>
               </div>
-              <form action="{{ route('user-password.update') }}" method="POST">
+              <form method="POST" action="{{ route('user-password.update') }}">
                 @csrf
                 @method('PUT')
               <div class="card-body">
                 <div class="form-group">
-                  <label for="gender">Current Password</label>
-                  <input id="password" type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" tabindex="3">
+                  <label for="current_password">Current Password</label>
+                  <input id="current_password" type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" tabindex="3">
                   @error('current_password')
                   <div class="invalid-feedback">
                     {{ $message }}

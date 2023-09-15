@@ -7999,6 +7999,10 @@ details.collapse summary::-webkit-details-marker {
   height: 1.25rem;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .h-\[300px\] {
   height: 300px;
 }
@@ -8031,10 +8035,6 @@ details.collapse summary::-webkit-details-marker {
   height: 100vh;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
 .w-3 {
   width: 0.75rem;
 }
@@ -8045,6 +8045,10 @@ details.collapse summary::-webkit-details-marker {
 
 .w-52 {
   width: 13rem;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-8 {
@@ -8086,10 +8090,6 @@ details.collapse summary::-webkit-details-marker {
 
 .w-full {
   width: 100%;
-}
-
-.w-6 {
-  width: 1.5rem;
 }
 
 .flex-shrink {
@@ -9115,13 +9115,13 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
-.bg-disabled\/\[\.3\] {
-  background-color: rgb(171 180 196 / .3);
-}
-
 .bg-mydark {
   --tw-bg-opacity: 1;
   background-color: rgb(52 55 65 / var(--tw-bg-opacity));
+}
+
+.bg-mydark\/\[\.3\] {
+  background-color: rgb(52 55 65 / .3);
 }
 
 .bg-primary {
@@ -9229,10 +9229,6 @@ details.collapse summary::-webkit-details-marker {
 
 .bg-origin-content {
   background-origin: content-box;
-}
-
-.stroke-current {
-  stroke: currentColor;
 }
 
 .stroke-white {
@@ -9547,6 +9543,11 @@ details.collapse summary::-webkit-details-marker {
 
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-blue-500 {
@@ -10448,10 +10449,6 @@ details.collapse summary::-webkit-details-marker {
 
   .lg\:w-16 {
     width: 4rem;
-  }
-
-  .lg\:w-8\/12 {
-    width: 66.666667%;
   }
 
   .lg\:w-\[180px\] {

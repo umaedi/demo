@@ -115,7 +115,7 @@
                   </div>
               </div>
             </div>
-            @if ($submission->acc !== 1)
+            @if ($submission->acc !== 1 && $submission->status != "3")
             <button type="submit" class="btn btn-primary mt-3">UPDATE</button>
             @endif
             </form>

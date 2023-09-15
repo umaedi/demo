@@ -127,7 +127,7 @@
                           <td>No set</td>
                           @endif
                           @if ($submission->status == '2')
-                          <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->loa) }}" target="_blank">Download LOA</a></td>
+                          <td> <a href="/user/loa_download/{{ $submission->id }}">Download LOA</a></td>
                           @else
                           <td>Not yet available</td>
                           @endif
@@ -156,7 +156,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Submission Status</label>
-                    <select onchange="getStatus(this.value)" name="status" class="form-control @error('status') is-invalid @enderror" id="exampleFormControlSelect1">
+                    <select name="status" class="form-control @error('status') is-invalid @enderror" id="exampleFormControlSelect1">
                       <option value="">--Select one--</option>
                       <option value="1">Revised</option>
                       <option value="2">Accepted</option>
@@ -174,7 +174,7 @@
                   </div>
               </div>
             </div>
-            @if ($submission->acc !== 1)
+            @if ($submission->acc !== 1 && $submission->status != "3")
             <button type="submit" class="btn btn-primary mt-3">UPDATE</button>
             @endif
         </div>
@@ -237,15 +237,5 @@ var editor_config = {
 
 tinymce.init(editor_config);
 
-function getStatus(value)
-{
-  if(value == '2') {
-      $('#loa').removeClass('d-none');
-      $('.loa').attr('required', 'true');
-  }else {
-    $('#loa').addClass('d-none');
-    $('.loa').removeAttr('required');
-  }
-}
 </script>
 @endpush

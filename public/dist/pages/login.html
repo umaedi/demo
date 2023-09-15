@@ -20,9 +20,9 @@
         <div class="right-content w-full md:w-1/2 overflow-scroll py-10 px-4 md:p-10 flex flex-col gap-5">
             <div class="wrapper">
                 <div
-                    class="wrapper w-[240px] md:w-[120px] lg:w-[240px] h-[80px] md:h-[40px] lg:h-[80px] rounded-md overflow-hidden group shadow-md hover:shadow-lg">
+                    class="wrapper w-[240px] md:w-[120px] lg:w-[240px] h-[80px] md:h-[40px] lg:h-[80px] rounded-md overflow-hidden group">
                     <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                        src="./../img/logo-icomesh.png" alt="logo icomesh">
+                        src="./../img/logo-icomesh-no-bg.png" alt="logo icomesh">
                 </div>
             </div>
             <div class="flex flex-col gap-1 items-start md:items-start">
@@ -62,8 +62,7 @@
                         <input id="password" type="password" placeholder="********" required
                             class="peer input input-bordered input-accent w-full text-sm" />
                         <label class="label">
-                            <a onclick="forgot_password.showModal()"
-                                class="cursor-pointer label-text text-xs md:text-sm text-primary">Forgot Password?</a>
+                            <a href="./forgot-password.html" class="cursor-pointer label-text text-xs md:text-sm text-primary">Forgot Password?</a>
                         </label>
                     </div>
                     <div class="form-control">
@@ -80,8 +79,8 @@
                         class="w-full py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                         Login
                     </button>
-                    <div class="divider text-xs">OR</div>
-                    <button type="button"
+                    <!-- <div class="divider text-xs">OR</div> -->
+                    <!-- <button type="button"
                         class="w-full py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-white hover:bg-disabled/20 text-primary hover:opacity-90 outline-double outline-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path
@@ -97,7 +96,7 @@
                                 d="M18.1712 8.36792H17.5V8.33334H10V11.6667H14.7096C14.3809 12.5902 13.7889 13.3972 13.0067 13.9879L13.0079 13.9871L15.5871 16.1696C15.4046 16.3354 18.3333 14.1667 18.3333 10C18.3333 9.44125 18.2758 8.89584 18.1712 8.36792Z"
                                 fill="#1976D2" />
                         </svg> <span class="ml-4">Login with Google</span>
-                    </button>
+                    </button> -->
                 </div>
             </form>
 
@@ -116,42 +115,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal Forgot Password -->
-    <dialog id="forgot_password" class="modal modal-bottom sm:modal-middle">
-        <form method="dialog" class="modal-box text-mydark">
-            <h3 class="text-mydark font-bold text-2xl md:text-3xl">Forgot Password</h3>
-            <p class="py-4 text-sm">Please give us your registered email & we'll send you a link to reset your password
-            </p>
-
-            <div class="input-area flex flex-col gap-10">
-                <!-- Input -->
-                <div class="wrapper flex flex-col gap-2">
-                    <!-- Email -->
-                    <div class="form-control w-full">
-                        <label class="label">
-                            <span class="label-text">Email</span>
-                        </label>
-                        <input type="email" placeholder="Example: wahyuaji@gmail.com"
-                            class="input input-bordered input-accent w-full text-sm" />
-                    </div>
-                </div>
-
-                <!-- Button Submit -->
-                <div class="wrapper flex flex-col gap-0">
-                    <button type="submit"
-                        class="w-full py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
-                        Submit
-                    </button>
-                </div>
-            </div>
-
-            <div class="modal-action">
-                <!-- if there is a button in form, it will close the modal -->
-                <button class="btn text-xs w-full rounded-xl">CANCEL</button>
-            </div>
-        </form>
-    </dialog>
 
     <script src="../script.js"></script>
 </body>
