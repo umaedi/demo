@@ -66,7 +66,7 @@
                 <h4>Certificate</h4>
               </div>
               <div class="card-body">
-                {{ $sertifikat }}
+                {{ auth()->user()->sertifikat ?? "0" }}
               </div>
             </div>
           </div>
