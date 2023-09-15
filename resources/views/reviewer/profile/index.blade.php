@@ -104,9 +104,30 @@
                       @enderror
                     </div>
                     <div class="form-group">
+                      <label for="country">Country of Institution</label>
+                      <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" tabindex="5" value="{{ auth()->user()->country }}">
+                      @error('country')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
+                    </div>
+                    <div class="form-group">
                       <label for="no_tlp">Mobile Number/WhatsApp</label>
                       <input id="no_tlp" type="number" class="form-control @error('no_tlp') is-invalid @enderror" name="no_tlp" tabindex="6" value="{{ auth()->user()->no_tlp }}">
                       @error('no_tlp')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
+                    </div>
+                    <div class="form-group d-none">
+                      <label for="gender">Participant Type</label>
+                      <select class="form-control @error('type_user') is-invalid @enderror" id="gender" name="type_user" tabindex="7" value="{{ auth()->user()->type_user }}">
+                        <option value="Presenter" {{ auth()->user()->type_user == 'Persenter' ? 'selected' : '' }}>Presenter (Oral/Poster)</option>
+                        <option value="Participant" {{ auth()->user()->type_user == 'Participant' ? 'selected' : '' }}>Participant Only</option>
+                      </select>
+                      @error('type_user')
                       <div class="invalid-feedback">
                         {{ $message }}
                       </div>
@@ -126,12 +147,14 @@
               <div class="card-header">
                 <h4>UPDATE PASSWORD</h4>
               </div>
-              <form action="" method="POST">
+              <form method="POST" action="{{ route('user-password.update') }}">
+                @csrf
+                @method('PUT')
               <div class="card-body">
                 <div class="form-group">
-                  <label for="gender">Current Password</label>
-                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" tabindex="3">
-                  @error('password')
+                  <label for="current_password">Current Password</label>
+                  <input id="current_password" type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" tabindex="3">
+                  @error('current_password')
                   <div class="invalid-feedback">
                     {{ $message }}
                   </div>
