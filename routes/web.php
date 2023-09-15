@@ -78,6 +78,9 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     //route for profile
     Route::get('/profile', [User\ProfileController::class, 'index']);
 
+    //route for download template
+    Route::get('/download/template', User\TemplateController::class);
+
     //route scan qr
     Route::get('scan-qr', [User\QrcodeController::class, 'index']);
     Route::get('/qr_code/validation', [User\QrcodeController::class, 'validation']);

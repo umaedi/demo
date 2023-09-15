@@ -107,18 +107,48 @@
         @endif
       </div>
       <div class="row mt-4">
-        <div class="col-lg-4 col-md-12 col-12 col-sm-12 mb-3">
+        <div class="col-lg-6 col-md-12 col-12 col-sm-12">
           <div class="card">
             <div class="card-header">
-              <h4>TICKET</h4>
+              <h4>DOWNLOAD TEMPLATE</h4>
             </div>
-                <div class="card-body img-fluid" id="qrcode">
-                  {!! QrCode::size(300)->generate(env('APP_URL'). '/user/qr_code/validation?='. auth()->user()->qrcode); !!}       
-                </div>
-              <a href="/user/scan-qr" class="btn btn-primary">SCAN ME</a>
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">File Name</th>
+                    <th scope="col">Download</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Abstarct Template</td>
+                    <td  class="text-center"><a href="/user/download/template?q=abstract" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Full Paper Template</td>
+                    <td  class="text-center"><a href="/user/download/template?q=full_paper" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>PPT Template</td>
+                    <td  class="text-center"><a href="/user/download/template?q=ppt" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Background Video Conference (Online)</td> 
+                    <td  class="text-center"><a href="/user/download/template?q=vidcon" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-        <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+        <div class="col-lg-6 col-md-12 col-12 col-sm-12">
           <div class="card">
             <div class="card-header">
               <h4>CERTIFICATE</h4>
@@ -145,8 +175,6 @@
     <script type="text/javascript">
       $(document).ready(function() {
         loadSertifikat();
-        $('#qrcode svg').attr('width', '100%');
-        $('#qrcode svg').attr('height', '100%');
       });
 
       async function loadSertifikat()
