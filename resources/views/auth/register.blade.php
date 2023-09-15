@@ -218,7 +218,7 @@
             </div>
         </div>
     </div>
-    <script src="../script.js"></script>
+    <script src="{{ asset('dist') }}/script.js"></script>
 </body>
 
 </html>

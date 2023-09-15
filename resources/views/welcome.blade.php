@@ -224,7 +224,7 @@
                     </p>
                 </div>
                 <div>
-                    <a href="{{ asset('dist') }}/pages/about-event.html"
+                    <a href="/pages/about-event.html"
                         class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                         Learn More
                     </a>
