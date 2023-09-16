@@ -153,12 +153,36 @@
               @if ($submission->status == "2")
               <div class="card my-3">
                 <div class="alert alert-primary"><h6>PERSENTATION & PAPER</h6></div>
-                  <div class="card-body table-responsive" id="dataTable">
-                    <button class="btn btn-primary btn-block btn-lg" type="button" disabled>
-                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                      Please wait...
-                    </button>
-                </div>
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Abstract</th>
+                        <th scope="col">Full Paper</th>
+                        <th scope="col">PPT</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        @if ($submission->abstract_file !== null)
+                        <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">Download Abstarct</a></td>
+                        @else
+                        <td>Not yet available</td>
+                        @endif
+                        @if ($submission->paper !== null)
+                        <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Download Full Paper</a></td>
+                        @else
+                        <td>Not yet available</td>
+                        @endif
+                        @if ($submission->ppt !== null)
+                        <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->ppt) }}" target="_blank">Download PPT</a></td>
+                        @else
+                        <td>Not yet available</td>
+                        @endif
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
               </div>
               @endif
                <div class="card mt-3">
@@ -199,43 +223,6 @@
 @push('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.6.2/tinymce.min.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() {
-      loadData();
-  });
-
-  async function loadData() {
-      var param = {
-          method: 'GET',
-          url: '{{ url()->current() }}',
-          data: {
-              load: 'table',
-          }
-      }
-      loading(true);
-      await transAjax(param).then((result) => {
-          loading(false);
-          $('#dataTable').html(result)
-
-      }).catch((err) => {
-          $('#dataTable').html(`<button class="btn btn-warning btn-lg btn-block">${err.responseJSON.message}</button>`)
-  });
-
-  function loading(state) {
-      if(state) {
-          $('#loading').removeClass('d-none');
-      } else {
-          $('#loading').addClass('d-none');
-      }
-  }
-
-}
-
-//paginate
-function loadPaginate(to) {
-  page = to
-  loadData()
-}
-
 var editor_config = {
     selector: "textarea.content",
     plugins: [
