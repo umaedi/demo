@@ -116,6 +116,39 @@
                     </table>
                 </div>
               </div>
+               <div class="card my-3">
+                <div class="alert alert-primary"><h6>PERSENTATION & PAPER</h6></div>
+                  <div class="card-body">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Abstract</th>
+                          <th scope="col">Full Paper</th>
+                          <th scope="col">PPT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          @if ($submission->abstract_file !== null)
+                          <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">Download Abstarct</a></td>
+                          @else
+                          <td>Not yet available</td>
+                          @endif
+                          @if ($submission->paper !== null)
+                          <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Download Full Paper</a></td>
+                          @else
+                          <td>Not yet available</td>
+                          @endif
+                          @if ($submission->ppt !== null)
+                          <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->ppt) }}" target="_blank">Download PPT</a></td>
+                          @else
+                          <td>Not yet available</td>
+                          @endif
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
                <div class="card mt-3">
                  <div class="alert alert-primary"><h6>REVIEWER</h6></div>
                  <div class="card-body">
@@ -134,13 +167,12 @@
             <div class="card my-3">
               <div class="alert alert-primary"><h6>UPLOAD PERSENTATION & FULL PAPER</h6></div>
                 <div class="card-body">
-                  <form action="/user/persentation" method="POST" enctype="multipart/form-data">
+                  <form action="/user/persentation/{{ $submission->id }}" method="POST" enctype="multipart/form-data">
+                    @method('PUT')
                     @csrf
                     <div class="form-group">
                       <label for="persentation">Persentation</label>
-                      <input type="hidden" name="submission_id" value="{{ $submission->id }}">
-                      <input type="hidden" name="registrasi_id" value="{{ $submission->registrasi_id }}">
-                      <input type="file" class="form-control" id="persentation" name="persentation">
+                      <input type="file" class="form-control" id="persentation" name="ppt">
                     </div>
                     <div class="form-group">
                       <label for="persentation">Full Paper</label>

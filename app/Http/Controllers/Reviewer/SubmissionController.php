@@ -7,17 +7,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
 use App\Http\Controllers\Controller;
-use App\Services\PersentationService;
 use Illuminate\Support\Facades\Storage;
 
 class SubmissionController extends Controller
 {
     public $submission;
     public $persentattion;
-    public function __construct(SubmissionService $submissionService, PersentationService $persentationService)
+    public function __construct(SubmissionService $submissionService)
     {
         $this->submission = $submissionService;
-        $this->persentattion = $persentationService;
     }
 
     public function index()

@@ -5,40 +5,36 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Submission;
 use App\Services\PersentationService;
+use App\Services\SubmissionService;
 use Illuminate\Support\Facades\Storage;
 
 class PersentationController extends Controller
 {
 
-    protected $persentation;
-    public function __construct(PersentationService $persentationService)
+    protected $submission;
+    public function __construct(SubmissionService $submissionService)
     {
-        $this->persentation = $persentationService;
+        $this->submission = $submissionService;
     }
 
-    public function store(Request $request)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'persentation'  => 'required',
+            'ppt'  => 'required',
             'paper'         => 'required',
         ]);
 
-        $data = $request->except('_token');
-        $data['user_id'] = auth()->user()->id;
-        $data['persentation'] = Storage::putFile('public/persentation', $request->persentation);
-        $data['paper'] = Storage::putFile('public/persentation', $request->paper);
+        $submission = $this->submission->find($id);
 
-        DB::beginTransaction();
+        $ppt = Storage::putFile('public/paper', $request->ppt);
+        $paper = Storage::putFile('public/paper', $request->paper);
 
-        try {
-            $this->persentation->store($data);
-        } catch (\Throwable $th) {
-            DB::rollBack();
-            return throw $th;
-        }
-
-        DB::commit();
+        $submission->forceFill([
+            'ppt'     => $ppt,
+            'paper'   => $paper,
+        ])->save();
         return redirect('/user/submission')->with('msg.persentation', 'Persentation and Paper has ben submited');
     }
 }
