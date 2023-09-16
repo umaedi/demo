@@ -150,7 +150,7 @@
                             <a href="/register">
                                 <button type="button"
                                     class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
-                                    Register Nowx
+                                    Register Now
                                 </button>
                             </a>
                             <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">

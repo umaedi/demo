@@ -28,6 +28,7 @@ class CreateNewUser implements CreatesNewUsers
             'institution' => ['required', 'string', 'max:255'],
             'no_tlp' => ['required', 'string', 'max:255'],
             'type_user' => ['required', 'string', 'max:255'],
+            'persence' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
                 'string',
