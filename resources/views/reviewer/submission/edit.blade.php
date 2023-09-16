@@ -92,7 +92,7 @@
                     <div class="form-group">
                       <label for="paper">Abstract</label>
                       <input type="file" class="form-control mb-2 @error('paper') is-invalid @enderror" id="paper" name="paper">
-                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">Link Abstarct</a>
+                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">Link Abstract</a>
                       @error('paper')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -105,7 +105,7 @@
                       @if ($submission->paper == "")
                       <a href="javascript:void()">Not yet available</a>
                       @else
-                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Link Abstarct</a>
+                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Link Full Paper</a>
                       @endif
                       @error('paper')
                       <div class="invalid-feedback">
