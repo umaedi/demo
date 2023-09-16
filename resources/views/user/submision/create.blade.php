@@ -19,7 +19,7 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" value="{{ auth()->user()->salutation . auth()->user()->name }}" readonly>
+                  <input type="text" class="form-control" id="name" value="{{ auth()->user()->name }}" readonly>
                 </div>
                 <div class="form-group">
                   <label for="name">Gender</label>
@@ -89,7 +89,16 @@
                           @enderror
                         </div>
                         <div class="form-group">
-                          <label for="paper">Abstract/Full Paper</label>
+                          <label for="abstract_file">Abstract</label>
+                          <input type="file" class="form-control @error('abstract_file') is-invalid @enderror" id="abstract_file" name="abstract_file">
+                          @error('abstract_file')
+                          <div class="invalid-feedback">
+                            {{ $message }}
+                          </div>
+                          @enderror
+                        </div>
+                        <div class="form-group">
+                          <label for="paper">Full Paper</label>
                           <input type="file" class="form-control @error('paper') is-invalid @enderror" id="paper" name="paper">
                           @error('paper')
                           <div class="invalid-feedback">

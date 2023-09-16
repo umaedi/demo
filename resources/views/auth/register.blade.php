@@ -30,7 +30,18 @@
                 <p class="text-primary text-xs lg:text-base font-semibold">Please sign up to register the event</p>
                 <h1 class="text-mydark font-bold text-2xl md:text-3xl">GET STARTED</h1>
             </div>
-
+            
+            @if (session('msgPersence'))
+            <div class="alert alert-error flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-white shrink-0 h-6 w-6" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-sm text-white">{{ session('msgPersence') }}</span>
+            </div>
+            @endif
+            
             <form action="/register" method="POST" class="input-area group flex flex-col gap-10" novalidate>
                 @csrf
                 <!-- Input -->
@@ -174,8 +185,8 @@
                         @enderror
                     </div>
 
-                     <!-- Participant Type -->
-                     <div class="form-control w-full">
+                    <!-- Participant Type -->
+                    <div class="form-control w-full">
                         <label class="label">
                             <span class="label-text">Participant Type</span>
                         </label>
@@ -190,7 +201,23 @@
                         Please select participant type
                         </label>
                         @enderror
-                    
+                    </div>
+                    <!-- Participant Type -->
+                    <div class="form-control w-full">
+                        <label class="label">
+                            <span class="label-text">Persence</span>
+                        </label>
+                        <select name="persence" class="peer select select-bordered select-accent @error('persence')  invalid:border-red-500 @enderror" required>
+                            <option disabled selected>Please select...</option>
+                            <option value="Online">Online</option>
+                            <option value="Offline">Offline</option>
+                        </select>
+                        @error('persence')
+                        <label class=" label invisible peer-invalid:visible text-red-500 font-light text-xs
+                        md:text-sm">
+                        Please select participant type
+                        </label>
+                        @enderror
                     </div>
                 </div>
 

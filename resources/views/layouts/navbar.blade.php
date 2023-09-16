@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg main-navbar container">
   <ul class="navbar-nav navbar-right ml-auto">
       <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user mr-auto">
-      <img alt="image" src="{{ \Illuminate\Support\Facades\Storage::url(auth()->user()->img) }}" class="rounded-circle mr-1">
+      <img alt="image" src="{{ \Illuminate\Support\Facades\Storage::url(auth()->user()->img) }}" class="rounded-circle mr-1" width="100">
       <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->name }}</div></a>
       <div class="dropdown-menu dropdown-menu-right">
         @if ( auth()->user()->level == "user" )

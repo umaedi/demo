@@ -22,7 +22,9 @@ return new class extends Migration
             $table->text('abstract');
             $table->string('keyword');
             $table->string('topic');
-            $table->string('paper');
+            $table->string('abstract_file');
+            $table->string('paper')->nullable();
+            $table->string('ppt')->nullable();
             $table->integer('status')->nullable();
             $table->string('message')->nullable();
             $table->string('comment')->nullable();

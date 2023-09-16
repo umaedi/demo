@@ -7,7 +7,7 @@
       </div>
       <div class="row">
         @if (auth()->user()->type_user == 'Participant')
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
           <a href="/user/profile" style="text-decoration: none">
           <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
@@ -24,7 +24,7 @@
           </div>
         </a>
         </div>
-        <div class="col-lg-8 col-md-6 col-sm-6 col-12 mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
           <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
               <i class="far fa-newspaper"></i>
@@ -106,8 +106,8 @@
         </a>
         @endif
       </div>
-      <div class="row mt-4">
-        <div class="col-lg-6 col-md-12 col-12 col-sm-12">
+      <div class="row my-3">
+        <div class="col-lg-6 col-md-12 col-12 col-sm-12 mb-3">
           <div class="card">
             <div class="card-header">
               <h4>DOWNLOAD TEMPLATE</h4>

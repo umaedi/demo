@@ -40,6 +40,7 @@ class SubmisionController extends Controller
         $this->validate($request, [
             'title'     => 'required|max:255',
             'abstract'  => 'required',
+            'abstract_file'  => 'required',
             'keyword'   => 'required',
             'topic'     => 'required',
         ]);
@@ -50,7 +51,7 @@ class SubmisionController extends Controller
         if ($request->id) {
             $submission = $this->submission->Query()->whereId($request->id)->where('user_id', auth()->user()->id)->first();
             if (is_null($submission->reviewer_id)) {
-                return back()->with(['msg' => 'Submission Anda masih dalam antrean!']);
+                return back()->with(['msg' => 'Your submission is still in queue!']);
             }
 
             if ($submission->acc == 1) {
@@ -68,6 +69,12 @@ class SubmisionController extends Controller
             $data['paper'] = Storage::putFile('public/paper', $data['paper']);
         } else {
             $data['paper'] = $submission->paper;
+        }
+
+        if (isset($data['abstract_file'])) {
+            $data['abstract_file'] = Storage::putFile('public/abstract_file', $data['abstract_file']);
+        } else {
+            $data['abstract_file'] = $submission->abstract_file;
         }
 
         DB::beginTransaction();

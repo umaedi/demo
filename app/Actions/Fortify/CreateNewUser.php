@@ -38,9 +38,13 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
-        $qrcode = strtoupper(Str::random(32));
+        if ($input['persence'] == "Offline") {
+            $user = User::where('persence')->count();
+            if ($user >= 100) {
+                return back()->with('msgPersence', 'Sorry, offline registration has been fulfilled!');
+            }
+        }
         return User::create([
-            'qrcode' => $qrcode,
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),

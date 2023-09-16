@@ -30,7 +30,7 @@
         </div>
         @endif
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
             <div class="card">
               <div class="card-header">
                 <h4>UPDATE PROFILE</h4>
@@ -142,7 +142,7 @@
                 </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
             <div class="card">
               <div class="card-header">
                 <h4>UPDATE PASSWORD</h4>

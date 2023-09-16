@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('qrcode');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -26,6 +25,7 @@ return new class extends Migration
             $table->string('country');
             $table->string('no_tlp');
             $table->string('type_user')->default('participan');
+            $table->string('persence')->default('online');
             $table->string('level')->default('user');
             $table->string('status')->default('0');
             $table->string('sertifikat')->nullable();
