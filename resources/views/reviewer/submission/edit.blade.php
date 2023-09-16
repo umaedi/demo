@@ -55,7 +55,7 @@
               <div class="card-body">
                     <div class="form-group">
                       <label for="title">Paper Title</label>
-                      <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') ?? $submission->title }}">
+                      <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') ?? $submission->title }}" readonly>
                       @error('title')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group">
                       <label for="keyword">Keyword</label>
-                      <input type="text" class="form-control @error('keyword') is-invalid @enderror" id="keyword" name="keyword" value="{{ old('keyword') ?? $submission->keyword}}">
+                      <input type="text" class="form-control @error('keyword') is-invalid @enderror" id="keyword" name="keyword" readonly value="{{ old('keyword') ?? $submission->keyword}}">
                       @error('keyword')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group">
                       <label for="topic">Topic</label>
-                      <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" value="{{ old('topic') ?? $submission->topic}}">
+                      <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" readonly value="{{ old('topic') ?? $submission->topic}}">
                       @error('topic')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -90,9 +90,23 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="paper">Abstract/Full Paper</label>
+                      <label for="paper">Abstract</label>
                       <input type="file" class="form-control mb-2 @error('paper') is-invalid @enderror" id="paper" name="paper">
-                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Lihat abstark/Paper</a>
+                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">Link Abstarct</a>
+                      @error('paper')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
+                    </div>
+                    <div class="form-group">
+                      <label for="paper">Full Paper</label>
+                      <input type="file" class="form-control mb-2 @error('paper') is-invalid @enderror" id="paper" name="paper">
+                      @if ($submission->paper == "")
+                      <a href="javascript:void()">Not yet available</a>
+                      @else
+                      <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Link Abstarct</a>
+                      @endif
                       @error('paper')
                       <div class="invalid-feedback">
                         {{ $message }}

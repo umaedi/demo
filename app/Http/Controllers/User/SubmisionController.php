@@ -65,16 +65,16 @@ class SubmisionController extends Controller
             $data['registrasi_id'] = strtoupper(Str::random(16));
         }
 
+        if (isset($data['abstract_file'])) {
+            $data['abstract_file'] = Storage::putFile('public/paper', $data['abstract_file']);
+        } else {
+            $data['abstract_file'] = $submission->abstract_file;
+        }
+
         if (isset($data['paper'])) {
             $data['paper'] = Storage::putFile('public/paper', $data['paper']);
         } else {
-            $data['paper'] = $submission->paper;
-        }
-
-        if (isset($data['abstract_file'])) {
-            $data['abstract_file'] = Storage::putFile('public/abstract_file', $data['abstract_file']);
-        } else {
-            $data['abstract_file'] = $submission->abstract_file;
+            $data['paper'] = $submission->paper ?? "";
         }
 
         DB::beginTransaction();

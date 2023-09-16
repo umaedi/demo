@@ -124,7 +124,7 @@
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Abstarct Template</td>
+                    <td>Abstract Template</td>
                     <td  class="text-center"><a href="/user/download/template?q=abstract" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
                   </tr>
                   <tr>

@@ -82,6 +82,13 @@ class SubmissionController extends Controller
         $data['user_id'] = $submission->user_id;
         $data['reviewer_id'] = auth()->user()->id;
         $data['histories'] = $submission->histories;
+        $data['abstract'] = $submission->abstract;
+
+        if (isset($data['abstract_file'])) {
+            $data['abstract_file'] = Storage::putFile('public/paper', $data['abstract_file']);
+        } else {
+            $data['abstract_file'] = $submission->abstract_file;
+        }
 
         if (isset($data['paper'])) {
             $data['paper'] = Storage::putFile('public/paper', $data['paper']);

@@ -40,8 +40,8 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         if ($input['persence'] == "Offline") {
-            $user = User::where('persence')->count();
-            if ($user >= 100) {
+            $user = User::wherePersence('Offline')->count();
+            if ($user >= 200) {
                 return back()->with('msgPersence', 'Sorry, offline registration has been fulfilled!');
             }
         }
