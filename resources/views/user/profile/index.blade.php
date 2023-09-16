@@ -134,6 +134,10 @@
                       @enderror
                     </div>
                     <div class="form-group">
+                      <label for="persence">Persence</label>
+                      <input id="persence" type="text" class="form-control" name="persence" tabindex="6" readonly value="{{ auth()->user()->persence }}">
+                    </div>
+                    <div class="form-group">
                       <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                         SAVE CHANGES
                       </button>

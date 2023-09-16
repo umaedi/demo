@@ -4,6 +4,20 @@
     <section class="section">
       <div class="section-header">
         <h1>Dashboard</h1>
+        <div id="clock" class="ml-auto h5 mt-2 font-weight-bold">
+          <h6>{{ __('Loading...') }}</h6>
+        </div>
+      </div>
+      <div class="alert alert-light alert-dismissible alert-has-icon" id="alert-1" style="background-color: #e3eaef42">
+        <div class="alert-icon"><i class="fas fa-bullhorn"></i></div>
+        <div class="alert-body mt-1">
+            <button class="close" data-dismiss="alert">
+                <span>x</span>
+            </button>
+            <p class="text-justify pr-5">
+              <em><b>Information!</b> You are registered as an {{ auth()->user()->persence }} participant</em>
+            </p>
+        </div>
       </div>
       <div class="row">
         @if (auth()->user()->type_user == 'Participant')
@@ -175,6 +189,14 @@
     <script type="text/javascript">
       $(document).ready(function() {
         loadSertifikat();
+
+        jQuery(function($) {
+          setInterval(function() {
+              var date = new Date(),
+                  time = date.toLocaleTimeString();
+              $("#clock").html(time);
+          }, 1000);
+        });
       });
 
       async function loadSertifikat()

@@ -46,12 +46,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $img = $user->img;
         }
 
-        if (isset($input['password'])) {
-            $password = Hash::make($input['password']);
-        } else {
-            $password = $user->password;
-        }
-
         if (
             $input['email'] !== $user->email &&
             $user instanceof MustVerifyEmail
@@ -61,7 +55,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
-                'password' => $password,
                 'salutation' => $input['salutation'],
                 'gender' => $input['gender'],
                 'institution' => $input['institution'],
