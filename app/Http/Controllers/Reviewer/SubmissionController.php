@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
 use App\Http\Controllers\Controller;
+use App\Jobs\SendNotification;
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class SubmissionController extends Controller
@@ -95,7 +98,7 @@ class SubmissionController extends Controller
         }
 
         if ($data['status'] == "2") {
-            $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 1]);
+            // $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 1]);
             $data['loa'] = strtoupper(Str::random(16));
         }
 
@@ -107,6 +110,13 @@ class SubmissionController extends Controller
             return throw $th;
         }
         DB::commit();
+
+        $notification = [
+            'email' => $data['email'],
+        ];
+
+        dispatch(new SendNotification($notification));
+        // Mail::to('humaedi.kh.99@gmail.com')->send(new SendMail($notification));
         return redirect('/reviewer/submission/show/' . $submission->registrasi_id)->with('message', 'Submission has ben updated');
     }
 
