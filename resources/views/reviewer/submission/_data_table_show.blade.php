@@ -6,7 +6,7 @@
             <th scope="col">Submisson Title</th>
             <th scope="col">Topic</th>
             <th scope="col">Submited At</th>
-            <th scope="col" class="text-center">Download</th>
+            <th scope="col" class="text-center" style="width: 21%">Download</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -23,12 +23,12 @@
                     @if ($tb->paper !== null)
                     <a href="{{ \Illuminate\Support\Facades\Storage::url($tb->paper) }}" target="_blank" class="btn btn-primary">Paper</a>
                     @else
-                    <a href="#" class="btn btn-primary">X</a>
+                    <a href="#" class="btn btn-warning">X</a>
                     @endif
                     @if ($tb->ppt !== null)
                     <a href="{{ \Illuminate\Support\Facades\Storage::url($tb->ppt) }}" target="_blank" class="btn btn-primary">PPT</a>
                     @else
-                    <a href="#" class="btn btn-primary">X</a>
+                    <a href="#" class="btn btn-warning">X</a>
                     @endif
                 </td>
                 <td><a href="/reviewer/submission/show/{{ $tb->registrasi_id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
