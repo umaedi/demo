@@ -6,17 +6,31 @@
             <th scope="col">Submisson Title</th>
             <th scope="col">Topic</th>
             <th scope="col">Submited At</th>
+            <th scope="col" class="text-center">Download</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
         @forelse ($table as $key => $tb)
             <tr>
-                <td>{{ $key + 1 }}</td>
+                <td>{{ $table->firstItem() + $key }}</td>
                 <td>{{ $tb->user->name }}</td>
                 <td>{{ $tb->title }}</td>
                 <td>{{ $tb->topic }}</td>
                 <td>{{ \Carbon\Carbon::parse($tb->created_at)->isoFormat('D MMMM Y') }}</td>
+                <td class="text-center">
+                    <a href="{{ \Illuminate\Support\Facades\Storage::url($tb->abstract_file) }}" target="_blank" class="btn btn-primary">Abstract</a>
+                    @if ($tb->paper !== null)
+                    <a href="{{ \Illuminate\Support\Facades\Storage::url($tb->paper) }}" target="_blank" class="btn btn-primary">Paper</a>
+                    @else
+                    <a href="#" class="btn btn-primary">X</a>
+                    @endif
+                    @if ($tb->ppt !== null)
+                    <a href="{{ \Illuminate\Support\Facades\Storage::url($tb->ppt) }}" target="_blank" class="btn btn-primary">PPT</a>
+                    @else
+                    <a href="#" class="btn btn-primary">X</a>
+                    @endif
+                </td>
                 <td><a href="/reviewer/submission/show/{{ $tb->registrasi_id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
             </tr>
         @empty
@@ -49,6 +63,11 @@
         @endforelse
     </tbody>
 </table>
+<div class="container">
+    <div class="row justify-content-center">
+        {{ $table->links('vendor.pagination.stisla') }}
+    </div>
+</div>
 
 
 

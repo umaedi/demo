@@ -123,7 +123,7 @@ class SubmissionController extends Controller
     public function accepted()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 2)->get();
+            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 2)->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
         $data['title'] = "Submission Accepted";

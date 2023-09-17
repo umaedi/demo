@@ -11,6 +11,31 @@
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
+            {{-- <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="search" name="search" placeholder="Search by name...">
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="perPage" name="pagination">
+                                <option value="12">--Topic--</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" id="perPage" name="pagination">
+                                <option value="12">--Perpage--</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                      </div>
+                </div>
+            </div> --}}
             <div class="card">
                 @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
