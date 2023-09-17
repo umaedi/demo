@@ -33,14 +33,7 @@ class SendNotification implements ShouldQueue
      */
     public function handle()
     {
-        $email = "humaedi.kh.99@gmail.com";
-
-        // Mail::to($email)->queue(new SendMail($this->data));
-
-        $data = [
-            'name'  => 'Umaedi'
-        ];
-        $emailx = new SendMail($data);
-        Mail::to($email)->send($emailx);
+        $dataEmail = new SendMail($this->data);
+        Mail::to($this->data['email'])->send($dataEmail);
     }
 }

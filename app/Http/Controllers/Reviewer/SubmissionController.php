@@ -80,6 +80,7 @@ class SubmissionController extends Controller
         $data = $request->except('_token');
 
         $submission = $this->submission->find($id);
+
         $data['user_id'] = $submission->user_id;
         $data['reviewer_id'] = auth()->user()->id;
         $data['histories'] = $submission->histories;
@@ -98,7 +99,7 @@ class SubmissionController extends Controller
         }
 
         if ($data['status'] == "2") {
-            // $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 1]);
+            $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 1]);
             $data['loa'] = strtoupper(Str::random(16));
         }
 
@@ -111,12 +112,12 @@ class SubmissionController extends Controller
         }
         DB::commit();
 
-        $notification = [
-            'email' => $data['email'],
+        $dataEmail = [
+            'name' => $submission->user->name,
+            'email' => $submission->user->email,
         ];
 
-        dispatch(new SendNotification($notification));
-        // Mail::to('humaedi.kh.99@gmail.com')->send(new SendMail($notification));
+        dispatch(new SendNotification($dataEmail));
         return redirect('/reviewer/submission/show/' . $submission->registrasi_id)->with('message', 'Submission has ben updated');
     }
 

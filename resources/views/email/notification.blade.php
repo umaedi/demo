@@ -189,12 +189,12 @@
         }
 
         .btn-primary table td {
-            background-color: #0a5414;
+            background-color: #00bfb3;
         }
 
         .btn-primary a {
-            background-color: #0a5414;
-            border-color: #0a5414;
+            background-color: #00bfb3;
+            border-color: #00bfb3;
             color: #ffffff;
         }
 
@@ -357,7 +357,7 @@
 </head>
 
 <body>
-    <span class="preheader">Informasi Pendaftaran Calon Pimpinan BAZNAS TUBA</span>
+    <span class="preheader">Submission Information</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
         <tr>
             <td>&nbsp;</td>
@@ -373,28 +373,11 @@
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                     <br>
                                     <br>
-                                    <h3>Assalamualikum </h3>
-                                    <p>Dengan hormat,</p>
+                                    <h3>Hallo {{ $data['name'] }}</h3>
                                     <br>
-                                    Atas nama tim seleksi Calon Pimpinan BAZNAS Kabupaten Tulang Bawang,
-                                    dengan ini memberitahukan bahwa Anda telah berhasil melewati tahap seleksi
-                                    administrasi.<br><br>
-                                    <p>
-                                        Isi pesan: 
-                                    </p>
-                                    Berikut adalah rincian pribadi Anda yang telah terdaftar dalam sistem
-                                    Kami:<br><br>
-                                    <p>
-                                        test
-                                    </p>
-                                    Tahap selanjutnya dari proses seleksi akan mencakup ujian Computer Assisted Test
-                                    (CAT) dan
-                                    Wawancara yang akan dilaksanakan pada hari selasa tanggal 01 Agustus 2023 pukul
-                                    08:00 WIB di kantor
-                                    Dinas Komunikasi dan Informatika (DISKOMINFO) Kabupaten Tulang Bawang, JL. Lintas
-                                    Timur komplek perkantoran Mall Pelayanan Publik (MPP) Tiuh Tohou.<br><br>
-                                    </p>
-                                    <p>Silakan gabung ke group whatsapp dengan menekan tombol dibawah ini</p>
+                                    Kami baru saja memeriksa submission Anda. Silakan masuk ke dashboard Anda untuk
+                                    melihat hasilnya<br><br>
+
                                     <table role="presentation" border="0" cellpadding="0" cellspacing="0"
                                         class="btn btn-primary">
                                         <tbody>
@@ -404,8 +387,8 @@
                                                         cellspacing="0">
                                                         <tbody>
                                                             <tr>
-                                                                <td> <a href="https://chat.whatsapp.com/DSCVezv3NlOGWPYXuXslIr"
-                                                                        target="_blank">Gabung Group WhatsApp</a> </td>
+                                                                <td> <a href="https://demo.icomesh-unila.com/user/dashboard"
+                                                                        target="_blank">Dashboard</a> </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -413,10 +396,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <p>Catatan : - Peserta Seleksi diharapkan hadir 30 menit sebelum acara dimulai.
-                                        - Pastikan anda memantau email secara aktif untuk mendapatkan informasi terkini.
-                                    </p>
-                                    <p>Hormat Kami <br>Tim Seleksi CAPIM BAZNAS Kabupaten Tulang Bawang</p>
+                                    <p>Hormat Kami <br>Team Reviewer</p>
                             </td>
                         </tr>
                     </table>
@@ -431,7 +411,7 @@
         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td class="content-block">
-                    <span class="apple-link">Copyright © 2023 BAZNAS TUBA. All rights
+                    <span class="apple-link">Copyright © 2023 ICOMESH. All rights
                         reserved</span>
                 </td>
             </tr>
