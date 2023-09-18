@@ -40,7 +40,7 @@ class SubmisionController extends Controller
         $this->validate($request, [
             'title'     => 'required|max:255',
             'abstract'  => 'required',
-            'abstract_file'  => 'required',
+            'abstract_file'  => 'mimes:pdf,docx|max:2048',
             'keyword'   => 'required',
             'topic'     => 'required',
         ]);
@@ -62,6 +62,11 @@ class SubmisionController extends Controller
             $data['histories'] = $submission->histories + 1;
             $data['registrasi_id'] = $submission->registrasi_id;
         } else {
+            $cekSubmission = $this->submission->Query()->where('user_id', auth()->user()->id)->latest()->first();
+            if ($cekSubmission && $cekSubmission->status !== "2" && $cekSubmission->acc == null) {
+                return back()->with('msgQueue', 'Sepertinya Anda masih memiliki submission yang harus di perbaiki!');
+            }
+
             $data['registrasi_id'] = strtoupper(Str::random(16));
         }
 

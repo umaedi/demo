@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" value="{{ auth()->user()->salutation . auth()->user()->name }}" readonly>
+                      <input type="text" class="form-control" id="name" value="{{ auth()->user()->name }}" readonly>
                     </div>
                     <div class="form-group">
                       <label for="name">Gender</label>

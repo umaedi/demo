@@ -72,7 +72,11 @@
                     <div class="form-group">
                       <label for="paper">Full Paper</label>
                       <input type="file" class="form-control mb-2 @error('paper') is-invalid @enderror" id="paper" name="paper">
+                      @if ($submission->paper !== "")
                       <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Link Full Paper</a>
+                      @else
+                      <td>Not yet available</td>
+                      @endif
                       @error('paper')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -134,7 +138,7 @@
                           @else
                           <td>Not yet available</td>
                           @endif
-                          @if ($submission->paper !== null)
+                          @if ($submission->paper !== "")
                           <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Download Full Paper</a></td>
                           @else
                           <td>Not yet available</td>
@@ -155,7 +159,12 @@
                   <div class="form-group">
                     <label for="name">Reviewer Comments</label>
                     <textarea type="text" class="form-control mb-2" style="height: 100px" id="name" readonly>{{ $submission->comment }}</textarea>
-                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">See what's in correction</a>
+                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">See what's in correction (abstract)</a> |
+                    @if ($submission->paper !== "")
+                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->ppaer) }}" target="_blank">See what's in correction (full paper)</a>
+                    @else
+                    Not yet available
+                    @endif
                   </div>
               </div>
             </div>
@@ -172,11 +181,21 @@
                     @csrf
                     <div class="form-group">
                       <label for="persentation">Persentation</label>
-                      <input type="file" class="form-control" id="persentation" name="ppt">
+                      <input type="file" class="form-control @error('ppt') is-invalid @enderror" id="persentation" name="ppt">
+                      @error('ppt')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
                     </div>
                     <div class="form-group">
                       <label for="persentation">Full Paper</label>
-                      <input type="file" class="form-control" id="persentation" name="paper">
+                      <input type="file" class="form-control @error('full_paper') is-invalid @enderror" id="persentation" name="full_paper">
+                      @error('full_paper')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">SUBMIT</button>
                   </form>

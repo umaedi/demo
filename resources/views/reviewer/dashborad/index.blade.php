@@ -81,7 +81,7 @@
             <div class="card-header">
               <h4>SUBMISSION REVISED</h4>
               <div class="card-header-action">
-                <a href="/user/download-sertifikat" class="btn btn-primary">SHOW MORE</a>
+                <a href="/reviewer/submission/revised" class="btn btn-primary">SHOW MORE</a>
               </div> 
             </div>
             <div class="card-body">

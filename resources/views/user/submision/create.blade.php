@@ -12,6 +12,9 @@
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
+          @if (session('msgQueue'))
+          <div class="alert alert-warning">{{ session('msgQueue') }}</div>
+          @endif
             <div class="card">
               <div class="card-header">
                 <h4>CREATE SUBMISSION</h4>
@@ -77,7 +80,7 @@
                         <div class="form-group">
                           <label for="topic">Topic</label>
                           <select name="topic" class="form-control  @error('topic') is-invalid @enderror" id="gender" name="topic" tabindex="4" value="{{ old('topic') }}">
-                            <option >--Please select one--</option>
+                            <option value="">--Please select one--</option>
                             <option value="Biomolecular">Biomolecular</option>
                             <option value="Genetic">Genetic</option>
                             <option value="Degenerative Desease">Degenerative Desease</option>

@@ -20,7 +20,7 @@
                 <td>{{ \Carbon\Carbon::parse($tb->created_at)->isoFormat('D MMMM Y') }}</td>
                 <td class="text-center">
                     <a href="{{ \Illuminate\Support\Facades\Storage::url($tb->abstract_file) }}" target="_blank" class="btn btn-primary">Abstract</a>
-                    @if ($tb->paper !== null)
+                    @if ($tb->paper !== "")
                     <a href="{{ \Illuminate\Support\Facades\Storage::url($tb->paper) }}" target="_blank" class="btn btn-primary">Paper</a>
                     @else
                     <a href="#" class="btn btn-warning">X</a>

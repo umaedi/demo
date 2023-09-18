@@ -124,7 +124,7 @@ class SubmissionController extends Controller
     public function revised()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 1)->whereNull('acc')->get();
+            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 1)->whereNull('acc')->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
         $data['title'] = "Submission Revised";
@@ -144,10 +144,10 @@ class SubmissionController extends Controller
     public function rejected()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 3)->get();
+            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 3)->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
         $data['title'] = "Submission Rejected";
-        return view('reviewer.submission.revised', $data);
+        return view('reviewer.submission.rejected', $data);
     }
 }

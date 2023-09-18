@@ -22,14 +22,14 @@ class PersentationController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'ppt'  => 'required',
-            'paper'         => 'required',
+            'ppt'  => 'required|mimes:pdf,docx,pptx|max:2048',
+            'full_paper'         => 'required|mimes:pdf,docx|max:2048',
         ]);
 
         $submission = $this->submission->find($id);
 
         $ppt = Storage::putFile('public/paper', $request->ppt);
-        $paper = Storage::putFile('public/paper', $request->paper);
+        $paper = Storage::putFile('public/paper', $request->full_paper);
 
         $submission->forceFill([
             'ppt'     => $ppt,
