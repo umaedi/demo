@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Reviewer;
 
-use App\Models\Submission;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
+use App\Http\Controllers\Controller;
+use App\Models\Submission;
 
 class DashboardController extends Controller
 {
@@ -17,16 +17,18 @@ class DashboardController extends Controller
 
     public function index()
     {
+
+        $uniqueData = $this->submission->Query()->groupBy('registrasi_id')->get(['registrasi_id', DB::raw('MAX(id) as max_id')])->pluck('max_id');
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->whereNull('acc')->where('status', '1')->get();
+            $data['table'] = Submission::whereIn('id', $uniqueData)->where('reviewer_id', auth()->user()->id)->where('status', '1')->get();
             return view('reviewer.dashborad._data_table', $data);
         }
 
-        $data['title'] = 'Reviewer | Dashboard';
-        $data['submission'] = Submission::whereNull('reviewer_id')->where('histories', 1)->count();
-        $data['submission_revised'] = Submission::whereNull('acc')->where('status', '1')->count();
-        $data['submission_accepted'] = Submission::where('reviewer_id', auth()->user()->id)->where('status', '2')->count();
-        $data['submission_rejected'] = Submission::where('reviewer_id', auth()->user()->id)->where('status', '3')->count();
+        $data['title'] = 'Reviewer Dashboard';
+        $data['submission'] = $this->submission->Query()->whereNull('reviewer_id')->where('histories', '1')->count();
+        $data['submission_revised'] = Submission::whereIn('id', $uniqueData)->where('reviewer_id', auth()->user()->id)->where('status', '1')->count();
+        $data['submission_accepted'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', '2')->count();
+        $data['submission_rejected'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', '3')->count();
         return view('reviewer.dashborad.index', $data);
     }
 }

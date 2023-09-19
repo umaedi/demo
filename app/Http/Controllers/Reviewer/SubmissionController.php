@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
 use App\Http\Controllers\Controller;
 use App\Jobs\SendNotification;
-use App\Mail\SendMail;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class SubmissionController extends Controller
@@ -124,7 +122,8 @@ class SubmissionController extends Controller
     public function revised()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 1)->whereNull('acc')->paginate(10);
+            $uniqueData = $this->submission->Query()->groupBy('user_id')->get(['user_id', DB::raw('MAX(id) as max_id')])->pluck('max_id');
+            $data['table'] = $this->submission->Query()->whereIn('id', $uniqueData)->where('reviewer_id', auth()->user()->id)->where('status', '1')->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
         $data['title'] = "Submission Revised";
