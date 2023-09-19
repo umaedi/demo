@@ -73,13 +73,13 @@ class SubmisionController extends Controller
         if (isset($data['abstract_file'])) {
             $data['abstract_file'] = Storage::putFile('public/paper', $data['abstract_file']);
         } else {
-            // $data['abstract_file'] = $submission->abstract_file;
+            $data['abstract_file'] = $submission->abstract_file;
         }
 
         if (isset($data['paper'])) {
             $data['paper'] = Storage::putFile('public/paper', $data['paper']);
         } else {
-            // $data['paper'] = $submission->paper ?? "";
+            $data['paper'] = $submission->paper ?? "";
         }
 
         DB::beginTransaction();
