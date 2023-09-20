@@ -20,9 +20,8 @@
                 <h4>DETAIL SUBMISSION</h4>
               </div>
               <div class="card-body">
-                <form action="/user/submission/store" method="POST" enctype="multipart/form-data">
+                <form action="/user/submission/update/{{ $submission->id }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="id" value="{{ $submission->id }}">
                     <div class="form-group">
                       <label for="title">Paper Title</label>
                       <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') ?? $submission->title }}">
@@ -61,7 +60,7 @@
                     </div>
                     <div class="form-group">
                       <label for="abstract_file">Abstract</label>
-                      <input type="file" class="form-control mb-2 @error('abstract_file') is-invalid @enderror" id="abstract_file" name="abstract_file" required>
+                      <input type="file" class="form-control mb-2 @error('abstract_file') is-invalid @enderror" id="abstract_file" name="abstract_file">
                       <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">Link Abstract</a>
                       @error('abstract_file')
                       <div class="invalid-feedback">
@@ -161,7 +160,7 @@
                     <textarea type="text" class="form-control mb-2" style="height: 100px" id="name" readonly>{{ $submission->comment }}</textarea>
                     <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">See what's in correction (abstract)</a> |
                     @if ($submission->paper !== "")
-                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->ppaer) }}" target="_blank">See what's in correction (full paper)</a>
+                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">See what's in correction (full paper)</a>
                     @else
                     Not yet available
                     @endif

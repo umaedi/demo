@@ -68,6 +68,7 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::post('/submission/store', [User\SubmisionController::class, 'store']);
     Route::get('/submission/show/{id}', [User\SubmisionController::class, 'show']);
     Route::get('/submission/edit/{id}', [User\SubmisionController::class, 'edit']);
+    Route::post('/submission/update/{id}', [User\SubmisionController::class, 'update']);
 
     Route::put('/persentation/{id}', [User\PersentationController::class, 'update']);
 

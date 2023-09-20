@@ -90,10 +90,10 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="paper">Abstract</label>                      
-                      <input type="file" class="form-control mb-2 @error('paper') is-invalid @enderror" id="paper" name="paper">
+                      <label for="abstract_file">Abstract</label>                      
+                      <input type="file" class="form-control mb-2 @error('abstract_file') is-invalid @enderror" id="abstract_file" name="abstract_file">
                       <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">Link Abstract</a>
-                      @error('paper')
+                      @error('abstract_file')
                       <div class="invalid-feedback">
                         {{ $message }}
                       </div>
