@@ -38,11 +38,11 @@ class SubmisionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title'     => 'required|max:255',
-            'abstract'  => 'required',
-            'abstract_file'  => 'mimes:pdf,docx|max:2048',
-            'keyword'   => 'required',
-            'topic'     => 'required',
+            'title'         => 'required|string|max:255',
+            'abstract'      => 'required|string',
+            'abstract_file' => 'mimes:pdf,docx|max:2048',
+            'keyword'       => 'required|string|max:255',
+            'topic'         => 'required|string|max:255',
         ]);
 
         $data = $request->except('_token');

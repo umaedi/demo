@@ -23,7 +23,7 @@ class PersentationController extends Controller
     {
         $request->validate([
             'ppt'  => 'required|mimes:pdf,docx,pptx|max:2048',
-            'full_paper'         => 'required|mimes:pdf,docx|max:2048',
+            'full_paper'  => 'required|mimes:pdf,docx|max:2048',
         ]);
 
         $submission = $this->submission->find($id);

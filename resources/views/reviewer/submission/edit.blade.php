@@ -90,7 +90,7 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="paper">Abstract</label>
+                      <label for="paper">Abstract</label>                      
                       <input type="file" class="form-control mb-2 @error('paper') is-invalid @enderror" id="paper" name="paper">
                       <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">Link Abstract</a>
                       @error('paper')
@@ -103,7 +103,7 @@
                       <label for="paper">Full Paper</label>
                       <input type="file" class="form-control mb-2 @error('paper') is-invalid @enderror" id="paper" name="paper">
                       @if ($submission->paper == "")
-                      <a href="javascript:void()">Not yet available</a>
+                      <a>Not yet available</a>
                       @else
                       <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Link Full Paper</a>
                       @endif

@@ -68,11 +68,11 @@ class SubmissionController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title'     => 'required',
-            'abstract'  => 'required',
-            'keyword'   => 'required',
-            'topic'     => 'required',
-            'status'    => 'required'
+            'title'     => 'required|string|max:255',
+            'abstract'  => 'required|string|max:255',
+            'keyword'   => 'required|string|max:255',
+            'topic'     => 'required|string|max:255',
+            'status'    => 'required|string|max:255'
         ]);
 
         $data = $request->except('_token');
@@ -122,7 +122,7 @@ class SubmissionController extends Controller
     public function revised()
     {
         if (\request()->ajax()) {
-            $uniqueData = $this->submission->Query()->groupBy('user_id')->get(['user_id', DB::raw('MAX(id) as max_id')])->pluck('max_id');
+            $uniqueData = $this->submission->Query()->where('status', '1')->groupBy('user_id')->get(['user_id', DB::raw('MIN(id) as min_id')])->pluck('min_id');
             $data['table'] = $this->submission->Query()->whereIn('id', $uniqueData)->where('reviewer_id', auth()->user()->id)->where('status', '1')->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
