@@ -31,6 +31,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'country',
         'no_tlp',
         'type_user',
+        'persence',
         'level',
         'status',
         'sertifikat',
