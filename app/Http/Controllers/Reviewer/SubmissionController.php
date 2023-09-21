@@ -69,7 +69,7 @@ class SubmissionController extends Controller
     {
         $this->validate($request, [
             'title'     => 'required|string|max:255',
-            'abstract'  => 'required|string|max:255',
+            'abstract'  => 'required',
             'keyword'   => 'required|string|max:255',
             'topic'     => 'required|string|max:255',
             'status'    => 'required|string|max:255'
