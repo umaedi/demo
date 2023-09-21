@@ -101,6 +101,10 @@ class SubmissionController extends Controller
             $data['loa'] = strtoupper(Str::random(16));
         }
 
+        if ($data['status'] == "3") {
+            $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 2]);
+        }
+
         DB::beginTransaction();
         try {
             $this->submission->update($id, $data);
