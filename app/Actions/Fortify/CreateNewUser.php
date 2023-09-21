@@ -55,6 +55,7 @@ class CreateNewUser implements CreatesNewUsers
             'country' => $input['country'],
             'no_tlp' => $input['no_tlp'],
             'type_user' => $input['type_user'],
+            'persence' => $input['persence'],
         ]);
     }
 }
