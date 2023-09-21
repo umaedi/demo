@@ -3,133 +3,7 @@
     <!-- Header Start -->
     <header id="home-section-1" class="overflow-x-hidden">
         <!-- Navbar Start -->
-        <div class="navbar bg-white fixed z-50 shadow-sm">
-            <div class="container flex justify-between">
-                <div class="">
-                    <a class="cursor-pointer" href="/">
-                        <div class="wrapper h-[50px] rounded-lg overflow-hidden shadow-sm hover:shadow-lg">
-                            <img class="w-full h-full object-cover" src="{{ asset('dist') }}/img/logo-icomesh.png"
-                                alt="Logo ICOMESH">
-                        </div>
-                    </a>
-                </div>
-                <div>
-
-                    <!-- Toggle on Mobile -->
-                    <div class="dropdown dropdown-bottom dropdown-end">
-                        <label tabindex="0" class="btn btn-ghost lg:hidden text-mydark">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </label>
-                        <ul tabindex="0"
-                            class="text-mydark menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52">
-                            <li><a href="/">Home</a></li>
-                            <li>
-                                <a>Event</a>
-                                <ul class="p-2">
-                                    <li><a href="{{ asset('dist') }}/pages/steering-committee.html">Steering Committee</a></li>
-                                    <li><a href="{{ asset('dist') }}/pages/about-event.html">About Event</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a>Call for Papers</a>
-                                <ul class="p-2">
-                                    <li><a href="{{ asset('dist') }}/pages/call-for-papers.html">Call for Papers</a></li>
-                                    <li><a href="{{ asset('dist') }}/pages/login.html">Paper Upload</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{ asset('dist') }}/pages/proceeding.html">Proceeding</a></li>
-                            <li>
-                                <a>ICOMESH</a>
-                                <ul class="p-2">
-                                    <li><a href="{{ asset('dist') }}/pages/icomesh-2023.html">ICOMESH 2023</a></li>
-                                    <li><a href="{{ asset('dist') }}/pages/gallery.html">Gallery</a></li>
-                                </ul>
-                            </li>
-                            <li class="flex flex-col gap-2">
-                                <a href="/register"
-                                    class="lg:inline-flex py-2 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-sm">
-                                    Register
-                                </a>
-                                <a href="/login"
-                                    class="lg:inline-flex py-2 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-sm">
-                                    Login
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Large Screen -->
-                    <div class="wrapper hidden lg:inline-block">
-                        <ul class="menu menu-horizontal px-1 text-mydark text-base gap-1">
-                            <li><a href="/">Home</a></li>
-                            <li>
-                                <div class="dropdown dropdown-hover dropdown-end">
-                                    <label tabindex="0" class="flex items-center gap-1">
-                                        Event
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 16 16" fill="none">
-                                            <path d="M12 6L8 10L4 6" stroke="#343741" stroke-width="1.33333"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></label>
-                                    <ul tabindex="0"
-                                        class="dropdown-content text-mydark text-base z-[1] mt-32 p-2 shadow bg-white rounded-box w-52">
-                                        <li><a href="{{ asset('dist') }}/pages/steering-committee.html">Steering Committee</a></li>
-                                        <li><a href="{{ asset('dist') }}/pages/about-event.html">About Event</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dropdown dropdown-hover dropdown-end">
-                                    <label tabindex="0" class="flex items-center gap-1">
-                                        Call for Papers
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 16 16" fill="none">
-                                            <path d="M12 6L8 10L4 6" stroke="#343741" stroke-width="1.33333"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></label>
-                                    <ul tabindex="0"
-                                        class="dropdown-content text-mydark text-base z-[1] mt-32 p-2 shadow bg-white rounded-box w-52">
-                                        <li><a href="{{ asset('dist') }}/pages/call-for-papers.html">Call for Papers</a></li>
-                                        <li><a href="{{ asset('dist') }}/pages/login.html">Paper Upload</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="{{ asset('dist') }}/pages/proceeding.html">Proceeding</a></li>
-                            <li>
-                                <div class="dropdown dropdown-hover dropdown-end">
-                                    <label tabindex="0" class="flex items-center gap-1">
-                                        ICOMESH
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            viewBox="0 0 16 16" fill="none">
-                                            <path d="M12 6L8 10L4 6" stroke="#343741" stroke-width="1.33333"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg></label>
-                                    <ul tabindex="0"
-                                        class="dropdown-content text-mydark text-base z-[1] mt-32 p-2 shadow bg-white rounded-box w-52">
-                                        <li><a href="{{ asset('dist') }}/pages/icomesh-2023.html">ICOMESH 2023</a></li>
-                                        <li><a href="{{ asset('dist') }}/pages/gallery.html">Gallery</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="flex flex-col md:flex-row gap-2">
-                                <a href="/register"
-                                    class="lg:inline-flex py-2 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-sm">
-                                    Register
-                                </a>
-                                <a href="/login"
-                                    class="lg:inline-flex py-2 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-sm">
-                                    Login
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.front.navbar')
         <!-- Navbar End -->
 
         <!-- Hero -->
@@ -146,14 +20,15 @@
                         <h3 class="text-mydark text-base lg:text-2xl">Topic : Biomolecular, Genetic, and Degenerative
                             Desease
                         </h3>
-                        <div class="mt-5 lg:mt-10 flex gap-5 lg:gap-10">
-                            <a href="/register">
+                        <div class="mt-5 lg:mt-10 flex flex-wrap gap-5 lg:gap-10">
+                            <a href="./dist/pages/register.html">
                                 <button type="button"
                                     class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                     Register Now
+                                    <div class="ms-2 badge badge-warning text-mydark text-xs lg:text-base">FREE</div>
                                 </button>
                             </a>
-                            <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
+                            <a href="./dist/docs/ICOMESH_2023_Template.docx">
                                 <button type="button"
                                     class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                     Download Template
@@ -168,7 +43,7 @@
                         <p class="text-xs lg:text-sm text-white">HETI Project</p>
                         <p class="text-xs lg:text-sm text-white">University of Lampung</p>
                         <hr class="w-full text-disabled">
-                        <p class="text-xs lg:text-sm text-white">Novotel, Bandar Lampung</p>
+                        <p class="text-xs lg:text-sm text-white">Bandar Lampung</p>
                         <p class="text-xs lg:text-sm text-white">28 - 29 November 2023</p>
                     </div>
                 </div>
@@ -186,12 +61,12 @@
             <div data-aos="fade-right" class="left-content lg:w-1/2 gap-3 hidden md:flex md:h-[400px] lg:h-[600px]">
                 <div class="md:w-full md:h-full flex flex-col gap-3">
                     <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                        style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-1.jpg);"></div>
+                        style="background-image: url(./dist/img/bg-about-event-home-1.jpg);"></div>
                     <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                        style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-2.jpg);"></div>
+                        style="background-image: url(./dist/img/bg-about-event-home-2.jpg);"></div>
                 </div>
                 <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                    style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-3.jpg);">
+                    style="background-image: url(./dist/img/bg-about-event-home-3.jpg);">
                 </div>
             </div>
 
@@ -205,26 +80,28 @@
                 </div>
                 <div>
                     <p class="text-base text-mydark text-justify">
-                        Berdasarkan Undang-undang nomor 14 tahun 2005 pasal 1 ayat 2, dosen adalah pendidik professional
-                        dan ilmuan dengan tugas utama mentransformasikan, mengembangkan dan menyebarluaskan pengetahuan,
-                        teknologi dan seni melalui pendidikan kepada masyarakat. Seorang dosen dituntut untuk selalu
-                        mengembangkan intelektualitasnya melalui penelitian yang bermutu yang selanjutnya akan
-                        memberikan dampak positif pada masyarakat.
+                        Based on The Constitutional Number 14 of 2005 Article 1 Paragraph 2, lecturers are professional
+                        and scientific
+                        educators with the main task of transforming, developing, and disseminating knowledge,
+                        technology,
+                        and art through education to the community. A lecturer is required to always develop his
+                        intellect through quality research which will then have a positive impact on society.
                         <br><br>
-                        Seminar Internasional/ International Conference on Biomolecular, Genetic, and Degenerative
-                        Diseases merupakan sarana bagi dosen untuk meningkatkan pengetahuan dan mengembangkan
-                        keilmuannya melalui publikasi internasional. HETI Project merupakan project yang didanai oleh
-                        bantuan luar negeri Asian Development Bank. Salah satu kegiatan pada project ini adalah Capacity
-                        Building. Program capacity building antara lain adalah seminar Internasional.
+                        International Conference are a means for lecturers to increase their knowledge and develop their
+                        knowledge through international publications. The HETI Project University of Lampung is a
+                        project funded by the Asian Development Bank's foreign aid. One of the activities in this
+                        project is Capacity Building. The capacity building program includes international conference.
                         <br><br>
-                        Seminar Internasional ini mengambil topik Biomolecular, genetic and degenerative disease. Topik
-                        ini sesuai dengan salah satu service excellence pada project RSPTN yang merupakan HETI Project.
-                        Topik ini juga diambil karena sesuai dengan jumlah kasus penyakit tidak menular yang diakibatkan
-                        perubahan genetik dan degeneratif yang ada di Indonesia.
+                        This International Conference took the topic Biomolecular, Genetic, and Degenerative Disease.
+                        This
+                        topic is in accordance with one of the service excellence in the teaching hospital RSPTN
+                        University of Lampung project which is the HETI Project University of Lampung. This topic was
+                        also taken because it corresponds to the number of cases of non-communicable diseases caused by
+                        genetic and degenerative changes in Indonesia.
                     </p>
                 </div>
                 <div>
-                    <a href="/pages/about-event.html"
+                    <a href="./dist/pages/about-event.html"
                         class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                         Learn More
                     </a>
@@ -236,7 +113,7 @@
 
     <!-- Section 3 Start -->
     <section id="home-section-3" class="w-full pt-10 pb-10 bg-fixed overflow-x-hidden"
-        style="background-image: url({{ asset('dist') }}/img/bg-section-3-home.png);">
+        style="background-image: url(./dist/img/bg-section-3-home.png);">
         <div data-aos="flip-down"
             class="container flex flex-wrap justify-center md:justify-between gap-10 md:gap-0 w-full">
 
@@ -258,8 +135,8 @@
                         d="M40.75 38.3333C38.5399 38.3333 36.4203 37.4553 34.8574 35.8925C33.2946 34.3297 32.4167 32.2101 32.4167 30C32.4167 27.7898 33.2946 25.6702 34.8574 24.1074C36.4203 22.5446 38.5399 21.6666 40.75 21.6666C42.9601 21.6666 45.0798 22.5446 46.6426 24.1074C48.2054 25.6702 49.0833 27.7898 49.0833 30C49.0833 31.0943 48.8678 32.1779 48.449 33.189C48.0302 34.2 47.4164 35.1187 46.6426 35.8925C45.8687 36.6663 44.9501 37.2802 43.939 37.699C42.928 38.1177 41.8444 38.3333 40.75 38.3333ZM40.75 6.66663C34.5616 6.66663 28.6267 9.12495 24.2508 13.5008C19.875 17.8766 17.4167 23.8116 17.4167 30C17.4167 47.5 40.75 73.3333 40.75 73.3333C40.75 73.3333 64.0833 47.5 64.0833 30C64.0833 23.8116 61.625 17.8766 57.2492 13.5008C52.8733 9.12495 46.9384 6.66663 40.75 6.66663Z"
                         fill="#FAFAFA" />
                 </svg>
-                <p class="text-white text-sm lg:text-xl">Novotel</p>
-                <p class="text-white text-xs lg:text-lg">Bandar Lampung</p>
+                <p class="text-white text-sm lg:text-xl">Bandar Lampung</p>
+                <p class="text-white text-xs lg:text-lg">Lampung, Indonesia</p>
             </div>
 
             <!-- 3rd Card -->
@@ -270,7 +147,7 @@
                         fill="#FAFAFA" />
                 </svg>
                 <p class="text-white text-sm lg:text-xl">2023</p>
-                <p class="text-white text-xs lg:text-lg">November</p>
+                <p class="text-white text-xs lg:text-lg">28 - 29 November</p>
             </div>
 
             <!-- 4th Card -->
@@ -320,10 +197,10 @@
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-1.png" alt="photo of the speaker">
+                            src="./dist/img/speaker-1.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-1 flex flex-col justify-center items-center">
-                        <p class="font-bold text-primary text-xl">Grace Mange</p>
+                        <p class="font-bold text-primary text-xl">Speaker 1</p>
                         <p class="text-sm md:text-base text-mydark">Monash University</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
@@ -336,10 +213,10 @@
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-2.png" alt="photo of the speaker">
+                            src="./dist/img/speaker-2.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-1 flex flex-col justify-center items-center">
-                        <p class="font-bold text-primary text-xl">dr. Arif Suriawinata, Ph.D.</p>
+                        <p class="font-bold text-primary text-xl">Speaker 2</p>
                         <p class="text-sm md:text-base text-mydark">Mc Dermot University</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
@@ -354,10 +231,10 @@
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-3.png" alt="photo of the speaker">
+                            src="./dist/img/speaker-3.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-1 flex flex-col justify-center items-center">
-                        <p class="font-bold text-primary text-xl">dr. Rusdy Mauleka, Ph.D, Sp.S</p>
+                        <p class="font-bold text-primary text-xl">Speaker 3</p>
                         <p class="text-sm md:text-base text-mydark">University of Lampung</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
@@ -371,10 +248,10 @@
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-4.png" alt="photo of the speaker">
+                            src="./dist/img/speaker-4.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-1 flex flex-col justify-center items-center">
-                        <p class="font-bold text-primary text-xl">Dr. Lisa Barrett</p>
+                        <p class="font-bold text-primary text-xl">Speaker 4</p>
                         <p class="text-sm md:text-base text-mydark">Delhousie University</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
@@ -391,7 +268,7 @@
     <!-- Section 5 Start -->
     <section id="home-section-5" class="overflow-x-hidden">
         <div class="container sm:rounded-md w-full flex flex-col gap-10 p-10 cover shadow-lg"
-            style="background-image: url({{ asset('dist') }}/img/bg-section-5-home.png);">
+            style="background-image: url(./dist/img/bg-section-5-home.png);">
             <div data-aos="fade-down" class="section-5-title flex flex-col gap-1 items-center">
                 <p class="uppercase text-secondary text-sm lg:text-base font-semibold">event timeline</p>
                 <h1 class="uppercase text-white font-bold text-3xl md:text-5xl">important dates</h1>
@@ -400,26 +277,23 @@
                 <ul class="steps steps-vertical lg:steps-horizontal text-white w-full">
                     <li class="step step-white text-white text-sm lg:text-base">
                         <div class="text-left lg:text-center pt-10 pb-10 px-2 lg:pt-0 lg:px-10">
-                            <p>29 October 2023</p>
-                            <p class="font-semibold">Lorem Ipsum</p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore aperiam illum ullam
-                                eaque voluptatibus optio dignissimos est reiciendis impedit alias!</p>
+                            <p>22 September - 3 November 2023</p>
+                            <p class="font-semibold text-lg">Registration</p>
+                            <p>Event Registration and Paper Submission</p>
                         </div>
                     </li>
                     <li class="step step-white text-white text-sm lg:text-base">
                         <div class="text-left lg:text-center pt-10 pb-10 px-2 lg:pt-0 lg:px-10">
-                            <p>29 October 2023</p>
-                            <p class="font-semibold">Lorem Ipsum</p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore aperiam illum ullam
-                                eaque voluptatibus optio dignissimos est reiciendis impedit alias!</p>
+                            <p>28 November 2023</p>
+                            <p class="font-semibold text-lg">Conference and Oral Presentation</p>
+                            <p>Day 1</p>
                         </div>
                     </li>
                     <li class="step step-white text-white text-sm lg:text-base">
                         <div class="text-left lg:text-center pt-10 pb-10 px-2 lg:pt-0 lg:px-10">
-                            <p>29 October 2023</p>
-                            <p class="font-semibold">Lorem Ipsum</p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore aperiam illum ullam
-                                eaque voluptatibus optio dignissimos est reiciendis impedit alias!</p>
+                            <p>29 November 2023</p>
+                            <p class="font-semibold text-lg">Conference and Oral Presentation</p>
+                            <p>Day 2</p>
                         </div>
                     </li>
                 </ul>
@@ -428,58 +302,40 @@
     </section>
     <!-- Section 5 End -->
 
-    <!-- Section 6 Start -->
-    <section id="home-section-6" class="overflow-x-hidden">
-        <div class="container px-2 py-10 flex flex-col gap-10">
-            <div data-aos="fade-down" class="section-6-title flex flex-col gap-1 items-center">
-                <p class="uppercase text-primary text-sm lg:text-base font-semibold">who help us</p>
-                <h1 class="uppercase text-mydark font-bold text-3xl md:text-5xl">event partner</h1>
-            </div>
-            <div data-aos="flip-up" class="section-6-content flex flex-wrap gap-5 justify-center">
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+       <!-- Section 6 Start -->
+       <section id="home-section-6" class="overflow-x-hidden">
+        <div class="container px-2 py-10 h-full w-full">
+            <div class="flex flex-wrap gap-5 justify-center">
+                <div class="flex flex-col gap-1 items-center p-2 bg-primary rounded-box text-white">
+                    <h1 id="days" class="countdown font-mono text-3xl md:text-8xl">
+                        <!-- Days Counting Here -->
+                    </h1>
+                    <span class="text-white text-base md:text-xl">Days</span>
                 </div>
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                <div class="flex flex-col gap-1 items-center p-2 bg-primary rounded-box text-white">
+                    <h1 id="hours" class="countdown font-mono text-3xl md:text-8xl">
+                        <!-- Hours Counting Here -->
+                    </h1>
+                    <span class="text-white text-base md:text-xl">Hours</span>
                 </div>
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                <div class="flex flex-col gap-1 items-center p-2 bg-primary rounded-box text-white">
+                    <h1 id="minutes" class="countdown font-mono text-3xl md:text-8xl">
+                        <!-- Minutes Counting Here -->
+                    </h1>
+                    <span class="text-white text-base md:text-xl">Mins</span>
                 </div>
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                <div class="flex flex-col gap-1 items-center p-2 bg-primary rounded-box text-white">
+                    <h1 id="seconds" class="countdown font-mono text-3xl md:text-8xl">
+                        <!-- Seconds Counting Here -->
+                    </h1>
+                    <span class="text-white text-base md:text-xl">Secs</span>
                 </div>
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                </div>
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                </div>
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                </div>
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                </div>
-                <div
-                    class="wrapper shadow-md hover:shadow-lg w-[100px] h-[40px] lg:w-[200px] lg:h-[80px] group overflow-hidden">
-                    <img src="{{ asset('dist') }}/img/logo-placeholder.png" alt=""
-                        class="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                <div class="flex flex-col gap-1 items-center p-2 bg-warning rounded-box text-white">
+                    <h1 id="participants" class="countdown font-mono text-3xl md:text-8xl">
+                        <!-- Participants Counting Here -->
+                        {{ $partisipant }}
+                    </h1>
+                    <span class="text-white text-base md:text-xl">Participant Registered</span>
                 </div>
             </div>
         </div>

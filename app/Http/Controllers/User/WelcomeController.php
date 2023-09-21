@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Submission;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class WelcomeController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -15,6 +16,7 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('admin.dashboard.index');
+        $data['partisipant'] = Submission::count();
+        return view('welcome', $data);
     }
 }

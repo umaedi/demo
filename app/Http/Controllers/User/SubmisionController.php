@@ -14,7 +14,7 @@ class SubmisionController extends Controller
     protected $submission;
     public function __construct(SubmissionService $submissionService)
     {
-        $this->middleware('persenter');
+        $this->middleware('presenter');
         $this->submission = $submissionService;
     }
 

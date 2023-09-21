@@ -15,11 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('guest')->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
-});
+Route::get('/', User\WelcomeController::class);
 
 Route::get('/root', function () {
     return view('root.index');
@@ -31,6 +27,19 @@ Route::get('/redirect', function () {
     } else {
         return redirect('/reviewer/dashboard');
     }
+});
+
+//route for admin
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', Admin\DashboardController::class);
+
+    //route for submissions
+    Route::get('/submissions', [Admin\SubmissionController::class, 'index']);
+
+    //route for users
+    Route::get('/users', [Admin\UserController::class, 'index']);
+
+    Route::get('/profile', Admin\ProfileController::class);
 });
 
 //route viewer
