@@ -111,6 +111,7 @@ class SubmisionController extends Controller
 
         $data = $request->except('_token');
         $data['user_id'] = auth()->user()->id;
+        $data['reviewer_id'] = $submission->reviewer_id;
         $data['histories'] = $submission->histories + 1;
         $data['registrasi_id'] = $submission->registrasi_id;
 
