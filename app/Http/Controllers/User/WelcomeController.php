@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Submission;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -16,7 +17,7 @@ class WelcomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $data['partisipant'] = Submission::count();
+        $data['partisipant'] = User::where('level', 'user')->count();
         return view('welcome', $data);
     }
 }
