@@ -21,11 +21,12 @@ class SubmisionController extends Controller
     public function index()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('user_id', auth()->user()->id)->latest()->where('histories', 1)->get();
+            $data['table'] = $this->submission->Query()->where('user_id', auth()->user()->id)->where('histories', 1)->get();
             return view('user.submision._data_table', $data);
         }
 
         $data['title'] = "User Submission";
+        $data['submission'] = $this->submission->Query()->where('user_id', auth()->user()->id)->where('status', 2)->first();
         return view('user.submision.index', $data);
     }
 

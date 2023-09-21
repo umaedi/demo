@@ -165,7 +165,7 @@
             <button type="submit" class="btn btn-primary mt-3">UPDATE</button>
             @endif
             </form>
-            @if ($submission->status == '2')
+            {{-- @if ($submission->status == '2')
             <div class="card my-3">
               <div class="alert alert-primary"><h6>UPLOAD PERSENTATION & FULL PAPER</h6></div>
                 <div class="card-body">
@@ -194,7 +194,7 @@
                   </form>
               </div>
             </div>
-            @endif
+            @endif --}}
         </div>
     </div>
 </div>

@@ -79,7 +79,8 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/submission/edit/{id}', [User\SubmisionController::class, 'edit']);
     Route::post('/submission/update/{id}', [User\SubmisionController::class, 'update']);
 
-    Route::put('/persentation/{id}', [User\PersentationController::class, 'update']);
+    Route::put('/persentation/ppt/{id}', [User\PersentationController::class, 'ppt']);
+    Route::put('/persentation/paper/{id}', [User\PersentationController::class, 'paper']);
 
     //route for loa
     Route::get('/loa', [User\LoaController::class, 'index']);
