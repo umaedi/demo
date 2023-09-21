@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
             <a href="/user/submission/create" class="btn btn-primary mb-3">CREATE SUBMISSION</a>
-            @if ($submission->status == '2')
+            @if ($submission->status ?? '')
             <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadPPT">UPLOAD PERSENTATION</button>
             <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadPaper">UPLOAD FULL PAPER</button>
             @endif
@@ -52,7 +52,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
-            <form action="/user/persentation/ppt/{{ $submission->id }}" method="POST" enctype="multipart/form-data">
+            <form action="/user/persentation/ppt/{{ $submission->id ?? '' }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="modal-body">
@@ -76,7 +76,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
-            <form action="/user/persentation/paper/{{ $submission->id }}" method="POST" enctype="multipart/form-data">
+            <form action="/user/persentation/paper/{{ $submission->id ?? ''}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="modal-body">
