@@ -18,7 +18,7 @@
                 <td>{{ \Carbon\Carbon::parse($tb->created_at)->isoFormat('D MMMM Y') }}</td>
                 @if ($tb->acc == 1)
                 <td><span class="badge badge-success">Accepted</span></td>
-                @elseif($tb->acc == 2)
+                @elseif($tb->status == 3)
                 <td><span class="badge badge-danger">Rejected</span></td>
                 @elseif($tb->status == '1')
                 <td><span class="badge badge-warning">Revised</span></td>
