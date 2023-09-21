@@ -94,7 +94,7 @@ class SubmisionController extends Controller
     {
         $this->validate($request, [
             'title'     => 'required|max:255',
-            'abstract'  => 'required|max:255',
+            'abstract'  => 'required',
             'abstract_file'  => 'mimes:pdf,docx|max:2048',
             'keyword'   => 'required|max:255',
             'topic'     => 'required|max:255',
