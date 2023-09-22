@@ -23,7 +23,9 @@ return new class extends Migration
             $table->string('keyword');
             $table->string('topic');
             $table->string('abstract_file');
+            $table->string('rev_abstract_file')->nullable();
             $table->string('paper')->nullable();
+            $table->string('rev_paper')->nullable();
             $table->string('ppt')->nullable();
             $table->integer('status')->nullable();
             $table->string('message')->nullable();

@@ -131,7 +131,7 @@
                           @else
                           <td>Not yet available</td>
                           @endif
-                          @if ($submission->paper !== "")
+                          @if ($submission->paper !== null)
                           <td> <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">Download Full Paper</a></td>
                           @else
                           <td>Not yet available</td>
@@ -152,11 +152,11 @@
                   <div class="form-group">
                     <label for="name">Reviewer Comments</label>
                     <textarea type="text" class="form-control mb-2" style="height: 100px" id="name" readonly>{{ $submission->comment }}</textarea>
-                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->abstract_file) }}" target="_blank">See what's in correction (abstract)</a> |
-                    @if ($submission->paper !== "")
-                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->paper) }}" target="_blank">See what's in correction (full paper)</a>
-                    @else
-                    Not yet available
+                    @if ($submission->rev_abstract_file !== null)
+                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->rev_abstract_file) }}" target="_blank">See what's in correction (abstract)</a> |
+                    @endif
+                    @if ($submission->rev_paper !== null)
+                    <a href="{{ \Illuminate\Support\Facades\Storage::url($submission->rev_paper) }}" target="_blank">See what's in correction (full paper)</a>
                     @endif
                   </div>
               </div>

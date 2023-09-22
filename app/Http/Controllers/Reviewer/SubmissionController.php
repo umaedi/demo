@@ -67,13 +67,23 @@ class SubmissionController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        $rules = [
             'title'     => 'required|string|max:255',
             'abstract'  => 'required',
             'keyword'   => 'required|string|max:255',
             'topic'     => 'required|string|max:255',
             'status'    => 'required|string|max:255'
-        ]);
+        ];
+
+        if ($request->rev_abstract_file) {
+            $rules['rev_abstract_file'] = 'mimes:pdf,docx|max:2048';
+        }
+
+        if ($request->rev_paper) {
+            $rules['rev_paper'] = 'mimes:pdf,docx|max:2048';
+        }
+
+        $request->validate($rules);
 
         $data = $request->except('_token');
 
@@ -83,25 +93,21 @@ class SubmissionController extends Controller
         $data['reviewer_id'] = auth()->user()->id;
         $data['histories'] = $submission->histories;
         $data['abstract'] = $submission->abstract;
+        $data['abstract_file'] = $submission->abstract_file;
+        $data['paper'] = $submission->paper;
 
-        if (isset($data['abstract_file'])) {
-            $data['abstract_file'] = Storage::putFile('public/paper', $data['abstract_file']);
-        } else {
-            $data['abstract_file'] = $submission->abstract_file;
+        if (isset($data['rev_abstract_file'])) {
+            $data['rev_abstract_file'] = Storage::putFile('public/paper', $data['rev_abstract_file']);
         }
 
-        if (isset($data['paper'])) {
-            $data['paper'] = Storage::putFile('public/paper', $data['paper']);
-        } else {
-            $data['paper'] = $submission->paper;
+        if (isset($data['rev_paper'])) {
+            $data['rev_paper'] = Storage::putFile('public/rev_paper', $data['rev_paper']);
         }
 
         if ($data['status'] == "2") {
             $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 1]);
             $data['loa'] = strtoupper(Str::random(16));
-        }
-
-        if ($data['status'] == "3") {
+        } elseif ($data['status'] == "3") {
             $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 2]);
         }
 
@@ -126,7 +132,7 @@ class SubmissionController extends Controller
     public function revised()
     {
         if (\request()->ajax()) {
-            $uniqueData = $this->submission->Query()->where('status', '1')->groupBy('user_id')->get(['user_id', DB::raw('MIN(id) as min_id')])->pluck('min_id');
+            $uniqueData = $this->submission->Query()->groupBy('registrasi_id')->get(['registrasi_id', DB::raw('MAX(id) as max_id')])->pluck('max_id');
             $data['table'] = $this->submission->Query()->whereIn('id', $uniqueData)->where('reviewer_id', auth()->user()->id)->where('status', '1')->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
@@ -137,7 +143,7 @@ class SubmissionController extends Controller
     public function accepted()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 2)->paginate(10);
+            $data['table'] = $this->submission->Query()->with('user')->where('reviewer_id', auth()->user()->id)->where('status', 2)->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
         $data['title'] = "Submission Accepted";

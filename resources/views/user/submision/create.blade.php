@@ -51,7 +51,7 @@
                     <form action="/user/submission/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                          <label for="title">Paper Title</label>
+                          <label for="title">Paper Title (<span class="text-danger">*</span>)</label>
                           <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') }}">
                           @error('title')
                           <div class="invalid-feedback">
@@ -60,7 +60,7 @@
                           @enderror
                         </div>
                         <div class="form-group">
-                          <label for="abstract">Abstract</label>
+                          <label for="abstract">Abstract (<span class="text-danger">*</span>)</label>
                           <textarea type="text" class="content form-control @error('abstract') is-invalid @enderror" id="abstract" name="abstract">{{ old('abstract') }}</textarea>
                           @error('abstract')
                           <div class="invalid-feedback">
@@ -69,7 +69,7 @@
                           @enderror
                         </div>
                         <div class="form-group">
-                          <label for="keyword">Keyword</label>
+                          <label for="keyword">Keyword (<span class="text-danger">*</span>)</label>
                           <input type="text" class="form-control @error('keyword') is-invalid @enderror" id="keyword" name="keyword" value="{{ old('keyword') }}">
                           @error('keyword')
                           <div class="invalid-feedback">
@@ -78,7 +78,7 @@
                           @enderror
                         </div>
                         <div class="form-group">
-                          <label for="topic">Topic</label>
+                          <label for="topic">Topic (<span class="text-danger">*</span>)</label>
                           <select name="topic" class="form-control  @error('topic') is-invalid @enderror" id="gender" name="topic" tabindex="4" value="{{ old('topic') }}">
                             <option value="">--Please select one--</option>
                             <option value="Biomolecular">Biomolecular</option>
@@ -92,7 +92,7 @@
                           @enderror
                         </div>
                         <div class="form-group">
-                          <label for="abstract_file">Abstract</label>
+                          <label for="abstract_file">Abstract (<span class="text-danger">*</span>)</label>
                           <input type="file" class="form-control @error('abstract_file') is-invalid @enderror" id="abstract_file" name="abstract_file">
                           @error('abstract_file')
                           <div class="invalid-feedback">
