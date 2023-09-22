@@ -10,7 +10,7 @@
                     </div>
                     <div class="text-xs md:text-base breadcrumbs text-white">
                         <ul>
-                            <li><a href="./../../index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li>Event</li>
                             <li>Steering Committee</li>
                         </ul>

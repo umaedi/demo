@@ -39,13 +39,13 @@
                             <td class="flex justify-between items-center">
                                 <div class="wrapper text-mydark flex flex-col gap-2">
                                     <p class="font-semibold text-base md:text-lg">
-                                        <a href="./proceeding-detail-full-paper-view.html">
+                                        <a href="/proceeding/show/paper">
                                             Paper Title
                                         </a>
                                     </p>
                                     <p>Author 1, Author 2, Author 3</p>
                                 </div>
-                                <a href="./../docs/ICOMESH_2023_Full_Paper.pdf">
+                                <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Full_Paper.pdf">
                                     <button type="button"
                                         class="py-1 px-3 shadow-sm inline-flex justify-center rounded-md font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                         Download
@@ -63,7 +63,7 @@
                                     </p>
                                     <p>Author 1, Author 2, Author 3</p>
                                 </div>
-                                <a href="./../docs/ICOMESH_2023_Full_Paper.pdf">
+                                <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Full_Paper.pdf">
                                     <button type="button"
                                         class="py-1 px-3 shadow-sm inline-flex justify-center rounded-md font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                         Download
@@ -81,7 +81,7 @@
                                     </p>
                                     <p>Author 1, Author 2, Author 3</p>
                                 </div>
-                                <a href="./../docs/ICOMESH_2023_Full_Paper.pdf">
+                                <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Full_Paper.pdf">
                                     <button type="button"
                                         class="py-1 px-3 shadow-sm inline-flex justify-center rounded-md font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                         Download
@@ -99,7 +99,7 @@
                                     </p>
                                     <p>Author 1, Author 2, Author 3</p>
                                 </div>
-                                <a href="./../docs/ICOMESH_2023_Full_Paper.pdf">
+                                <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Full_Paper.pdf">
                                     <button type="button"
                                         class="py-1 px-3 shadow-sm inline-flex justify-center rounded-md font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                         Download
@@ -117,7 +117,7 @@
                                     </p>
                                     <p>Author 1, Author 2, Author 3</p>
                                 </div>
-                                <a href="./../docs/ICOMESH_2023_Full_Paper.pdf">
+                                <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Full_Paper.pdf">
                                     <button type="button"
                                         class="py-1 px-3 shadow-sm inline-flex justify-center rounded-md font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                         Download

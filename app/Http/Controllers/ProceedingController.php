@@ -17,4 +17,10 @@ class ProceedingController extends Controller
         $data['title'] = "Proceeding";
         return view('proceeding.show', $data);
     }
+
+    public function paper()
+    {
+        $data['title'] = "Proceeding Show Paper";
+        return view('proceeding.paper', $data);
+    }
 }

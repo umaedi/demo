@@ -28,6 +28,7 @@ Route::get('/call-for-papers', [PaperController::class, 'index']);
 //route for proceding
 Route::get('/proceeding', [ProceedingController::class, 'index']);
 Route::get('/proceeding/show', [ProceedingController::class, 'show']);
+Route::get('/proceeding/show/paper', [ProceedingController::class, 'show']);
 
 //route for icomesh
 Route::get('/ecomesh', [IcomeshController::class, 'index']);
