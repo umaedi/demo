@@ -20,7 +20,7 @@
                             Desease
                         </h3>
                         <div class="mt-5 lg:mt-10 flex flex-wrap gap-5 lg:gap-10">
-                            <a href="./dist/pages/register.html">
+                            <a href="/register">
                                 <button type="button"
                                     class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                     Register Now
