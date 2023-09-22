@@ -35,6 +35,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'level',
         'status',
         'sertifikat',
+        'linkzoom',
         'img',
 
     ];

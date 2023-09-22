@@ -41,7 +41,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
           <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
-             <i class="fa-solid fa-file-arrow-down"></i>
+              <i class="far fa-file"></i>
             </div>
             <div class="card-wrap">
               <div class="card-header">

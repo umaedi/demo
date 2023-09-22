@@ -25,15 +25,15 @@
                     <li>
                         <a>Event</a>
                         <ul class="p-2">
-                            <li><a href="./dist/pages/steering-committee.html">Steering Committee</a></li>
-                            <li><a href="./dist/pages/about-event.html">About Event</a></li>
-                            <li><a href="./dist/pages/schedule.html">Schedule</a></li>
+                            <li><a href="/steering-committee">Steering Committee</a></li>
+                            <li><a href="/about">About Event</a></li>
+                            <li><a href="/schedule">Schedule</a></li>
                         </ul>
                     </li>
                     <li>
                         <a>Call for Papers</a>
                         <ul class="p-2">
-                            <li><a href="./dist/pages/call-for-papers.html">Call for Papers</a></li>
+                            <li><a href="/call-for-papers">Call for Papers</a></li>
                             <li><a href="./dist/pages/login.html">Paper Upload</a></li>
                         </ul>
                     </li>
@@ -41,7 +41,7 @@
                     <li>
                         <a>ICOMESH</a>
                         <ul class="p-2">
-                            <li><a href="./dist/pages/icomesh-2023.html">ICOMESH 2023</a></li>
+                            <li><a href="/ecomesh">ICOMESH 2023</a></li>
                             <li><a href="./dist/pages/gallery.html">Gallery</a></li>
                         </ul>
                     </li>
@@ -61,7 +61,7 @@
             <!-- Large Screen -->
             <div class="wrapper hidden lg:inline-block">
                 <ul class="menu menu-horizontal px-1 text-mydark text-base gap-1">
-                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>
                         <div class="dropdown dropdown-hover dropdown-end">
                             <label tabindex="0" class="flex items-center gap-1">
@@ -73,9 +73,9 @@
                                 </svg></label>
                             <ul tabindex="0"
                                 class="dropdown-content text-mydark text-base z-[1] mt-40 p-2 shadow bg-white rounded-box w-52">
-                                <li><a href="./dist/pages/steering-committee.html">Steering Committee</a></li>
-                                <li><a href="./dist/pages/about-event.html">About Event</a></li>
-                                <li><a href="./dist/pages/schedule.html">Schedule</a></li>
+                                <li><a href="/steering-committee">Steering Committee</a></li>
+                                <li><a href="/about">About Event</a></li>
+                                <li><a href="/schedule">Schedule</a></li>
                             </ul>
                         </div>
                     </li>
@@ -90,12 +90,12 @@
                                 </svg></label>
                             <ul tabindex="0"
                                 class="dropdown-content text-mydark text-base z-[1] mt-32 p-2 shadow bg-white rounded-box w-52">
-                                <li><a href="./dist/pages/call-for-papers.html">Call for Papers</a></li>
-                                <li><a href="./dist/pages/login.html">Paper Upload</a></li>
+                                <li><a href="/call-for-papers">Call for Papers</a></li>
+                                <li><a href="/user/submission">Paper Upload</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="./dist/pages/proceeding.html">Proceeding</a></li>
+                    <li><a href="/proceeding">Proceeding</a></li>
                     <li>
                         <div class="dropdown dropdown-hover dropdown-end">
                             <label tabindex="0" class="flex items-center gap-1">
@@ -107,8 +107,8 @@
                                 </svg></label>
                             <ul tabindex="0"
                                 class="dropdown-content text-mydark text-base z-[1] mt-32 p-2 shadow bg-white rounded-box w-52">
-                                <li><a href="./dist/pages/icomesh-2023.html">ICOMESH 2023</a></li>
-                                <li><a href="./dist/pages/gallery.html">Gallery</a></li>
+                                <li><a href="/ecomesh">ICOMESH 2023</a></li>
+                                <li><a href="/gallery">Gallery</a></li>
                             </ul>
                         </div>
                     </li>

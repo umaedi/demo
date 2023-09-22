@@ -44,15 +44,6 @@ class SubmissionController extends Controller
 
     public function edit($id)
     {
-        if (\request()->ajax()) {
-            $data['persentation'] = $this->persentattion->Query()->where('submission_id', $id)->first();
-            if ($data['persentation']) {
-                return view('reviewer.persentation._data_table', $data);
-            } else {
-                return view('reviewer.persentation._nodata_table');
-            }
-        }
-
         $data['title'] = 'Reviewer Submission Edit';
         $data['submission'] = $this->submission->find($id);
         return view('reviewer.submission.edit', $data);
@@ -153,7 +144,7 @@ class SubmissionController extends Controller
     public function rejected()
     {
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', 3)->paginate(10);
+            $data['table'] = $this->submission->Query()->with('user')->where('reviewer_id', auth()->user()->id)->where('status', 3)->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
         $data['title'] = "Submission Rejected";

@@ -1,11 +1,10 @@
-@extends('layouts.landingpage')
+@extends('layouts.template')
 @section('content')
     <!-- Header Start -->
     <header id="home-section-1" class="overflow-x-hidden">
         <!-- Navbar Start -->
         @include('layouts.front.navbar')
         <!-- Navbar End -->
-
         <!-- Hero -->
         <div
             class="home-hero w-full bg-[url('/dist/img/bg-home-hero.png')] md:h-3/4 lg:min-h-screen bg-cover bg-fixed py-10">
@@ -101,7 +100,7 @@
                     </p>
                 </div>
                 <div>
-                    <a href="./dist/pages/about-event.html"
+                    <a href="/about"
                         class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                         Learn More
                     </a>

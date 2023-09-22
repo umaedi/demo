@@ -17,6 +17,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', User\WelcomeController::class);
 
+//route for events
+Route::get('/steering-committee', [EventController::class, 'index']);
+Route::get('/about', [EventController::class, 'about']);
+Route::get('/schedule', [EventController::class, 'schedule']);
+
+//route for papers
+Route::get('/call-for-papers', [PaperController::class, 'index']);
+
+//route for proceding
+Route::get('/proceeding', [ProceedingController::class, 'index']);
+Route::get('/proceeding/show', [ProceedingController::class, 'show']);
+
+//route for icomesh
+Route::get('/ecomesh', [IcomeshController::class, 'index']);
+
+//route for galleri
+Route::get('gallery', GaleriController::class);
+
 Route::get('/root', function () {
     return view('root.index');
 });

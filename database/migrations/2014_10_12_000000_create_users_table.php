@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('level')->default('user');
             $table->string('status')->default('0');
             $table->string('sertifikat')->nullable();
+            $table->string('linkzoom')->nullable();
             $table->string('img')->default('avatar.png');
             $table->rememberToken();
             $table->timestamps();
