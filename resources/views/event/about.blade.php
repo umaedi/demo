@@ -11,7 +11,7 @@
                     </div>
                     <div class="text-xs md:text-base breadcrumbs text-white">
                         <ul>
-                            <li><a href="/">Home</a></li>
+                            <li><a href="/user/login">Home</a></li>
                             <li>Event</li>
                             <li>About Event</li>
                         </ul>
