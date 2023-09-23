@@ -34,15 +34,15 @@
                         <a>Call for Papers</a>
                         <ul class="p-2">
                             <li><a href="/call-for-papers">Call for Papers</a></li>
-                            <li><a href="./dist/pages/login.html">Paper Upload</a></li>
+                            <li><a href="/user/submission">Paper Upload</a></li>
                         </ul>
                     </li>
-                    <li><a href="./dist/pages/proceeding.html">Proceeding</a></li>
+                    <li><a href="/proceeding">Proceeding</a></li>
                     <li>
                         <a>ICOMESH</a>
                         <ul class="p-2">
                             <li><a href="/ecomesh">ICOMESH 2023</a></li>
-                            <li><a href="./dist/pages/gallery.html">Gallery</a></li>
+                            <li><a href="/gallery">Gallery</a></li>
                         </ul>
                     </li>
                     <li class="flex flex-col gap-2">

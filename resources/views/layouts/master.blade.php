@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Layout &rsaquo; Top Navigation &mdash; Stisla</title>
+  <title>Admin Dashboard</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -15,25 +15,24 @@
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="{{ asset('css') }}/masterstyle.css">
+  <link rel="stylesheet" href="{{ asset('css') }}/components.css">
 </head>
 
 <body class="layout-3">
   <div id="app">
     <div class="main-wrapper container">
       <div class="navbar-bg"></div>
-      @include('layouts.topnavbar')
+      @include('layouts.masternavbar')
 
       <!-- Main Content -->
       @yield('content')
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval
-            Azhar</a>
+          Copyright &copy; 2023 <div class="bullet"></div> Developed By <a href="#">Yoru</a>
         </div>
         <div class="footer-right">
-          2.3.0
+          0.1
         </div>
       </footer>
     </div>
@@ -50,15 +49,15 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="../assets/js/stisla.js"></script>
+  <script src="{{ asset('js') }}/stisla.js"></script>
 
   <!-- JS Libraies -->
 
   <!-- Page Specific JS File -->
 
   <!-- Template JS File -->
-  <script src="../assets/js/scripts.js"></script>
-  <script src="../assets/js/custom.js"></script>
+  <script src="{{ asset('js') }}/scripts.js"></script>
+  <script src="{{ asset('js') }}/custom.js"></script>
 </body>
 
 </html>

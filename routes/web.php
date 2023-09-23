@@ -83,13 +83,6 @@ Route::middleware(['auth', 'reviewer'])->prefix('reviewer')->group(function () {
     Route::get('/profile', Reviewer\ProfileController::class);
 });
 
-//route for admin
-Route::middleware('admin')->prefix('admin')->group(function () {
-    Route::get('/dashboard', [Admin\DashboardController::class, 'index']);
-
-    Route::post('/scan', Admin\SacanQrcdeController::class);
-});
-
 //route for user
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/dashboard', [User\DashboardController::class, 'index']);
