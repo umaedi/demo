@@ -18,6 +18,22 @@ class ProceedingController extends Controller
         return view('proceeding.show', $data);
     }
 
+    public function topic1()
+    {
+        $data['title'] = "Proceeding Show Paper";
+        return view('proceeding.topic1', $data);
+    }
+    public function topic2()
+    {
+        $data['title'] = "Proceeding Show Paper";
+        return view('proceeding.topic2', $data);
+    }
+    public function topic3()
+    {
+        $data['title'] = "Proceeding Show Paper";
+        return view('proceeding.topic3', $data);
+    }
+
     public function paper()
     {
         $data['title'] = "Proceeding Show Paper";
