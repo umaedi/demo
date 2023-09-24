@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\Submission;
+use App\Models\Event;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -17,7 +18,11 @@ class WelcomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $data['partisipant'] = User::where('level', 'user')->count();
-        return view('welcome', $data);
+        $countdown = Event::pluck('end_time')->first();
+        $now = Carbon::now();
+        $end_time = Carbon::parse($countdown);
+        $difference = $now->diffInSeconds($end_time, false);
+        $partisipant = User::where('level', 'user')->count();
+        return view('welcome', compact('end_time', 'difference', 'partisipant'));
     }
 }

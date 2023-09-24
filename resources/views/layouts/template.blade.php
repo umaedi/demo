@@ -17,6 +17,7 @@
 
     <script src="{{ asset('aos') }}/dist/aos.js"></script>
     <script src="{{ asset('dist') }}/script.js"></script>
+    @stack('js')
 </body>
 
 </html>

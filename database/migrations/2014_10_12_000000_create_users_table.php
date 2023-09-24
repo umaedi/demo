@@ -25,11 +25,12 @@ return new class extends Migration
             $table->string('country');
             $table->string('no_tlp');
             $table->string('type_user')->default('participan');
-            $table->string('persence')->default('online');
+            $table->string('persence')->default('Online');
             $table->string('level')->default('user');
             $table->string('status')->default('0');
             $table->string('sertifikat')->nullable();
-            $table->string('linkzoom')->nullable();
+            $table->string('zoom_id')->nullable();
+            $table->string('zoom_password')->nullable();
             $table->string('img')->default('avatar.png');
             $table->rememberToken();
             $table->timestamps();

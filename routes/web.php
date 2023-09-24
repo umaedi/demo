@@ -4,17 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', User\WelcomeController::class);
 
 //route for events
@@ -47,8 +36,10 @@ Route::get('/root', function () {
 Route::get('/redirect', function () {
     if (auth()->user()->level == "user") {
         return redirect('/user/dashboard');
-    } else {
+    } elseif (auth()->user()->level == "reviewer") {
         return redirect('/reviewer/dashboard');
+    } else {
+        return redirect('/admin/dashboard');
     }
 });
 
@@ -58,6 +49,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     //route for submissions
     Route::get('/submissions', [Admin\SubmissionController::class, 'index']);
+    Route::get('/submissions/show/{id}', [Admin\SubmissionController::class, 'show']);
 
     //route for users
     Route::get('/users', [Admin\UserController::class, 'index']);
