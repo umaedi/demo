@@ -92,7 +92,7 @@ class SubmissionController extends Controller
         }
 
         if (isset($data['rev_paper'])) {
-            $data['rev_paper'] = Storage::putFile('public/rev_paper', $data['rev_paper']);
+            $data['rev_paper'] = Storage::putFile('public/paper', $data['rev_paper']);
         }
 
         if ($data['status'] == "2") {
