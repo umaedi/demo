@@ -18,7 +18,7 @@ class DashboardController extends Controller
     public function index()
     {
 
-        $uniqueData = $this->submission->Query()->groupBy('registrasi_id')->get(['registrasi_id', DB::raw('MAX(id) as max_id')])->pluck('max_id');
+        $uniqueData = $this->submission->Query()->where('status', '1')->groupBy('registrasi_id')->get(['registrasi_id', DB::raw('MAX(id) as max_id')])->pluck('max_id');
         if (\request()->ajax()) {
             $data['table'] = Submission::with('user')->whereIn('id', $uniqueData)->where('reviewer_id', auth()->user()->id)->where('status', '1')->get();
             return view('reviewer.dashborad._data_table', $data);
