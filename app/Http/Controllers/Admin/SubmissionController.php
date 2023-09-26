@@ -21,9 +21,22 @@ class SubmissionController extends Controller
             $page = request()->get('paginate', 10);
 
             if (request()->status == '1') {
-                $submissions->where('histories', '1');
+                $submissions->where('histories', '1')->whereNull('acc');
             }
-            $data['table'] = $submissions->where('status', \request()->status)->paginate($page);
+
+            if (request()->status == '2') {
+                $submissions->where('status', '2');
+            }
+
+            if (request()->status == '3') {
+                $submissions->where('histories', '1')->where('acc', 2);
+            }
+
+            if (request()->status == '0') {
+                $submissions->whereNull('reviewer_id');
+            }
+
+            $data['table'] = $submissions->paginate($page);
             return view('admin.submissions._data_table', $data);
         }
 

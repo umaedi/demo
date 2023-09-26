@@ -15,6 +15,7 @@ class Submission extends Model
         'title',
         'abstract',
         'keyword',
+        'author',
         'topic',
         'abstract_file',
         'rev_abstract_file',

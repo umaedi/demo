@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use App\Models\Submission;
-use App\Services\PersentationService;
 use App\Services\SubmissionService;
-use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
+
 
 class PersentationController extends Controller
 {
@@ -27,10 +25,11 @@ class PersentationController extends Controller
 
         $submission = $this->submission->find($id);
 
-        $ppt = Storage::putFile('public/paper', $request->ppt);
+        $ppt = $request->file('ppt');
+        $renamePpt =  Str::replace(' ', '_', auth()->user()->name) . '_PPT_' . $submission->registrasi_id . '.' . $ppt->getClientOriginalExtension();
 
         $submission->forceFill([
-            'ppt'     => $ppt,
+            'ppt'     => $ppt->storeAs('public/paper', $renamePpt),
         ])->save();
         return redirect('/user/submission')->with('msg.persentation', 'Persentation has ben submited');
     }
@@ -43,10 +42,11 @@ class PersentationController extends Controller
 
         $submission = $this->submission->find($id);
 
-        $paper = Storage::putFile('public/paper', $request->paper);
+        $paper = $request->file('paper');
+        $renamePaper =  Str::replace(' ', '_', auth()->user()->name) . '_Paper_' . $submission->registrasi_id . '.' . $paper->getClientOriginalExtension();
 
         $submission->forceFill([
-            'paper'   => $paper,
+            'paper'   => $paper->storeAs('public/paper', $renamePaper),
         ])->save();
         return redirect('/user/submission')->with('msg.persentation', 'Paper has ben submited');
     }

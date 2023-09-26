@@ -27,7 +27,7 @@
                 @endif
                 <td>
                     <a href="/admin/submissions/show/{{ $tb->registrasi_id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Download</button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="downloadData('{{ $tb->id }}')">Download</button>
                 </td>
             </tr>
         @empty

@@ -110,6 +110,15 @@
                           @enderror
                         </div>
                         <div class="form-group">
+                          <label for="author">Author (<span class="text-danger">*</span>)</label>
+                          <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author">
+                          @error('author')
+                          <div class="invalid-feedback">
+                            {{ $message }}
+                          </div>
+                          @enderror
+                        </div>
+                        <div class="form-group">
                           <label for="message">Message (optional)</label>
                           <textarea class="form-control" id="message" name="message">{{ old('message') }}</textarea>
                         </div>

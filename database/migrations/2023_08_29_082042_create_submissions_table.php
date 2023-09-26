@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('abstract');
             $table->string('keyword');
+            $table->string('author');
             $table->string('topic');
             $table->string('abstract_file');
             $table->string('rev_abstract_file')->nullable();

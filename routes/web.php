@@ -55,6 +55,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/users', [Admin\UserController::class, 'index']);
 
     Route::get('/profile', Admin\ProfileController::class);
+
+    //route for download
+    Route::get('/download/submission/{id}', [Admin\DownloadController::class, 'index']);
 });
 
 //route viewer

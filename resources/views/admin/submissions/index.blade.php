@@ -67,34 +67,11 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-            <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">File Name</th>
-                    <th scope="col">Download</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Abstract</td>
-                    <td  class="text-center"><a href="/user/download/template?q=abstract" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Full Paper</td>
-                    <td  class="text-center"><a href="/user/download/template?q=full_paper" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>PPT</td>
-                    <td  class="text-center"><a href="/user/download/template?q=ppt" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
-                  </tr>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="modal-body" id="downloadData">
+            <button class="btn btn-primary btn-block btn-lg" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Please wait...
+            </button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -167,6 +144,24 @@
     function loadPaginate(to) {
         page = to
         filterTable()
+    }
+
+    //download
+    async function downloadData(id)
+    {
+      var param = {
+        method : "GET",
+        url: '/admin/download/submission/'+id,
+        data: {
+          load: 'table'
+        }
+      }
+
+      await transAjax(param).then((result) => {
+        $('#downloadData').html(result);
+      }).catch((err) => {
+        $('#downloadData').html(`<button class="btn btn-warning btn-lg btn-block">${err.responseJSON.message}</button>`);
+      });
     }
 </script>
 @endpush

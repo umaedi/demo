@@ -44,6 +44,7 @@ class SubmisionController extends Controller
             'abstract_file'  => 'required|mimes:pdf,docx|max:2048',
             'keyword'   => 'required|max:255',
             'topic'     => 'required|max:255',
+            'author'     => 'required|max:255',
         ]);
 
         $data = $request->except('_token');
@@ -55,10 +56,14 @@ class SubmisionController extends Controller
         }
 
         $data['registrasi_id'] = strtoupper(Str::random(16));
-        $data['abstract_file'] = Storage::putFile('public/paper', $data['abstract_file']);
+        $abstract_file = $request->file('abstract_file');
+        $rename_abstract_file = Str::replace(' ', '_',  auth()->user()->name) . '_Abstract_' . $data['registrasi_id'] . '.' . $abstract_file->getClientOriginalExtension();
+        $data['abstract_file'] = $abstract_file->storeAs('public/paper', $rename_abstract_file);
 
-        if (isset($data['paper'])) {
-            $data['paper'] = Storage::putFile('public/paper', $data['paper']);
+        if ($request->file('paper')) {
+            $paper = $request->file('paper');
+            $rename_paper = Str::replace(' ', '_',  auth()->user()->name) . '_Abstract_' . $data['registrasi_id'] . '.' . $paper->getClientOriginalExtension();
+            $data['paper'] = $paper->storeAs('public/paper', $rename_paper);
         }
 
         DB::beginTransaction();
@@ -116,14 +121,20 @@ class SubmisionController extends Controller
         $data['histories'] = $submission->histories + 1;
         $data['registrasi_id'] = $submission->registrasi_id;
 
-        if (isset($data['abstract_file'])) {
-            $data['abstract_file'] = Storage::putFile('public/paper', $data['abstract_file']);
+        if ($request->file('abstract_file')) {
+            $abstract_file = $request->file('abstract_file');
+            $rename_abstract_file = Str::replace(' ', '_',  auth()->user()->name) . '_Abstract_' . $data['registrasi_id'] . '.' . $abstract_file->getClientOriginalExtension();
+            $data['abstract_file'] = $abstract_file->storeAs('public/paper', $rename_abstract_file);
         } else {
             $data['abstract_file'] = $submission->abstract_file;
         }
 
-        if (isset($data['paper'])) {
-            $data['paper'] = Storage::putFile('public/paper', $data['paper']);
+        if ($request->file('paper') !== null) {
+            $paper = $request->file('paper');
+            $rename_paper = Str::replace(' ', '_',  auth()->user()->name) . '_Abstract_' . $data['registrasi_id'] . '.' . $paper->getClientOriginalExtension();
+            $data['paper'] = $paper->storeAs('public/paper', $rename_paper);
+        } else {
+            $data['paper'] = $submission->paper;
         }
 
         DB::beginTransaction();
