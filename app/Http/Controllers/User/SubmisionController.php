@@ -111,7 +111,7 @@ class SubmisionController extends Controller
             return back()->with(['msg' => 'Your submission is still in queue!']);
         }
 
-        if ($submission->acc == 1) {
+        if ($submission->acc == 2 || $submission->acc == 3) {
             return back();
         }
 

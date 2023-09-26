@@ -95,11 +95,13 @@ class SubmissionController extends Controller
             $data['rev_paper'] = Storage::putFile('public/paper', $data['rev_paper']);
         }
 
-        if ($data['status'] == "2") {
+        if ($data['status'] == "1") {
             $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 1]);
             $data['loa'] = strtoupper(Str::random(16));
-        } elseif ($data['status'] == "3") {
+        } elseif ($data['status'] == "2") {
             $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 2]);
+        } else {
+            $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 3]);
         }
 
         DB::beginTransaction();
