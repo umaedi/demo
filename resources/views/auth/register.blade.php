@@ -205,14 +205,14 @@
                     <!-- Participant Type -->
                     <div class="form-control w-full">
                         <label class="label">
-                            <span class="label-text">Persence</span>
+                            <span class="label-text">Presence</span>
                         </label>
-                        <select name="persence" class="peer select select-bordered select-accent @error('persence')  invalid:border-red-500 @enderror" required>
+                        <select name="presence" class="peer select select-bordered select-accent @error('presence')  invalid:border-red-500 @enderror" required>
                             <option disabled selected>Please select...</option>
                             <option value="Online">Online</option>
                             <option value="Offline">Offline</option>
                         </select>
-                        @error('persence')
+                        @error('presence')
                         <label class=" label invisible peer-invalid:visible text-red-500 font-light text-xs
                         md:text-sm">
                         Please select participant type

@@ -1,0 +1,157 @@
+@extends('layouts.app')
+@section('content')
+<div class="main-content">
+    <section class="section">
+      <div class="section-header">
+        <h1>Reviewers</h1>
+        <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a href="/admin/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item">Reviewers</div>
+          </div>
+      </div>
+      <div class="card mb-3">
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-md-10">
+                      <input class="form-control" type="text" name="q" id="search" placeholder="Serach by name...">
+                    </div>
+                    <div class="col-md-2">
+                        <select id="page" class="form-control" name="page">
+                            <option value="">--Perpage--</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
+              <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">ADD REVIEWER</button>
+                @if (session('msg_store'))
+                <div class="alert alert-success">{{ session('msg_store') }}</div>
+                @endif
+                @if($errors->any())
+                <div class="alert alert-warning">{{ implode('', $errors->all(':message')) }}</div>
+                @endif
+              <div class="card">
+                @if (session('message'))
+                <div class="alert alert-success">{{ session('message') }}</div>
+                @endif
+                <button id="loading" class="btn btn-primary btn-block btn-lg" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Please wait...
+                </button>
+                <div class="card-body table-responsive" id="dataTable">
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Reviewer</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="/admin/create_new_reviewer" method="POST">
+                @csrf
+                <div class="modal-body">
+                <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="no_tlp">No Tlp/WhstApp</label>
+                    <input type="text" class="form-control" id="no_tlp" name="no_tlp">
+                </div>
+                <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" id="password" name="password">
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+@endsection
+@push('js')
+    <script type="text/javascript">
+        var page = 1;
+        var pagination = '';
+        var q = '';
+  
+        $(document).ready(function() {
+            loadData();
+
+            $('#search').on('keypress', function(e) {
+                if(e.which == 13) {
+                    filterTable();
+                    return false;
+                }
+            });
+
+            $('#page').on('change', () => {
+                filterTable();
+            });
+        });
+
+        function filterTable()
+        {
+            pagination = $('#page').val();
+            q = $('#search').val();
+            loadData();
+        }
+
+        async function loadData() {
+            var param = {
+                method: 'GET',
+                url: '{{ url()->current() }}',
+                data: {
+                    load: 'table',
+                    q: q,
+                    page: page,
+                    pagination: pagination
+                }
+            }
+            loading(true);
+            await transAjax(param).then((result) => {
+                loading(false);
+                $('#dataTable').html(result)
+
+            }).catch((err) => {
+                $('#dataTable').html(`<button class="btn btn-warning btn-lg btn-block">${err.responseJSON.message}</button>`)
+        });
+
+        function loading(state) {
+            if(state) {
+                $('#loading').removeClass('d-none');
+            } else {
+                $('#loading').addClass('d-none');
+            }
+        }
+
+      }
+
+   //paginate
+    function loadPaginate(to) {
+        page = to
+        filterTable()
+    }
+</script>
+@endpush

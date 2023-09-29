@@ -38,7 +38,7 @@ Route::get('/redirect', function () {
         return redirect('/user/dashboard');
     } elseif (auth()->user()->level == "reviewer") {
         return redirect('/reviewer/dashboard');
-    } else {
+    } elseif (auth()->user()->level == "admin") {
         return redirect('/admin/dashboard');
     }
 });
@@ -50,9 +50,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //route for submissions
     Route::get('/submissions', [Admin\SubmissionController::class, 'index']);
     Route::get('/submissions/show/{id}', [Admin\SubmissionController::class, 'show']);
+    Route::get('/submission/show/{id}', [Admin\SubmissionController::class, 'detail']);
+    Route::get('/submission/edit/{id}', [Admin\SubmissionController::class, 'edit']);
 
-    //route for users
-    Route::get('/users', [Admin\UserController::class, 'index']);
+    //route for zoom
+    Route::post('/zoom/update', Admin\ZoomController::class);
+
+    //route for reviewers
+    Route::get('/reviewers', [Admin\ReviewerController::class, 'index']);
+    Route::post('/create_new_reviewer', [Admin\ReviewerController::class, 'store']);
+
+    //route for participants
+    Route::get('/participants', [Admin\ParticipantController::class, 'index']);
+    Route::get('/participant/show/{id}', [Admin\ParticipantController::class, 'show']);
 
     Route::get('/profile', Admin\ProfileController::class);
 

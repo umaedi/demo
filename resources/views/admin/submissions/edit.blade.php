@@ -5,14 +5,14 @@
       <div class="section-header">
         <h1>Submission</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="/reviewer/dashboard">Dashboard</a></div>
-            <div class="breadcrumb-item active"><a href="/reviewer/submission">Submission</a></div>
+            <div class="breadcrumb-item active"><a href="/admin/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="/admin/submissions">Submissions</a></div>
             <div class="breadcrumb-item">Edit Submission</div>
           </div>
       </div>
-      <form action="/reviewer/submission/update/{{ $submission->id }}" method="POST" enctype="multipart/form-data">
-        @method('PUT')
-          @csrf
+      {{-- <form action="/admin/submission/update/{{ $submission->id }}" method="POST" enctype="multipart/form-data"> --}}
+        {{-- @method('PUT')
+          @csrf --}}
         <div class="row">
           <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
             @if (session('message'))
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-    </div>
+          </div>
           <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
             <div class="card">
               <div class="card-header">
@@ -150,7 +150,6 @@
                     </table>
                 </div>
               </div>
-              @if ($submission->status == "2")
               <div class="card my-3">
                 <div class="alert alert-primary"><h6>PERSENTATION & PAPER</h6></div>
                 <div class="card-body">
@@ -184,7 +183,6 @@
                   </table>
               </div>
               </div>
-              @endif
                <div class="card mt-3">
                  <div class="alert alert-primary"><h6>REVIEWER</h6></div>
                  <div class="card-body">
@@ -192,7 +190,7 @@
                     <label for="name">Reviewer Comments</label>
                     <textarea type="text" name="comment" class="form-control mb-2" style="height: 100px" id="name">{{ $submission->comment }}</textarea>
                   </div>
-                  <div class="form-group">
+                  {{-- <div class="form-group">
                     <label for="exampleFormControlSelect1">Submission Status</label>
                     <select name="status" class="form-control @error('status') is-invalid @enderror" id="exampleFormControlSelect1">
                       <option value="">--Select one--</option>
@@ -205,16 +203,12 @@
                       {{ $message }}
                     </div>
                     @enderror
-                  </div>
-                  <div id="loa" class="form-group d-none">
-                    <label for="loa">LOA</label>
-                    <input type="file" class="loa form-control" name="loa">
-                  </div>
+                  </div> --}}
               </div>
             </div>
-            @if ($submission->acc !== 1 && $submission->status != "3")
+            {{-- @if ($submission->acc !== 1 && $submission->status != "3")
             <button type="submit" class="btn btn-primary mt-3">UPDATE</button>
-            @endif
+            @endif --}}
         </div>
       </div>
     </form>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Services\SubmissionService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,11 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $user;
-    public function __construct(UserService $userService)
+    public $submission;
+    public function __construct(UserService $userService, SubmissionService $submissionService)
     {
         $this->user = $userService;
+        $this->submission = $submissionService;
     }
 
     public function __invoke(Request $request)
@@ -26,7 +29,7 @@ class DashboardController extends Controller
         if (\request()->ajax()) {
             $user = $this->user->Query();
             if ($request->data) {
-                $user = $user->where('persence', $request->data);
+                $user = $user->where('presence', $request->data);
             }
 
             $data['table'] = $user->where('level', 'user')->get();
@@ -34,8 +37,11 @@ class DashboardController extends Controller
         }
 
         $data['participants'] = $this->user->Query()->where('level', 'user')->count();
-        $data['participantsOffline'] = $this->user->Query()->where('level', 'user')->where('persence', 'Offline')->count();
-        $data['participantsOnline'] =  $this->user->Query()->where('level', 'user')->where('persence', 'Online')->count();
+        $data['reviewers'] = $this->user->Query()->where('level', 'reviewer')->count();
+        $data['participantsOffline'] = $this->user->Query()->where('level', 'user')->where('presence', 'Offline')->count();
+        $data['participantsOnline'] =  $this->user->Query()->where('level', 'user')->where('presence', 'Online')->count();
+        $data['submissions'] =  $this->submission->count();
+        $data['zoom'] = $this->user->Query()->where('presence', 'Online')->first();
         return view('admin.dashboard.index', $data);
     }
 }

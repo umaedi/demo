@@ -16,4 +16,15 @@ class UserService
     {
         return $this->user->query();
     }
+
+    public function find($id)
+    {
+        $model = $this->user->find($id);
+        return $model;
+    }
+
+    public function store($data)
+    {
+        return $this->user->create($data);
+    }
 }

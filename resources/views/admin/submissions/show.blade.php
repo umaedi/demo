@@ -5,8 +5,8 @@
       <div class="section-header">
         <h1>Submission</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="/reviewer/dashboard">Dashboard</a></div>
-            <div class="breadcrumb-item active"><a href="/reviewer/submission">Submission</a></div>
+            <div class="breadcrumb-item active"><a href="/admin/dashboard">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="/admin/submissions">Submissions</a></div>
             <div class="breadcrumb-item">Show Submission</div>
           </div>
       </div>

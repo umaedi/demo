@@ -28,7 +28,7 @@ class CreateNewUser implements CreatesNewUsers
             'institution' => ['required', 'string', 'max:255'],
             'no_tlp' => ['required', 'string', 'max:255'],
             'type_user' => ['required', 'string', 'max:255'],
-            'persence' => ['required', 'string', 'max:255'],
+            'presence' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
                 'string',
@@ -39,7 +39,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
-        if ($input['persence'] == "Offline") {
+        if ($input['presence'] == "Offline") {
             $user = User::wherePersence('Offline')->count();
             if ($user >= 200) {
                 return back()->with('msgPersence', 'Sorry, offline registration has been fulfilled!');
@@ -55,7 +55,7 @@ class CreateNewUser implements CreatesNewUsers
             'country' => $input['country'],
             'no_tlp' => $input['no_tlp'],
             'type_user' => $input['type_user'],
-            'persence' => $input['persence'],
+            'presence' => $input['presence'],
         ]);
     }
 }

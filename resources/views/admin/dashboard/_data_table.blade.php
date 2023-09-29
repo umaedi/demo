@@ -17,7 +17,7 @@
                 <td>{{ $tb->institution }}</td>
                 <td>{{ $tb->country }}</td>
                 <td>{{ $tb->persence }}</td>
-                <td><a href="/reviewer/submission/show/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
+                <td><a href="/admin/participant/show/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
             </tr>
         @empty
             <tr>

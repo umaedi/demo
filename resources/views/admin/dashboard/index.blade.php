@@ -10,24 +10,24 @@
     </div>
     <div class="row">
       <div class="col-lg-4 col-md-12 col-12 col-sm-12">
-        <a href="/admin/submission" style="text-decoration: none">
+        <a href="/admin/reviewers" style="text-decoration: none">
           <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
              <i class="fas fa-users"></i>
             </div>
             <div class="card-wrap">
               <div class="card-header">
-                <h4>Users</h4>
+                <h4>Reviewers</h4>
               </div>
               <div class="card-body">
-                4
+                {{ $reviewers }}
               </div>
             </div>
           </div>
         </a>
     </div>
       <div class="col-lg-4 col-md-12 col-12 col-sm-12">
-        <a href="/admin/submission" style="text-decoration: none">
+        <a href="/admin/participants" style="text-decoration: none">
           <div class="card card-statistic-1">
             <div class="card-icon bg-primary">
              <i class="fas fa-users"></i>
@@ -54,7 +54,7 @@
                 <h4>Submissions</h4>
               </div>
               <div class="card-body">
-                4
+                {{ $submissions }}
               </div>
             </div>
           </div>
@@ -63,20 +63,36 @@
   </div>
   <div class="row mt-4">
     <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+      @if (session('msg_zoom'))
+      <div class="alert alert-success">{{ session('msg_zoom') }}</div>
+      @endif
       <div class="card">
         <div class="card-header">
           <h4>ZOOM</h4>
         </div>
         <div class="card-body">
+        <form action="/admin/zoom/update" method="POST">
+          @csrf
           <div class="form-group">
             <label for="#">ID</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control @error('zoom_id') is-invalid @enderror" name="zoom_id" value="{{ $zoom->zoom_id ?? '' }}">
+            @error('zoom_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
           </div>
           <div class="form-group">
             <label for="#">Password</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control @error('zoom_password') is-invalid @enderror" name="zoom_password" value="{{ $zoom->zoom_password ?? '' }}">
+            @error('zoom_password')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
           </div>
-          <button class="btn btn-primary btn-block">SAVE</button>
+          <button id="submit" type="submit" class="btn btn-primary btn-block">SAVE</button>
+          <button id="loadingBtn" class="btn btn-primary btn-block d-none" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Please wait...
+          </button>
+        </form>
         </div>
       </div>
     </div>
@@ -159,6 +175,13 @@ var _data = "";
         $('#loading').addClass('d-none');
       }
     }
+
+    const btn = $('#submit');
+
+    btn.on('click', function() {
+      $('#loadingBtn').removeClass('d-none');
+      btn.addClass('d-none');
+    });
   }
 </script>
 @endpush

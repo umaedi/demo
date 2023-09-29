@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('country');
             $table->string('no_tlp');
             $table->string('type_user')->default('participan');
-            $table->string('persence')->default('Online');
+            $table->string('presence')->default('Online');
             $table->string('level')->default('user');
             $table->string('status')->default('0');
             $table->string('sertifikat')->nullable();

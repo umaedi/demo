@@ -3,33 +3,33 @@
 <div class="main-content">
     <section class="section">
       <div class="section-header">
-        <h1>Submissions</h1>
+        <h1>Participants</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="/admin/dashboard">Dashboard</a></div>
-            <div class="breadcrumb-item">Submissions</div>
+            <div class="breadcrumb-item">Participants</div>
           </div>
       </div>
       <div class="card mb-3">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
-                    <select id="status" class="form-control" name="status">
-                        <option value="">--Status--</option>
-                        <option value="2">Accepted</option>
-                        <option value="1">Revised</option>
-                        <option value="3">Rejected</option>
-                        <option value="0">No Set</option>
+                    <input id="search" class="form-control" type="text" name="q" placeholder="Serach by name...">
+                </div>
+                <div class="col-md-3">
+                    <select id="presence" class="form-control" name="presence">
+                        <option value="">--Presence--</option>
+                        <option value="Online">Participant Online</option>
+                        <option value="Offline">Participant Offline</option>
                     </select>
                 </div>
-                <div class="col-md-4">
-                    <select id="topic" class="form-control" name="topic">
-                        <option value="">--Topic--</option>
-                        <option value="Biomolecular">Biomolecular</option>
-                        <option value="Genetic">Genetic</option>
-                        <option value="Degenerative Desease">Degenerative Desease</option>
+                <div class="col-md-3">
+                    <select id="type_user" class="form-control" name="type_user">
+                        <option value="">--User Type--</option>
+                        <option value="Presenter">Presenter (Oral)</option>
+                        <option value="Participant">Participant Only</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <select id="page" class="form-control" name="page">
                         <option value="">--Perpage--</option>
                         <option value="20">20</option>
@@ -42,16 +42,29 @@
       </div>
       <div class="row">
           <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
+            <div class="mb-3">
+                <button type="button" class="btn btn-primary">
+                    Participant Online <span class="badge badge-light">{{ $online }}</span>
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Participant Offline <span class="badge badge-light">{{ $offline }}</span>
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Presenter (Oral) <span class="badge badge-light">{{ $presenter }}</span>
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Participant Only <span class="badge badge-light">{{ $participant }}</span>
+                </button>
+            </div>
               <div class="card">
                 @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
                 @endif
-                <button id="loading" class="btn btn-primary btn-block btn-lg" type="button" disabled>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    Please wait...
-                </button>
                 <div class="card-body table-responsive" id="dataTable">
-                    
+                    <button id="loading" class="btn btn-primary btn-block btn-lg" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Please wait...
+                    </button>
                 </div>
             </div>
         </div>
@@ -83,17 +96,25 @@
 @endsection
 @push('js')
     <script type="text/javascript">
+        var q = '';
         var page = 1;
-        var pagination = 10;
-        var status = '';
-        var topic = '';
+        var pagination = '';
+        var presence = '';
+        var type_user = '';
         $(document).ready(function() {
             loadData();
 
-            $('#status').on('change', () => {
+            $('#search').on('keypress', function(e) {
+                if(e.which == 13) {
+                    filterTable();
+                    return false;
+                }
+            });
+
+            $('#presence').on('change', () => {
                 filterTable();
             });
-            $('#topic').on('change', () => {
+            $('#type_user').on('change', () => {
                 filterTable();
             });
             $('#page').on('change', () => {
@@ -103,8 +124,9 @@
 
         function filterTable()
         {
-            topic = $('#topic').val()
-            status = $('#status').val();
+            q = $('#search').val();
+            presence = $('#presence').val()
+            type_user = $('#type_user').val();
             pagination = $('#page').val();
             loadData();
         }
@@ -115,10 +137,11 @@
                 url: '{{ url()->current() }}',
                 data: {
                     load: 'table',
+                    q: q,
                     page: page,
-                    topic: topic,
-                    status: status,
-                    paginate: pagination
+                    presence: presence,
+                    type_user: type_user,
+                    pagination: pagination
                 }
             }
             loading(true);
@@ -144,24 +167,6 @@
     function loadPaginate(to) {
         page = to
         filterTable()
-    }
-
-    //download
-    async function downloadData(id)
-    {
-      var param = {
-        method : "GET",
-        url: '/admin/download/submission/'+id,
-        data: {
-          load: 'table'
-        }
-      }
-
-      await transAjax(param).then((result) => {
-        $('#downloadData').html(result);
-      }).catch((err) => {
-        $('#downloadData').html(`<button class="btn btn-warning btn-lg btn-block">${err.responseJSON.message}</button>`);
-      });
     }
 </script>
 @endpush

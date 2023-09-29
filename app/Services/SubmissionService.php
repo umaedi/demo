@@ -39,4 +39,9 @@ class SubmissionService
     {
         return $this->submission->query();
     }
+
+    public function count()
+    {
+        return $this->submission->count();
+    }
 }

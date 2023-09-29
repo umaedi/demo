@@ -31,11 +31,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'country',
         'no_tlp',
         'type_user',
-        'persence',
+        'presence',
         'level',
         'status',
         'sertifikat',
-        'linkzoom',
+        'zoom_id',
+        'zoom_password',
         'img',
 
     ];

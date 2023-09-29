@@ -15,7 +15,7 @@
                 <span>x</span>
             </button>
             <p class="text-justify pr-5">
-              <em><b>Information!</b> You are registered as an {{ auth()->user()->persence }} participant</em>
+              <em><b>Information!</b> You are registered as an {{ auth()->user()->presence }} participant</em>
             </p>
         </div>
       </div>
