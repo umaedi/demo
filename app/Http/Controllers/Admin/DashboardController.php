@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Services\SubmissionService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
@@ -32,7 +31,7 @@ class DashboardController extends Controller
                 $user = $user->where('presence', $request->data);
             }
 
-            $data['table'] = $user->where('level', 'user')->get();
+            $data['table'] = $user->where('level', 'user')->limit(10)->get();
             return view('admin.dashboard._data_table', $data);
         }
 
@@ -40,7 +39,7 @@ class DashboardController extends Controller
         $data['reviewers'] = $this->user->Query()->where('level', 'reviewer')->count();
         $data['participantsOffline'] = $this->user->Query()->where('level', 'user')->where('presence', 'Offline')->count();
         $data['participantsOnline'] =  $this->user->Query()->where('level', 'user')->where('presence', 'Online')->count();
-        $data['submissions'] =  $this->submission->count();
+        $data['submissions'] =  $this->submission->Query()->where('histories', '1')->count();
         $data['zoom'] = $this->user->Query()->where('presence', 'Online')->first();
         return view('admin.dashboard.index', $data);
     }

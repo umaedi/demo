@@ -10,8 +10,8 @@
     <div class="right-content w-full md:w-1/2 overflow-scroll py-10 px-4 md:p-10 flex flex-col gap-5">
         <div class="wrapper">
             <div
-                class="wrapper w-[240px] md:w-[120px] lg:w-[240px] h-[80px] md:h-[40px] lg:h-[80px] rounded-md overflow-hidden group shadow-md hover:shadow-lg">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                class="wrapper w-[240px] md:w-[120px] lg:w-[240px] h-[80px] md:h-[40px] lg:h-[80px] rounded-md overflow-hidden group">
+                <img class="w-full h-full object-cover"
                     src="{{ asset('dist') }}/img/logo-icomesh.png" alt="logo icomesh">
             </div>
         </div>

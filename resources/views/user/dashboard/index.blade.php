@@ -122,7 +122,35 @@
       </div>
       <div class="row my-3">
         <div class="col-lg-6 col-md-12 col-12 col-sm-12 mb-3">
+          @if (auth()->user()->presence == 'Online')
           <div class="card">
+            <div class="card-header">
+              <h4>ZOOM ROOM</h4>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Password</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ auth()->user()->zoom_id }}</td>
+                    <td>{{ auth()->user()->zoom_password }}</td>
+                  </tr>
+                  <tr>
+                    <td>Background Video Conference (Online)</td> 
+                    <td><a href="/user/download/template?q=vidcon">Download</a></td> 
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          @endif
+          <div class="card mt-3">
             <div class="card-header">
               <h4>DOWNLOAD TEMPLATE</h4>
             </div>
@@ -149,12 +177,7 @@
                   <tr>
                     <th scope="row">3</th>
                     <td>PPT Template</td>
-                    <td  class="text-center"><a href="/user/download/template?q=ppt" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Background Video Conference (Online)</td> 
-                    <td  class="text-center"><a href="/user/download/template?q=vidcon" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
+                    <td class="text-center"><a href="/user/download/template?q=ppt" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
                   </tr>
                   </tr>
                 </tbody>

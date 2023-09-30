@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <meta name="theme-color" content="#00bfb3"/>
+  <meta name="theme-color" content="#2691DB"/>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ $title ?? "Dashboard" }}</title>
   <link rel="stylesheet" href="{{ asset('css') }}/bootstrap.4.3.1.css">

@@ -26,7 +26,7 @@
                     <select id="type_user" class="form-control" name="type_user">
                         <option value="">--User Type--</option>
                         <option value="Presenter">Presenter (Oral)</option>
-                        <option value="Participant">Participant Only</option>
+                        <option value="Participant Only">Participant Only</option>
                     </select>
                 </div>
                 <div class="col-md-2">
@@ -60,11 +60,12 @@
                 @if (session('message'))
                 <div class="alert alert-success">{{ session('message') }}</div>
                 @endif
+                <button id="loading" class="btn btn-primary btn-block btn-lg" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Please wait...
+                </button>
                 <div class="card-body table-responsive" id="dataTable">
-                    <button id="loading" class="btn btn-primary btn-block btn-lg" type="button" disabled>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        Please wait...
-                    </button>
+           
                 </div>
             </div>
         </div>
