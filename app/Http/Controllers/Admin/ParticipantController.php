@@ -41,7 +41,7 @@ class ParticipantController extends Controller
         $data['offline'] = $this->user->Query()->where('presence', 'Offline')->count();
         $data['online'] = $this->user->Query()->where('presence', 'Online')->count();
         $data['presenter'] = $this->user->Query()->where('type_user', 'Presenter')->count();
-        $data['participant'] = $this->user->Query()->where('type_user', 'Participant')->count();
+        $data['participant'] = $this->user->Query()->where('type_user', 'Participant Only')->count();
         return view('admin.participants.index', $data);
     }
 
