@@ -40,7 +40,7 @@ class SubmissionController extends Controller
                 $submissions->whereTopic(request()->topic);
             }
 
-            $data['table'] = $submissions->paginate($page);
+            $data['table'] = $submissions->where('histories', '1')->paginate($page);
             return view('admin.submissions._data_table', $data);
         }
 
