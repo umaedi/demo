@@ -79,13 +79,6 @@
                 </div>
                 <div>
                     <p class="text-base text-mydark text-justify">
-                        Based on The Constitutional Number 14 of 2005 Article 1 Paragraph 2, lecturers are professional
-                        and scientific
-                        educators with the main task of transforming, developing, and disseminating knowledge,
-                        technology,
-                        and art through education to the community. A lecturer is required to always develop his
-                        intellect through quality research which will then have a positive impact on society.
-                        <br><br>
                         International Conference are a means for lecturers to increase their knowledge and develop their
                         knowledge through international publications. The HETI Project University of Lampung is a
                         project funded by the Asian Development Bank's foreign aid. One of the activities in this
