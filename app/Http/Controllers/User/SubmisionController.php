@@ -123,15 +123,15 @@ class SubmisionController extends Controller
 
         if ($request->file('abstract_file')) {
             $abstract_file = $request->file('abstract_file');
-            $rename_abstract_file = Str::replace(' ', '_',  auth()->user()->name) . '_Abstract_' . $data['registrasi_id'] . '.' . $abstract_file->getClientOriginalExtension();
+            $rename_abstract_file = Str::replace(' ', '_',  auth()->user()->name) . '_abstract_icomesh_' . $data['registrasi_id'] . '.' . $abstract_file->getClientOriginalExtension();
             $data['abstract_file'] = $abstract_file->storeAs('public/paper', $rename_abstract_file);
         } else {
             $data['abstract_file'] = $submission->abstract_file;
         }
 
-        if ($request->file('paper') !== null) {
+        if (!is_null($request->file('paper'))) {
             $paper = $request->file('paper');
-            $rename_paper = Str::replace(' ', '_',  auth()->user()->name) . '_Abstract_' . $data['registrasi_id'] . '.' . $paper->getClientOriginalExtension();
+            $rename_paper = Str::replace(' ', '_',  auth()->user()->name) . '_paper_icomesh_' . $data['registrasi_id'] . '.' . $paper->getClientOriginalExtension();
             $data['paper'] = $paper->storeAs('public/paper', $rename_paper);
         } else {
             $data['paper'] = $submission->paper;
