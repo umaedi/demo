@@ -27,8 +27,8 @@
                 <div data-aos="fade-up"
                     class="wrapper w-full h-40 md:h-80 lg:h-96 shadow-xl overflow-hidden group bg-fixed">
                     <img data-aos="fade-up"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                        src="{{ asset('dist/img/bg-about-event.jpg') }}" alt="About Event Poster">
+                        class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                        data-src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">
                 </div>
     
                 <!-- 1st -->
@@ -59,7 +59,10 @@
                                 <li>Abstract must be in a structured form, including (but not limited to) background,
                                     objective, methods, result, and conclusion;</li>
                                 <li>Abstract not more than 1 page (size A4);</li>
-                                <li>Keywords are limited to 5 words.</li>
+                                <li>Keywords are limited to 5 words;</li>
+                                <li>Full Paper Submission Deadline : 12 Des 2023;</li>
+                                <li>1 Presentation File consist of 5 Pages inculding : Background, Literature Review, Methods, Results and Discussion;</li>
+                                <li>Duration for presentation : 12 Minutes (10 min Presentation + 2 min QnA session).</li>
                             </ol> <br>
                             <p class="text-sm md:text-base">Please save your abstract in Microsoft Word file, with this
                                 following file name instruction:</p>
@@ -79,22 +82,6 @@
                             </ol>
                         </div>
                         <div>
-                            <p class="font-semibold text-base md:text-lg mb-2">Time and Place</p>
-                            <ol class="list-inside list-decimal text-sm md:text-base text-justify">
-                                <li>Tuesday-Wednesday, November 28-29, 2023.
-                                    <ul class="list-inside list-disc text-sm md:text-base text-justify indent-5">
-                                        <li>November 28th, 2023 : Conference and Oral Presentation.</li>
-                                        <li>November 29th, 2023 : Conference and Oral Presentation.</li>
-                                    </ul>
-                                </li>
-                                <li>Location : Bandar Lampung (Offline) and Online
-                                    via Zoom Meeting.</li>
-                                <li>3rd November 2023 : Abstract Submission Deadline.</li>
-                                <li>21st November 2023 : Participant Registration Deadline.</li>
-                                <li>13th December 2023 : Full Paper Submission Deadline.</li>
-                            </ol>
-                        </div>
-                        <div>
                             <p class="font-semibold text-base md:text-lg mb-2">Participant Registration</p>
                             <p class="text-sm md:text-base">PIU Heti Project UNILA will announce the activities of the
                                 International Conference on Medical Science and Health (ICOMESH) through the
@@ -102,7 +89,7 @@
                                 ICOMESH website and upload all the required documents.</p>
                         </div>
     
-                        <a href="{{ asset('dist/docs/ICOMESH_2023_Template.docx') }}">
+                        <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
                             <button type="button"
                                 class="md:w-1/3 py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                 Download Template

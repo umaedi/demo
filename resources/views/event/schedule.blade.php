@@ -28,8 +28,8 @@
                 <div data-aos="fade-up"
                     class="wrapper w-full h-40 md:h-80 lg:h-96 shadow-xl overflow-hidden group bg-fixed">
                     <img data-aos="fade-up"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                        src="{{ asset('dist/img/bg-about-event.jpg') }}" alt="About Event Poster">
+                        class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                        data-src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">
                 </div>
     
                 <!-- 1st -->
@@ -40,10 +40,29 @@
                     </h1>
     
                     <hr class="border-disabled">
-                    <div class="flex flex-col gap-8">
+    
+                    <div>
+                        <p class="font-semibold text-base md:text-lg mb-2">Time and Place</p>
+                        <ol class="list-inside list-decimal text-sm md:text-base text-justify">
+                            <li>Tuesday-Wednesday, November 28-29, 2023.
+                                <ul class="list-inside list-disc text-sm md:text-base text-justify indent-5">
+                                    <li>November 28th, 2023 : Conference and Oral Presentation.</li>
+                                    <li>November 29th, 2023 : Conference and Oral Presentation.</li>
+                                </ul>
+                            </li>
+                            <li>Location : Bandar Lampung (Offline) and Online
+                                via Zoom Meeting.</li>
+                            <li>Zoom ID will be available in Participant Dashboard Page.</li>
+                            <li>3rd November 2023 : Abstract Submission Deadline.</li>
+                            <li>21st November 2023 : Participant Registration Deadline.</li>
+                            <li>12th December 2023 : Full Paper Submission Deadline.</li>
+                        </ol>
+                    </div>
+    
+    
+                    <!-- <div class="flex flex-col gap-8">
                         <div class="overflow-x-auto">
                             <table class="table">
-                                <!-- head -->
                                 <thead>
                                     <tr>
                                         <th>Date</th>
@@ -98,7 +117,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

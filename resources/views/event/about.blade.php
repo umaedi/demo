@@ -28,8 +28,8 @@
                 <div data-aos="fade-up"
                     class="wrapper w-full h-40 md:h-80 lg:h-96 shadow-xl overflow-hidden group bg-fixed">
                     <img data-aos="fade-up"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                        src="{{ asset('dist/img/bg-about-event.jpg') }}" alt="About Event Poster">
+                        class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                        data-src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">
                 </div>
     
                 <!-- 1st -->
@@ -43,13 +43,6 @@
                     <hr class="border-disabled">
                     <div class="flex flex-col gap-8">
                         <p class="text-mydark text-justify text-sm md:text-base">
-                            Based on The Constitutional Number 14 of 2005 Article 1 Paragraph 2, lecturers are professional
-                            and scientific
-                            educators with the main task of transforming, developing, and disseminating knowledge,
-                            technology,
-                            and art through education to the community. A lecturer is required to always develop his
-                            intellect through quality research which will then have a positive impact on society.
-                            <br><br>
                             International Conference are a means for lecturers to increase their knowledge and develop their
                             knowledge through international publications. The HETI Project University of Lampung is a
                             project funded by the Asian Development Bank's foreign aid. One of the activities in this
@@ -62,7 +55,7 @@
                             also taken because it corresponds to the number of cases of non-communicable diseases caused by
                             genetic and degenerative changes in Indonesia.
                         </p>
-                        <div>
+                        <!-- <div>
                             <p class="font-semibold text-base md:text-lg mb-2">Objectives</p>
                             <p class="text-sm md:text-base">The objectives of this activity are:</p>
                             <ol class="list-inside list-decimal text-sm md:text-base text-justify">
@@ -78,8 +71,8 @@
                                 <li>Achieve established HETI project KPIs to increase the number of international
                                     publications.</li>
                             </ol>
-                        </div>
-                        <div>
+                        </div> -->
+                        <!-- <div>
                             <p class="font-semibold text-base md:text-lg mb-2">Types of Activities</p>
                             <ol class="list-inside list-decimal text-sm md:text-base text-justify">
                                 <li>The implementation of the activity is the implementation of an international conference
@@ -120,16 +113,7 @@
                                 </li>
     
                             </ol>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-base md:text-lg mb-2">Outcomes</p>
-                            <p class="text-sm md:text-base">The outputs of this activity are:</p>
-                            <ol class="list-inside list-decimal text-sm md:text-base text-justify">
-                                <li>Activity reports.
-                                </li>
-                                <li>Proceedings indexed and/or ISBN.</li>
-                            </ol>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="wrapper w-fit">
                         <a href="/register">
