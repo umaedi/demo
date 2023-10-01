@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 use App\Services\UserService;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Services\SubmissionService;
 use Illuminate\Support\Facades\Hash;
 
 class ReviewerController extends Controller
 {
     public $user;
-    public function __construct(UserService $userService)
+    public $submission;
+    public function __construct(UserService $userService, SubmissionService $submissionService)
     {
         $this->user = $userService;
+        $this->submission = $submissionService;
     }
     public function index()
     {
@@ -60,5 +63,18 @@ class ReviewerController extends Controller
 
         DB::commit();
         return back()->with('msg_store', 'Reviewer has ben created!');
+    }
+
+    public function show($id)
+    {
+        if (request()->ajax()) {
+            $data['reviewer'] = 'Aadada';
+            $data['table'] = $this->submission->Query()->where('reviewer_id', $id)->where('histories', '1')->get();
+            return view('admin.reviewers._data_table_submission', $data);
+        }
+
+        $data['title'] = "Admin | Reviewer Show";
+        $data['reviewer'] = $this->user->find($id);
+        return view('admin.reviewers.show', $data);
     }
 }

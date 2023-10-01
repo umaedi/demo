@@ -97,9 +97,9 @@ class SubmissionController extends Controller
 
         if ($data['status'] == "1") {
             $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 1]);
-            $data['loa'] = strtoupper(Str::random(16));
         } elseif ($data['status'] == "2") {
             $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 2]);
+            $data['loa'] = strtoupper(Str::random(16));
         } else {
             $this->submission->Query()->where('registrasi_id', $submission->registrasi_id)->update(['acc' => 3]);
         }

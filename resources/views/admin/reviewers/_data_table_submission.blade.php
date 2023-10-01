@@ -2,20 +2,28 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">No Tlp/WhatsApp</th>
-            <th scope="col">Email</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
         @forelse ($table as $key => $tb)
             <tr>
-                <td>{{ $table->firstItem() + $key}}</td>
-                <td>{{ $tb->name }}</td>
-                <td>{{  $tb->no_tlp  }}</td>
-                <td>{{  $tb->email  }}</td>
-                <td><a href="/admin/reviewer/show/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
+                <td>{{ $key + 1 }}</td>
+                <td>{{ $tb->title }}</td>
+                @if ($tb->status == '1')
+                <td><span class="badge badge-warning">Revised</span></td>
+                @elseif($tb->status == '2')
+                <td><span class="badge badge-success">Accpeted</span></td>
+                @elseif($tb->status == '3')
+                <td><span class="badge badge-danger">Rejected</span></td>
+                @else
+                <td><span class="badge badge-warning">No set</span></td>
+                @endif
+                <td>
+                    <a href="/admin/submission/show/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
+                </td>
             </tr>
         @empty
             <tr>
@@ -47,11 +55,6 @@
         @endforelse
     </tbody>
 </table>
-<div class="container">
-    <div class="row justify-content-center">
-        {{ $table->links('vendor.pagination.stisla') }}
-    </div>
-</div>
 
 
 

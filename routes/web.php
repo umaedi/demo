@@ -59,6 +59,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //route for reviewers
     Route::get('/reviewers', [Admin\ReviewerController::class, 'index']);
     Route::post('/create_new_reviewer', [Admin\ReviewerController::class, 'store']);
+    Route::get('/reviewer/show/{id}', [Admin\ReviewerController::class, 'show']);
 
     //route for participants
     Route::get('/participants', [Admin\ParticipantController::class, 'index']);
