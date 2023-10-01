@@ -65,7 +65,7 @@
                     <!-- Password -->
                     <div class="form-control w-full">
                         <label class="label" for="password">
-                            <span class="label-text">Password</span>
+                            <span class="label-text">Password (min 6 chracter)</span>
                         </label>
                         <input id="password" name="password" value="{{ old('password') }}" type="password"  autocomplete="current-password" required
                         pattern=".{6,}" placeholder="********"
@@ -193,7 +193,7 @@
                         <select name="type_user" class="peer select select-bordered select-accent @error('type_user')  invalid:border-red-500 @enderror" required>
                             <option disabled selected>Please select...</option>
                             <option value="Participant Only">Participant Only</option>
-                            <option value="Presenter">Presenter (Oral/Poster)</option>
+                            <option value="Presenter">Presenter (Oral)</option>
                         </select>
                         @error('type_user')
                         <label class=" label invisible peer-invalid:visible text-red-500 font-light text-xs
