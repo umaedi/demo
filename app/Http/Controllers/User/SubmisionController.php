@@ -38,14 +38,14 @@ class SubmisionController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'title'     => 'required|max:255',
-            'abstract'  => 'required',
-            'abstract_file'  => 'required|mimes:pdf,docx|max:2048',
-            'keyword'   => 'required|max:255',
-            'topic'     => 'required|max:255',
-            'author'     => 'required|max:255',
-        ]);
+        // $this->validate($request, [
+        //     'title'     => 'required|max:255',
+        //     'abstract'  => 'required',
+        //     'abstract_file'  => 'required|mimes:pdf,docx,doc|max:2048',
+        //     'keyword'   => 'required|max:255',
+        //     'topic'     => 'required|max:255',
+        //     'author'     => 'required|max:255',
+        // ]);
 
         $data = $request->except('_token');
         $data['user_id'] = auth()->user()->id;
@@ -57,12 +57,12 @@ class SubmisionController extends Controller
 
         $data['registrasi_id'] = strtoupper(Str::random(16));
         $abstract_file = $request->file('abstract_file');
-        $rename_abstract_file = Str::replace(' ', '_',  auth()->user()->name) . '_Abstract_' . $data['registrasi_id'] . '.' . $abstract_file->getClientOriginalExtension();
+        $rename_abstract_file = Str::replace(' ', '_',  auth()->user()->name) . '_abstract_icomesh' . $data['registrasi_id'] . '.' . $abstract_file->getClientOriginalExtension();
         $data['abstract_file'] = $abstract_file->storeAs('public/paper', $rename_abstract_file);
 
-        if ($request->file('paper')) {
+        if (!is_null($request->file('paper'))) {
             $paper = $request->file('paper');
-            $rename_paper = Str::replace(' ', '_',  auth()->user()->name) . '_Abstract_' . $data['registrasi_id'] . '.' . $paper->getClientOriginalExtension();
+            $rename_paper = Str::replace(' ', '_',  auth()->user()->name) . '_paper_icomesh' . $data['registrasi_id'] . '.' . $paper->getClientOriginalExtension();
             $data['paper'] = $paper->storeAs('public/paper', $rename_paper);
         }
 
