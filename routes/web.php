@@ -100,6 +100,7 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/submission/show/{id}', [User\SubmisionController::class, 'show']);
     Route::get('/submission/edit/{id}', [User\SubmisionController::class, 'edit']);
     Route::post('/submission/update/{id}', [User\SubmisionController::class, 'update']);
+    Route::get('/submissions/delete/{id}', [User\SubmisionController::class, 'delete']);
 
     Route::put('/persentation/ppt/{id}', [User\PersentationController::class, 'ppt']);
     Route::put('/persentation/paper/{id}', [User\PersentationController::class, 'paper']);

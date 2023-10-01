@@ -38,14 +38,14 @@ class SubmisionController extends Controller
 
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'title'     => 'required|max:255',
-        //     'abstract'  => 'required',
-        //     'abstract_file'  => 'required|mimes:pdf,docx,doc|max:2048',
-        //     'keyword'   => 'required|max:255',
-        //     'topic'     => 'required|max:255',
-        //     'author'     => 'required|max:255',
-        // ]);
+        $this->validate($request, [
+            'title'     => 'required|max:255',
+            'abstract'  => 'required',
+            'abstract_file'  => 'required|mimes:pdf,docx,doc|max:2048',
+            'keyword'   => 'required|max:255',
+            'topic'     => 'required|max:255',
+            'author'     => 'required|max:255',
+        ]);
 
         $data = $request->except('_token');
         $data['user_id'] = auth()->user()->id;
@@ -146,5 +146,11 @@ class SubmisionController extends Controller
         }
         DB::commit();
         return redirect('/user/submission')->with('message', 'Submission has ben updated');
+    }
+
+    public function delete($id)
+    {
+        $this->submission->delete($id);
+        return redirect('/user/submission')->with('msg_delete', 'Submissions has been deleted!');
     }
 }

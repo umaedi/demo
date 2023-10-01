@@ -44,4 +44,10 @@ class SubmissionService
     {
         return $this->submission->count();
     }
+
+    public function delete($id)
+    {
+        $submissions = $this->submission->where('registrasi_id', $id)->delete();
+        return $submissions;
+    }
 }

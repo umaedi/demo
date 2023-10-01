@@ -28,6 +28,9 @@
             @if($errors->has('paper'))
                 <div class="alert alert-warning">{{ $errors->first('paper') }}</div>
             @endif
+            @if (session('msg_delete'))
+            <div class="alert alert-warning">{{ session('msg_delete') }}</div>
+            @endif
             <div class="card">
                 <div class="card-header">
                     <h4>SUBMISSION</h4>
