@@ -15,6 +15,7 @@
             @if ($submission->status ?? '')
             <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadPPT">UPLOAD PERSENTATION</button>
             <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadPaper">UPLOAD FULL PAPER</button>
+            <button class="btn btn-danger mb-3">Withdraw</button>
             @endif
             @if (session('msg.persentation'))
             <div class="alert alert-success">{{ session('msg.persentation') }}</div>
