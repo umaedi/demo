@@ -195,8 +195,8 @@
                 <!-- Speaker Card 1 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="./dist/img/speaker-1.png" alt="photo of the speaker">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="./dist/img/speaker-1.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-1 flex flex-col justify-center items-center">
                         <p class="font-bold text-primary text-xl">Speaker 1</p>
@@ -211,8 +211,8 @@
                 <!-- Speaker Card 2 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="./dist/img/speaker-2.png" alt="photo of the speaker">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="./dist/img/speaker-2.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-1 flex flex-col justify-center items-center">
                         <p class="font-bold text-primary text-xl">Speaker 2</p>
@@ -229,8 +229,8 @@
                 <!-- Speaker Card 3 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="./dist/img/speaker-3.png" alt="photo of the speaker">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="./dist/img/speaker-3.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-1 flex flex-col justify-center items-center">
                         <p class="font-bold text-primary text-xl">Speaker 3</p>
@@ -246,8 +246,8 @@
                 <!-- Speaker Card 4 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="./dist/img/speaker-4.png" alt="photo of the speaker">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="./dist/img/speaker-4.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-1 flex flex-col justify-center items-center">
                         <p class="font-bold text-primary text-xl">Speaker 4</p>

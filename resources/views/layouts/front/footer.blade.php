@@ -108,8 +108,8 @@
         <div class="wrapper w-full sm:w-1/4">
             <div
                 class="wrapper w-[240px] md:w-[120px] lg:w-[240px] h-[80px] md:h-[40px] lg:h-[80px] rounded-md overflow-hidden group shadow-md hover:shadow-lg">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                    src="{{ asset('dist') }}/img/logo-icomesh.png" alt="logo icomesh">
+                <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                    data-src="{{ asset('dist') }}/img/logo-icomesh.png" alt="logo icomesh">
             </div>
         </div>
         <!-- Logo 2 -->

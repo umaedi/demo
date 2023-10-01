@@ -17,6 +17,7 @@
 
     <script src="{{ asset('aos') }}/dist/aos.js"></script>
     <script src="{{ asset('dist') }}/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" async=""></script>
     @stack('js')
 </body>
 

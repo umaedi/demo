@@ -16,7 +16,7 @@
                 <td>{{ $tb->name }}</td>
                 <td>{{ $tb->institution }}</td>
                 <td>{{ $tb->country }}</td>
-                <td>{{ $tb->persence }}</td>
+                <td>{{ $tb->presence }}</td>
                 <td><a href="/admin/participant/show/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
             </tr>
         @empty
