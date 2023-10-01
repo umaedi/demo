@@ -19,7 +19,7 @@
                 @if ($tb->acc == 1)
                 <td><span class="badge badge-warning">Revised</span></td>
                 @elseif($tb->acc == 2)
-                <td><span class="badge badge-success">Accpeted</span></td>
+                <td><span class="badge badge-success">Accepted</span></td>
                 @elseif($tb->acc == 3)
                 <td><span class="badge badge-danger">Rejected</span></td>
                 @else
