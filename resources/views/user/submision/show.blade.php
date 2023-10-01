@@ -12,8 +12,8 @@
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
-          {{-- <button class="btn btn-danger mb-3">Withdraw</button>
-          <button class="btn btn-warning mb-3">Delete</button> --}}
+          <button class="btn btn-danger mb-3">Withdraw</button>
+          <button class="btn btn-warning mb-3">Delete</button>
           @if (session('msg.persentation'))
           <div class="alert alert-success">{{ session('msg.persentation') }}</div>
           @endif
