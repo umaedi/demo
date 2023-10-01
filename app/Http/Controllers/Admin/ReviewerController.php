@@ -31,6 +31,7 @@ class ReviewerController extends Controller
             $data['table'] = $users->where('level', 'reviewer')->paginate($page);
             return view('admin.reviewers._data_table', $data);
         }
+
         $data['title'] = 'Admin | Reviewers';
         return view('admin.reviewers.index', $data);
     }

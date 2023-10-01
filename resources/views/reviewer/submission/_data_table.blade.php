@@ -25,7 +25,7 @@
                 @else
                 <td><span class="badge badge-warning">No set</span></td>
                 @endif
-                <td><a href="/admin/submission/edit/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
+                <td><a href="/reviewer/submission/edit/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
             </tr>
         @empty
             <tr>

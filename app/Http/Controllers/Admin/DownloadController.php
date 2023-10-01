@@ -15,8 +15,8 @@ class DownloadController extends Controller
     public function index($id)
     {
         if (request()->ajax()) {
-            $data['data'] = $this->submission->find($id);
-            return view('modal._data_download', $data);
+            $data =  $this->submission->Query()->where('registrasi_id', $id)->latest()->first();
+            return view('modal._data_download', compact('data'));
         }
     }
 }

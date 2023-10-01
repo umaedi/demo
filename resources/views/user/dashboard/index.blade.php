@@ -120,9 +120,10 @@
         </a>
         @endif
       </div>
+
+      @if (auth()->user()->presence == 'Online' && auth()->user()->type_user == 'Participant')
       <div class="row my-3">
         <div class="col-lg-6 col-md-12 col-12 col-sm-12 mb-3">
-          @if (auth()->user()->presence == 'Online')
           <div class="card">
             <div class="card-header">
               <h4>ZOOM ROOM</h4>
@@ -149,7 +150,58 @@
               </table>
             </div>
           </div>
-          @endif
+        </div>
+        <div class="col-lg-6 col-md-12 col-12 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>CERTIFICATE</h4>
+              @if (auth()->user()->sertifikat !== NULL)
+              <div class="card-header-action">
+                <a href="/user/download-sertifikat" class="btn btn-primary">Download</a>
+              </div> 
+              @endif
+            </div>
+            <div class="card-body">
+              @if (auth()->user()->sertifikat !== NULL)
+              <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" 		alt="Sertifikat">
+              @else
+              <img data-src="{{ asset('sertifikat/sertifikat.png') }}" class="lazyload img-fluid" alt="Sertifikat">
+              @endif
+            </div>
+          </div>
+        </div>
+      </div>  
+      @endif
+
+      @if (auth()->user()->presence == 'Online' && auth()->user()->type_user == 'Presenter')
+      <div class="row my-3">
+        <div class="col-lg-6 col-md-12 col-12 col-sm-12 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <h4>ZOOM ROOM</h4>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Password</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ auth()->user()->zoom_id }}</td>
+                    <td>{{ auth()->user()->zoom_password }}</td>
+                  </tr>
+                  <tr>
+                    <td>Background Video Conference (Online)</td> 
+                    <td><a href="/user/download/template?q=vidcon">Download</a></td> 
+                  </tr>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           <div class="card mt-3">
             <div class="card-header">
               <h4>DOWNLOAD TEMPLATE</h4>
@@ -205,8 +257,92 @@
           </div>
         </div>
       </div>
-    </section>
-  </div>
+      @endif
+      @if (auth()->user()->presence == 'Offline' && auth()->user()->type_user == 'Participant')
+      <div class="row my-3">
+      <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>CERTIFICATE</h4>
+            @if (auth()->user()->sertifikat !== NULL)
+            <div class="card-header-action">
+              <a href="/user/download-sertifikat" class="btn btn-primary">Download</a>
+            </div> 
+            @endif
+          </div>
+          <div class="card-body">
+            @if (auth()->user()->sertifikat !== NULL)
+            <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" alt="Sertifikat">
+            @else
+            <img data-src="{{ asset('sertifikat/sertifikat.png') }}" class="lazyload img-fluid" alt="Sertifikat">
+            @endif
+          </div>
+        </div>
+      </div>
+      </div>
+      @endif
+
+      @if (auth()->user()->presence == 'Offline' && auth()->user()->type_user == 'Presenter')
+      <div class="row my-3">
+      <div class="col-lg-6 col-md-12 col-12 col-sm-12 mb-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>DOWNLOAD TEMPLATE</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">File Name</th>
+                  <th scope="col">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Abstract Template</td>
+                  <td  class="text-center"><a href="/user/download/template?q=abstract" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Full Paper Template</td>
+                  <td  class="text-center"><a href="/user/download/template?q=full_paper" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>PPT Template</td>
+                  <td class="text-center"><a href="/user/download/template?q=ppt" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
+                </tr>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-12 col-sm-12 mb-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>CERTIFICATE</h4>
+            @if (auth()->user()->sertifikat !== NULL)
+            <div class="card-header-action">
+              <a href="/user/download-sertifikat" class="btn btn-primary">Download</a>
+            </div> 
+            @endif
+          </div>
+          <div class="card-body">
+            @if (auth()->user()->sertifikat !== NULL)
+            <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" alt="Sertifikat">
+            @else
+            <img data-src="{{ asset('sertifikat/sertifikat.png') }}" class="lazyload img-fluid" alt="Sertifikat">
+            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+    @endif
+  </section>
+</div>
 @endsection
 @push('js')
     <script type="text/javascript">

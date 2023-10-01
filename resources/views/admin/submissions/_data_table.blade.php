@@ -16,7 +16,7 @@
                 <td>{{ $tb->title }}</td>
                 <td>{{  $tb->topic  }}</td>
                 <td>{{ \Carbon\Carbon::parse($tb->created_at)->isoFormat('D MMMM Y') }}</td>
-                @if ($tb->status == '1')
+                @if ($tb->acc == 1)
                 <td><span class="badge badge-warning">Revised</span></td>
                 @elseif($tb->acc == 2)
                 <td><span class="badge badge-success">Accpeted</span></td>
@@ -27,7 +27,7 @@
                 @endif
                 <td>
                     <a href="/admin/submissions/show/{{ $tb->registrasi_id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="downloadData('{{ $tb->id }}')"><i class="fa fa-download"></i></button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="downloadData('{{ $tb->registrasi_id }}')"><i class="fa fa-download"></i></button>
                 </td>
             </tr>
         @empty
