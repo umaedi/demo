@@ -7869,24 +7869,12 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 8rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-28 {
-  margin-top: 7rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
-.mt-36 {
-  margin-top: 9rem;
-}
-
 .mt-40 {
   margin-top: 10rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .box-border {
@@ -8054,6 +8042,11 @@ details.collapse summary::-webkit-details-marker {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .w-3 {
@@ -9136,6 +9129,11 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
+.bg-disabled {
+  --tw-bg-opacity: 1;
+  background-color: rgb(171 180 196 / var(--tw-bg-opacity));
+}
+
 .bg-mydark {
   --tw-bg-opacity: 1;
   background-color: rgb(52 55 65 / var(--tw-bg-opacity));
@@ -9158,16 +9156,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 250 / var(--tw-bg-opacity));
-}
-
-.bg-base-200 {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2) / var(--tw-bg-opacity));
-}
-
-.bg-disabled {
-  --tw-bg-opacity: 1;
-  background-color: rgb(171 180 196 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\/dist\/img\/bg-home-hero\.png\'\)\] {
@@ -9412,10 +9400,6 @@ details.collapse summary::-webkit-details-marker {
 
 .text-end {
   text-align: end;
-}
-
-.indent-4 {
-  text-indent: 1rem;
 }
 
 .indent-5 {
@@ -10370,10 +10354,6 @@ details.collapse summary::-webkit-details-marker {
 
   .md\:gap-20 {
     gap: 5rem;
-  }
-
-  .md\:gap-52 {
-    gap: 13rem;
   }
 
   .md\:rounded-xl {
