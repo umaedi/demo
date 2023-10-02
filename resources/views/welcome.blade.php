@@ -15,7 +15,7 @@
                         <h1 class="text-black uppercase font-bold text-3xl sm:text-5xl">INTERNATIONAL
                             CONFERENCE ON
                             MEDICAL SCIENCE AND
-                            HEALTH (ICOMESHX)</h1>
+                            HEALTH (ICOMESH)</h1>
                         <h3 class="text-mydark text-base lg:text-2xl">Topic : Biomolecular, Genetic, and Degenerative
                             Desease
                         </h3>
