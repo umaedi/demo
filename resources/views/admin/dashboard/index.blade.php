@@ -71,6 +71,7 @@
           <h4>ZOOM</h4>
         </div>
         <div class="card-body">
+         
         <form action="/admin/zoom/update" method="POST">
           @csrf
           <div class="form-group">
