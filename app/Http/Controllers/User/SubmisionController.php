@@ -111,7 +111,7 @@ class SubmisionController extends Controller
             return back()->with(['msg' => 'Your submission is still in queue!']);
         }
 
-        if ($submission->acc == 2 || $submission->acc == 3) {
+        if (in_array($submission->acc, [2, 3, 4])) {
             return back();
         }
 
@@ -146,6 +146,19 @@ class SubmisionController extends Controller
         }
         DB::commit();
         return redirect('/user/submission')->with('message', 'Submission has ben updated');
+    }
+
+    public function withdraw($id)
+    {
+        DB::beginTransaction();
+        try {
+            $this->submission->withdraw($id);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+
+        DB::commit();
+        return back()->with('msg_withdraw', 'You just resigned!');
     }
 
     public function delete($id)

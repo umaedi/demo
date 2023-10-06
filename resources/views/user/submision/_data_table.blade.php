@@ -22,6 +22,8 @@
                 <td><span class="badge badge-success">Accepted</span></td>
                 @elseif($tb->acc == 3)
                 <td><span class="badge badge-danger">Rejected</span></td>
+                @elseif($tb->acc == 4)
+                <td><span class="badge badge-danger">Rejected</span></td>
                 @else
                 <td><span class="badge badge-warning">No set</span></td>
                 @endif

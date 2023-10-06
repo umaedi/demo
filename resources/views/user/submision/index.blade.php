@@ -15,7 +15,7 @@
             @if ($submission->status ?? '')
             <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadPPT">UPLOAD PERSENTATION</button>
             <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadPaper">UPLOAD FULL PAPER</button>
-            <button class="btn btn-danger mb-3">Withdraw</button>
+            <a onclick="return confirm('Are you sure?')" href="/user/submissions/withdraw/{{ request()->id }}" class="btn btn-danger mb-3">Withdraw</a>
             @endif
             @if (session('msg.persentation'))
             <div class="alert alert-success">{{ session('msg.persentation') }}</div>
@@ -30,7 +30,7 @@
                 <div class="alert alert-warning">{{ $errors->first('paper') }}</div>
             @endif
             @if (session('msg_delete'))
-            <div class="alert alert-warning">{{ session('msg_delete') }}</div>
+            <div class="alert alert-success">{{ session('msg_delete') }}</div>
             @endif
             <div class="card">
                 <div class="card-header">

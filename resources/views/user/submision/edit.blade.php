@@ -170,40 +170,10 @@
                   </div>
               </div>
             </div>
-            @if ($submission->acc !== 2 && $submission->acc !== 3)
+            @if (!in_array($submission->acc, [2,3,4]))
             <button type="submit" class="btn btn-primary mt-3">UPDATE</button>
             @endif
-            </form>
-            {{-- @if ($submission->status == '2')
-            <div class="card my-3">
-              <div class="alert alert-primary"><h6>UPLOAD PERSENTATION & FULL PAPER</h6></div>
-                <div class="card-body">
-                  <form action="/user/persentation/{{ $submission->id }}" method="POST" enctype="multipart/form-data">
-                    @method('PUT')
-                    @csrf
-                    <div class="form-group">
-                      <label for="persentation">Persentation</label>
-                      <input type="file" class="form-control @error('ppt') is-invalid @enderror" id="persentation" name="ppt">
-                      @error('ppt')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
-                      @enderror
-                    </div>
-                    <div class="form-group">
-                      <label for="persentation">Full Paper</label>
-                      <input type="file" class="form-control @error('full_paper') is-invalid @enderror" id="persentation" name="full_paper">
-                      @error('full_paper')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
-                      @enderror
-                    </div>
-                    <button type="submit" class="btn btn-primary">SUBMIT</button>
-                  </form>
-              </div>
-            </div>
-            @endif --}}
+          </form>
         </div>
     </div>
 </div>

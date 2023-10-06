@@ -47,7 +47,13 @@ class SubmissionService
 
     public function delete($id)
     {
-        $submissions = $this->submission->where('registrasi_id', $id)->delete();
+        $submissions = $this->submission->where('registrasi_id', $id)->where('user_id', auth()->user()->id)->delete();
         return $submissions;
+    }
+
+    public function withdraw($id)
+    {
+        $submission = $this->submission->where('user_id', auth()->user()->id)->where('registrasi_id', $id)->update(['status' => '4', 'acc' => 4]);
+        return $submission;
     }
 }

@@ -101,6 +101,7 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/submission/edit/{id}', [User\SubmisionController::class, 'edit']);
     Route::post('/submission/update/{id}', [User\SubmisionController::class, 'update']);
     Route::get('/submissions/delete/{id}', [User\SubmisionController::class, 'delete']);
+    Route::get('/submissions/withdraw/{id}', [User\SubmisionController::class, 'withdraw']);
 
     Route::put('/persentation/ppt/{id}', [User\PersentationController::class, 'ppt']);
     Route::put('/persentation/paper/{id}', [User\PersentationController::class, 'paper']);

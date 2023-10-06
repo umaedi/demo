@@ -12,10 +12,13 @@
       </div>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 col-sm-12 mb-3">
-          <button class="btn btn-danger mb-3">Withdraw</button>
-          <button onclick="deteletSubmissions()" class="btn btn-warning mb-3">Delete</button>
+          <a onclick="return confirm('Are you sure?')" href="/user/submissions/withdraw/{{ request()->id }}" class="btn btn-danger mb-3">Withdraw</a>
+          <a onclick="return confirm('Delete this submissions?')" href="/user/submissions/delete/{{ request()->id }}" class="btn btn-warning mb-3">Delete</a>
           @if (session('msg.persentation'))
           <div class="alert alert-success">{{ session('msg.persentation') }}</div>
+          @endif
+          @if (session('msg_withdraw'))
+          <div class="alert alert-success">{{ session('msg_withdraw') }}</div>
           @endif
             <div class="card">
                 <div class="card-body">
@@ -59,6 +62,7 @@
 @endsection
 @push('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.6.2/tinymce.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/sweetalert.min.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         loadData();
@@ -96,18 +100,5 @@
 
     tinymce.init(editor_config);
 
-    // Mendapatkan URL saat ini
-    var currentUrl = window.location.href;
-
-    // Memisahkan URL berdasarkan tanda "/"
-    var segments = currentUrl.split('/');
-
-    // Mengambil elemen terakhir setelah tanda "/"
-    var lastSegment = segments[segments.length - 1];
-
-    function deteletSubmissions()
-    {
-      window.location.href = "/user/submissions/delete/" + lastSegment;
-    }
 </script>
 @endpush
