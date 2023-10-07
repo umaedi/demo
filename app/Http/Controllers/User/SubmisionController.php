@@ -51,7 +51,7 @@ class SubmisionController extends Controller
         $data['user_id'] = auth()->user()->id;
 
         $cekSubmission = $this->submission->Query()->where('user_id', auth()->user()->id)->latest()->first();
-        if ($cekSubmission && $cekSubmission->status !== "2" && $cekSubmission->acc == null) {
+        if ($cekSubmission && $cekSubmission->status !== "2") {
             return back()->with('msgQueue', 'Sepertinya Anda masih memiliki submission yang harus di perbaiki!');
         }
 
@@ -73,6 +73,7 @@ class SubmisionController extends Controller
             DB::rollBack();
             return throw $th;
         }
+
         DB::commit();
         return redirect('/user/submission')->with('message', 'Submission has ben created');
     }
@@ -111,7 +112,7 @@ class SubmisionController extends Controller
             return back()->with(['msg' => 'Your submission is still in queue!']);
         }
 
-        if (in_array($submission->acc, [2, 3, 4])) {
+        if ($submission->acc !== 1) {
             return back();
         }
 

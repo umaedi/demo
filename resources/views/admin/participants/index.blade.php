@@ -169,5 +169,18 @@
         page = to
         filterTable()
     }
+
+    function persence(id)
+    {
+        loadData();
+        var param = {
+            method: 'POST',
+            url: '/admin/persence/user/' + id,
+        }
+
+        transAjax(param).then((res) => {
+            console.log('ok');
+        });
+    }
 </script>
 @endpush

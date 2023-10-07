@@ -27,4 +27,10 @@ class UserService
     {
         return $this->user->create($data);
     }
+
+    public function update($participant, $status)
+    {
+        $model = $participant->update(['status' => $status]);
+        return $model;
+    }
 }

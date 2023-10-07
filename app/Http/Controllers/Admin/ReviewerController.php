@@ -22,7 +22,7 @@ class ReviewerController extends Controller
     {
         if (request()->ajax()) {
             $users = $this->user->Query();
-            $page = request('pagination', 1);
+            $page = request('pagination', 10);
 
             if (request()->q) {
                 $users->where('name', 'like', '%' . request()->q . '%');

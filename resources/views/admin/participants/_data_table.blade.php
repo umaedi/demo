@@ -17,7 +17,19 @@
                 <td>{{  $tb->no_tlp  }}</td>
                 <td>{{  $tb->institution  }}</td>
                 <td>{{  $tb->country  }}</td>
-                <td><a href="/admin/participant/show/{{ $tb->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
+                <td>
+                    <a href="/admin/participant/show/{{ $tb->id }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
+                    @if ($tb->status == '1' || $tb->status == '2')
+                    <button class="btn btn-success"><i class="fa fa-check"></i></button>
+                    @else
+                    <button onclick="persence('{{ $tb->id }}')" class="btn btn-warning">Persence</button>
+                    @endif
+                    @if ($tb->status == '2')
+                    <button class="btn btn-success"><i class="fa fa-check"></i></button>
+                    @else
+                    <button onclick="persence('{{ $tb->id }}')" class="btn btn-warning">Persence</button>
+                    @endif
+                </td>
             </tr>
         @empty
             <tr>

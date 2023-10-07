@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Services\UserService;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
+use App\Http\Controllers\Controller;
 
 class ParticipantController extends Controller
 {
@@ -54,5 +55,27 @@ class ParticipantController extends Controller
         $data['title'] = "Admin | Show participant";
         $data['participant'] = $this->user->find($id);
         return view('admin.participants.show', $data);
+    }
+
+    public function persence($id)
+    {
+        $participant = $this->user->find($id);
+
+        if ($participant->status == '0') {
+            $status = '1';
+        } else {
+            $status = '2';
+        }
+
+        DB::beginTransaction();
+        try {
+            $this->user->update($participant, $status);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return $this->error($th->getMessage());
+        }
+
+        DB::commit();
+        return $this->success();
     }
 }

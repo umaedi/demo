@@ -64,6 +64,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //route for participants
     Route::get('/participants', [Admin\ParticipantController::class, 'index']);
     Route::get('/participant/show/{id}', [Admin\ParticipantController::class, 'show']);
+    Route::post('/persence/user/{id}', [Admin\ParticipantController::class, 'persence']);
 
     Route::get('/profile', Admin\ProfileController::class);
 
