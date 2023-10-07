@@ -172,7 +172,7 @@
 
     function persence(id)
     {
-        loadData();
+        filterTable();
         var param = {
             method: 'POST',
             url: '/admin/persence/user/' + id,

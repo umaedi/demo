@@ -24,10 +24,12 @@
                     @else
                     <button onclick="persence('{{ $tb->id }}')" class="btn btn-warning">Persence</button>
                     @endif
-                    @if ($tb->status == '2')
-                    <button class="btn btn-success"><i class="fa fa-check"></i></button>
-                    @else
-                    <button onclick="persence('{{ $tb->id }}')" class="btn btn-warning">Persence</button>
+                    @if ($tb->status !== '0')
+                        @if ($tb->status == '2')
+                        <button class="btn btn-success"><i class="fa fa-check"></i></button>
+                        @else
+                        <button onclick="persence('{{ $tb->id }}')" class="btn btn-warning">Persence</button>
+                        @endif
                     @endif
                 </td>
             </tr>
