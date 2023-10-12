@@ -20,15 +20,15 @@
                 <td>
                     <a href="/admin/participant/show/{{ $tb->id }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
                     @if ($tb->status == '1' || $tb->status == '2')
-                    <button class="btn btn-success"><i class="fa fa-check"></i></button>
+                    <button onclick="persence('{{ $tb->id }}', '1')" class="btn btn-success"><i class="fa fa-check"></i></button>
                     @else
-                    <button onclick="persence('{{ $tb->id }}')" class="btn btn-warning">Persence</button>
+                    <button onclick="persence('{{ $tb->id }}', '1')" class="btn btn-warning">Persence</button>
                     @endif
                     @if ($tb->status !== '0')
                         @if ($tb->status == '2')
-                        <button class="btn btn-success"><i class="fa fa-check"></i></button>
+                        <button onclick="persence('{{ $tb->id }}', '2')" class="btn btn-success"><i class="fa fa-check"></i></button>
                         @else
-                        <button onclick="persence('{{ $tb->id }}')" class="btn btn-warning">Persence</button>
+                        <button onclick="persence('{{ $tb->id }}', '2')" class="btn btn-warning">Persence</button>
                         @endif
                     @endif
                 </td>

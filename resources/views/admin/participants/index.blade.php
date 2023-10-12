@@ -170,16 +170,19 @@
         filterTable()
     }
 
-    function persence(id)
+    function persence(id, value)
     {
         filterTable();
         var param = {
             method: 'POST',
             url: '/admin/persence/user/' + id,
+            data: {value : value},
+            load: value,
+         
         }
 
         transAjax(param).then((res) => {
-            console.log('ok');
+           console.log('ok');
         });
     }
 </script>

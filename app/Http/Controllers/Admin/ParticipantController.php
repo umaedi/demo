@@ -57,14 +57,24 @@ class ParticipantController extends Controller
         return view('admin.participants.show', $data);
     }
 
-    public function persence($id)
+    public function persence(Request $request, $id)
     {
         $participant = $this->user->find($id);
 
-        if ($participant->status == '0') {
-            $status = '1';
-        } else {
-            $status = '2';
+        if ($request->value == '1') {
+            if ($participant->status == '1') {
+                $status = '0';
+            } else {
+                $status = '1';
+            }
+        }
+
+        if ($request->value == '2') {
+            if ($participant->status == '2') {
+                $status = '1';
+            } else {
+                $status = '2';
+            }
         }
 
         DB::beginTransaction();
