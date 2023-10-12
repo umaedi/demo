@@ -7,7 +7,7 @@
         <!-- Navbar End -->
         <!-- Hero -->
         <div
-            class="home-hero w-full bg-[url('/dist/img/bg-home-hero.png')] md:h-3/4 lg:min-h-screen bg-cover bg-fixed py-10">
+            class="home-hero w-full bg-[url('/dist/img/bg-home-hero.png')] md:h-3/4 lg:min-h-screen bg-cover bg-fixed py-10" loading="lazy">
             <div class="wrapper flex flex-col gap-10 w-full h-full justify-center">
                 <div class="container px-2 pt-32 ">
                     <div class="hero-title-1 w-full lg:w-1/2 flex flex-col gap-3" data-aos="fade-up">
@@ -27,7 +27,7 @@
                                     <div class="ms-2 badge badge-warning text-mydark text-xs lg:text-base">FREE</div>
                                 </button>
                             </a>
-                            <a href="./dist/docs/ICOMESH_2023_Template.docx">
+                            <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
                                 <button type="button"
                                     class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                     Download Template
@@ -60,12 +60,12 @@
             <div data-aos="fade-right" class="left-content lg:w-1/2 gap-3 hidden md:flex md:h-[400px] lg:h-[600px]">
                 <div class="md:w-full md:h-full flex flex-col gap-3">
                     <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                        style="background-image: url(./dist/img/bg-about-event-home-1.jpg);"></div>
+                        style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-1.jpg);" loading="lazy"></div>
                     <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                        style="background-image: url(./dist/img/bg-about-event-home-2.jpg);"></div>
+                        style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-2.jpg);" loading="lazy"></div>
                 </div>
                 <div class="w-full h-full bg-cover rounded-lg shadow-lg hover:shadow-2xl"
-                    style="background-image: url(./dist/img/bg-about-event-home-3.jpg);">
+                    style="background-image: url({{ asset('dist') }}/img/bg-about-event-home-3.jpg);" loading="lazy">
                 </div>
             </div>
 
@@ -105,7 +105,7 @@
 
     <!-- Section 3 Start -->
     <section id="home-section-3" class="w-full pt-10 pb-10 bg-fixed overflow-x-hidden"
-        style="background-image: url(./dist/img/bg-section-3-home.png);">
+        style="background-image: url({{ asset('dist') }}/img/bg-section-3-home.png);">
         <div data-aos="flip-down"
             class="container flex flex-wrap justify-center md:justify-between gap-10 md:gap-0 w-full">
 
@@ -184,72 +184,99 @@
                 </div>
             </div>
 
-            <div data-aos="flip-down" class="wrapper flex flex-wrap gap-5 lg:justify-between justify-center">
+            <div data-aos="flip-down" class="wrapper flex flex-wrap gap-10 justify-center">
                 <!-- Speaker Card 1 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="./dist/img/speaker-1.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="{{ asset('dist') }}/img/speaker-1.png" alt="photo of the speaker" loading="lazy">
                     </div>
-                    <div class="py-3 px-1 flex flex-col justify-center items-center">
+                    <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Speaker 1</p>
-                        <p class="text-sm md:text-base text-mydark">Monash University</p>
+                        <p class="text-sm md:text-base text-mydark">Ministry of Health of the Republic of Indonesia</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-sm text-mydark text-center">Clinical trial of Stem Cell Therapy</p>
+                        <p class="text-xs text-mydark">Indonesian goverment policies in tackling and preventing malnutrition as an effort to prevent degenerative diseases</p>
                     </div>
                 </div>
 
                 <!-- Speaker Card 2 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="./dist/img/speaker-2.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="{{ asset('dist') }}/img/speaker-2.png" alt="photo of the speaker" loading="lazy">
                     </div>
-                    <div class="py-3 px-1 flex flex-col justify-center items-center">
-                        <p class="font-bold text-primary text-xl">Speaker 2</p>
-                        <p class="text-sm md:text-base text-mydark">Mc Dermot University</p>
+                    <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
+                        <p class="font-bold text-primary text-xl">Prof. dr. Nur Indrawati Lipoeto, M.Sc, Ph.D, Sp.GK</p>
+                        <p class="text-sm md:text-base text-mydark">Andalas University</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark text-center">The role of biomolecular in gastrointestinal
-                            diseases/
-                            autoimmune disease</p>
+                        <p class="text-xs text-mydark">Malnutrition has been linked to various socioeconomic factors, including limited access to healthy foods and a general lack of awareness of healthy diets</p>
                     </div>
                 </div>
 
                 <!-- Speaker Card 3 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="./dist/img/speaker-3.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="{{ asset('dist') }}/img/speaker-3.png" alt="photo of the speaker" loading="lazy"> 
                     </div>
-                    <div class="py-3 px-1 flex flex-col justify-center items-center">
-                        <p class="font-bold text-primary text-xl">Speaker 3</p>
-                        <p class="text-sm md:text-base text-mydark">University of Lampung</p>
+                    <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
+                        <p class="font-bold text-primary text-xl">Prof. Dr. Sazzli Shahlan Kasim</p>
+                        <p class="text-sm md:text-base text-mydark">University</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark text-center">Advancing Stem Cell Therapy for Aging and Genetic
-                            Disease</p>
+                        <p class="text-xs text-mydark text-center">Inflammation in atherosclerotic cardiovascular disease, where we are and where are we going</p>
                     </div>
                 </div>
 
                 <!-- Speaker Card 4 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="./dist/img/speaker-4.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="{{ asset('dist') }}/img/speaker-4.png" alt="photo of the speaker" loading="lazy">
                     </div>
-                    <div class="py-3 px-1 flex flex-col justify-center items-center">
+                    <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Speaker 4</p>
-                        <p class="text-sm md:text-base text-mydark">Delhousie University</p>
+                        <p class="text-sm md:text-base text-mydark">University in Korea</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark text-center">Molecular Aspect of Immune response of Covid-19
-                            Vaccine</p>
+                        <p class="text-xs text-mydark">The Molecullar Aspects of Early Detection and Interception of Cancer</p>
+                    </div>
+                </div>
+
+                <!-- Speaker Card 5 -->
+                <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
+                    <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="{{ asset('dist') }}/img/speaker-5.png" alt="photo of the speaker" loading="lazy">
+                    </div>
+                    <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
+                        <p class="font-bold text-primary text-xl">Prof. Noboru Hattori, MD, Ph.D</p>
+                        <p class="text-sm md:text-base text-mydark">Hiroshima University</p>
+                        <div class="w-full py-3">
+                            <hr class="w-full text-disabled">
+                        </div>
+                        <p class="text-xs text-mydark"> Environmental pollution effects in pulmonary inflamation process: the role of cytokine in chronic respiratory problem</p>
+                    </div>
+                </div>
+                <!-- Speaker Card 6 -->
+                <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
+                    <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="{{ asset('dist') }}/img/speaker-6.png" alt="photo of the speaker" loading="lazy">
+                    </div>
+                    <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
+                        <p class="font-bold text-primary text-xl">Speaker 6</p>
+                        <p class="text-sm md:text-base text-mydark">University in Australia</p>
+                        <div class="w-full py-3">
+                            <hr class="w-full text-disabled">
+                        </div>
+                        <p class="text-xs text-mydark">The substance/drug abuse resulted in a loss of healthy life</p>
                     </div>
                 </div>
             </div>
@@ -260,7 +287,7 @@
     <!-- Section 5 Start -->
     <section id="home-section-5" class="overflow-x-hidden">
         <div class="container sm:rounded-md w-full flex flex-col gap-10 p-10 cover shadow-lg"
-            style="background-image: url(./dist/img/bg-section-5-home.png);">
+            style="background-image: url({{ asset('dist') }}/img/bg-section-5-home.png);">
             <div data-aos="fade-down" class="section-5-title flex flex-col gap-1 items-center">
                 <p class="uppercase text-secondary text-sm lg:text-base font-semibold">event timeline</p>
                 <h1 class="uppercase text-white font-bold text-3xl md:text-5xl">important dates</h1>

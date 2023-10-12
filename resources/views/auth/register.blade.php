@@ -13,7 +13,7 @@
         <!-- Images -->
         <div class="left-content hidden md:flex lg:w-1/2 justify-center items-center p-5">
             <img src="{{ asset('dist') }}/img/public-talk.gif" alt="International Conference"
-                class="md:w-[300px] md:h-[300px] lg:w-[500px] lg:h-[500px]">
+                class="md:w-[300px] md:h-[300px] lg:w-[500px] lg:h-[500px]" loading="lazy">
         </div>
 
         <!-- Form -->
@@ -23,7 +23,7 @@
                 <div
                     class="wrapper w-[240px] md:w-[120px] lg:w-[240px] h-[80px] md:h-[40px] lg:h-[80px] rounded-md overflow-hidden">
                     <img class="w-full h-full object-cover"
-                        src="{{ asset('dist') }}/img/logo-icomesh.png" alt="logo icomesh">
+                        src="{{ asset('dist') }}/img/logo-icomesh-no-bg.png" alt="logo icomesh" loading="lazy">
                 </div>
             </div>
             <div class="flex flex-col gap-1 items-start md:items-start">
