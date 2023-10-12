@@ -188,8 +188,8 @@
                 <!-- Speaker Card 1 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-1.png" alt="photo of the speaker" loading="lazy">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="{{ asset('dist') }}/img/speaker-1.png" alt="photo of the speaker" loading="lazy">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Speaker 1</p>
@@ -204,8 +204,8 @@
                 <!-- Speaker Card 2 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-2.png" alt="photo of the speaker" loading="lazy">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="{{ asset('dist') }}/img/speaker-2.png" alt="photo of the speaker" loading="lazy">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Prof. dr. Nur Indrawati Lipoeto, M.Sc, Ph.D, Sp.GK</p>
@@ -220,8 +220,8 @@
                 <!-- Speaker Card 3 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-3.png" alt="photo of the speaker" loading="lazy"> 
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="{{ asset('dist') }}/img/speaker-3.png" alt="photo of the speaker" loading="lazy"> 
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Prof. Dr. Sazzli Shahlan Kasim</p>
@@ -236,8 +236,8 @@
                 <!-- Speaker Card 4 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-4.png" alt="photo of the speaker" loading="lazy">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="{{ asset('dist') }}/img/speaker-4.png" alt="photo of the speaker" loading="lazy">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Speaker 4</p>
@@ -252,8 +252,8 @@
                 <!-- Speaker Card 5 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-5.png" alt="photo of the speaker" loading="lazy">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="{{ asset('dist') }}/img/speaker-5.png" alt="photo of the speaker" loading="lazy">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Prof. Noboru Hattori, MD, Ph.D</p>
@@ -267,8 +267,8 @@
                 <!-- Speaker Card 6 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            src="{{ asset('dist') }}/img/speaker-6.png" alt="photo of the speaker" loading="lazy">
+                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="{{ asset('dist') }}/img/speaker-6.png" alt="photo of the speaker" loading="lazy">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Speaker 6</p>
