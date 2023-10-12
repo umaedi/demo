@@ -3,7 +3,7 @@
 <div class="container p-2 flex h-screen overflow-hidden">
   <!-- Images -->
   <div class="left-content hidden md:flex md:w-1/2 justify-center items-center">
-      <img src="{{ asset('dist') }}/img/public-talk.gif" alt="International Conference" class="w-[500px] h-[500px]">
+      <img src="{{ asset('dist') }}/img/public-talk.gif" alt="International Conference" class="w-[500px] h-[500px]" loading="lazy">
   </div>
 
   <!-- Form -->
@@ -12,7 +12,7 @@
           <div
               class="wrapper w-[240px] md:w-[120px] lg:w-[240px] h-[80px] md:h-[40px] lg:h-[80px] rounded-md overflow-hidden group">
               <img class="w-full h-full object-cover"
-                  src="{{ asset('dist') }}/img/logo-icomesh.png" alt="logo icomesh">
+                  src="{{ asset('dist') }}/img/logo-icomesh-no-bg.png" alt="logo icomesh" loading="lazy">
           </div>
       </div>
       <div class="flex flex-col gap-1 items-start md:items-start">

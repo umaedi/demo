@@ -22,7 +22,7 @@
       <div class="container mt-5">
         <div class="page-error">
           <div class="page-inner">
-            <img data-src="{{ asset('img/email_verification.png') }}" width="350" class="lazyload img-fluid" alt="Closing">
+            <img data-src="{{ asset('img/email_verification.png') }}" width="350" class="lazyload img-fluid" alt="Closing" loading="lazy">
             <div class="page-description mt-3">
             	We've just sent an activation link to your email.<br>
               If you do not receive the email, please click the button below<br>
