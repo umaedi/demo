@@ -3,8 +3,8 @@
         <div class="">
             <a class="cursor-pointer" href="/">
                 <div class="wrapper h-[50px] rounded-lg overflow-hidden shadow-sm hover:shadow-lg">
-                    <img class="lazyload w-full h-full object-cover" data-src="{{ asset('dist') }}/img/logo-icomesh.png"
-                        alt="Logo ICOMESH">
+                    <img class="lazyload w-full h-full object-cover" data-src="{{ asset('dist') }}/img/logo-icomesh-no-bg.png"
+                        alt="Logo ICOMESH" loading="lazy">
                 </div>
             </a>
         </div>
