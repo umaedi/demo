@@ -28,8 +28,8 @@
                 <div data-aos="fade-up"
                     class="wrapper w-full h-40 md:h-80 lg:h-96 shadow-xl overflow-hidden group bg-fixed">
                     <img data-aos="fade-up"
-                        class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                        data-src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                        src="./../img/bg-about-event.jpg" alt="About Event Poster">
                 </div>
     
                 <!-- 1st -->
@@ -55,7 +55,7 @@
                             <li>Zoom ID will be available in Participant Dashboard Page.</li>
                             <li>3rd November 2023 : Abstract Submission Deadline.</li>
                             <li>21st November 2023 : Participant Registration Deadline.</li>
-                            <li>12th December 2023 : Full Paper Submission Deadline.</li>
+                            <li>13th December 2023 : Full Paper Submission Deadline.</li>
                         </ol>
                     </div>
     

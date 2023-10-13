@@ -27,8 +27,8 @@
                 <div data-aos="fade-up"
                     class="wrapper w-full h-40 md:h-80 lg:h-96 shadow-xl overflow-hidden group bg-fixed">
                     <img data-aos="fade-up"
-                        class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                        data-src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                        src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">
                 </div>
     
                 <!-- 1st -->
@@ -60,8 +60,9 @@
                                     objective, methods, result, and conclusion;</li>
                                 <li>Abstract not more than 1 page (size A4);</li>
                                 <li>Keywords are limited to 5 words;</li>
-                                <li>Full Paper Submission Deadline : 12 Des 2023;</li>
-                                <li>1 Presentation File consist of 5 Pages inculding : Background, Literature Review, Methods, Results and Discussion;</li>
+                                <li>Full Paper Submission Deadline : 13 Des 2023;</li>
+                                <li>1 Presentation File consist of 5 Pages inculding : Background, Literature Review,
+                                    Methods, Results and Discussion;</li>
                                 <li>Duration for presentation : 12 Minutes (10 min Presentation + 2 min QnA session).</li>
                             </ol> <br>
                             <p class="text-sm md:text-base">Please save your abstract in Microsoft Word file, with this
@@ -89,18 +90,20 @@
                                 ICOMESH website and upload all the required documents.</p>
                         </div>
     
-                        <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
-                            <button type="button"
-                                class="md:w-1/3 py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
-                                Download Template
-                            </button>
-                        </a>
-                        <a href="{{ asset('dist') }}/docs/Manual_book_paper_submission_for_participant.pdf">
-                            <button type="button"
-                                class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
-                                Download Manual Book
-                            </button>
-                        </a>
+                        <div class="w-fit h-fit flex flex-wrap gap-3">
+                            <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
+                                <button type="button"
+                                    class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                    Download Template
+                                </button>
+                            </a>
+                            <a href="{{ asset('dist') }}/docs/Manual_book_paper_submission_for_participant.pdf">
+                                <button type="button"
+                                    class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                    Download Manual Book
+                                </button>
+                            </a>
+                        </div>
                         <p class="text-mydark text-xs">*The committee has the right to review and decide whether the paper
                             is
                             accepted or rejected.</p>

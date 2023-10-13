@@ -7,47 +7,47 @@
         <!-- Navbar End -->
         <!-- Hero -->
         <div
-            class="home-hero w-full bg-[url('/dist/img/bg-home-hero.png')] md:h-3/4 lg:min-h-screen bg-cover bg-fixed py-10" loading="lazy">
-            <div class="wrapper flex flex-col gap-10 w-full h-full justify-center">
-                <div class="container px-2 pt-32 ">
-                    <div class="hero-title-1 w-full lg:w-1/2 flex flex-col gap-3" data-aos="fade-up">
-                        <p class="text-primary text-base md:text-base">New Event 2023</p>
-                        <h1 class="text-black uppercase font-bold text-3xl sm:text-5xl">INTERNATIONAL
-                            CONFERENCE ON
-                            MEDICAL SCIENCE AND
-                            HEALTH (ICOMESH)</h1>
-                        <h3 class="text-mydark text-base lg:text-2xl">Topic : Biomolecular, Genetic, and Degenerative
-                            Desease
-                        </h3>
-                        <div class="mt-5 lg:mt-10 flex flex-wrap gap-5 lg:gap-10">
-                            <a href="/register">
-                                <button type="button"
-                                    class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
-                                    Register Now
-                                    <div class="ms-2 badge badge-warning text-mydark text-xs lg:text-base">FREE</div>
-                                </button>
-                            </a>
-                            <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
-                                <button type="button"
-                                    class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
-                                    Download Template
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper flex justify-end">
-                    <div class="hero-title-2 px-5 py-3 w-8/12 flex flex-col gap-1 md:w-3/12 rounded-tl-xl rounded-bl-xl bg-mydark/[.3] backdrop-blur-sm"
-                        data-aos="fade-left">
-                        <p class="text-xs lg:text-sm text-white">HETI Project</p>
-                        <p class="text-xs lg:text-sm text-white">University of Lampung</p>
-                        <hr class="w-full text-disabled">
-                        <p class="text-xs lg:text-sm text-white">Bandar Lampung</p>
-                        <p class="text-xs lg:text-sm text-white">28 - 29 November 2023</p>
+        class="home-hero w-full bg-[url('/dist/img/bg-home-hero.png')] md:h-3/4 lg:min-h-screen bg-cover bg-fixed py-10">
+        <div class="wrapper flex flex-col gap-10 w-full h-full justify-center">
+            <div class="container px-2 pt-32 ">
+                <div class="hero-title-1 w-full lg:w-1/2 flex flex-col gap-3" data-aos="fade-up">
+                    <p class="text-white-full text-base md:text-base">New Event 2023</p>
+                    <h1 class="text-white-full uppercase font-bold text-3xl sm:text-5xl">INTERNATIONAL
+                        CONFERENCE ON
+                        MEDICAL SCIENCE AND
+                        HEALTH (ICOMESH)</h1>
+                    <h3 class="text-white-full text-base lg:text-2xl">Topic : Biomolecular, Genetic, and Degenerative
+                        Desease
+                    </h3>
+                    <div class="mt-5 lg:mt-10 flex flex-wrap gap-5 lg:gap-10">
+                        <a href="/register">
+                            <button type="button"
+                                class="py-3 px-5 shadow-md inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                Register Now
+                                <div class="ms-2 badge badge-warning text-mydark text-xs lg:text-base">FREE</div>
+                            </button>
+                        </a>
+                        <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
+                            <button type="button"
+                                class="py-3 px-5 shadow-md inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                Download Template
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
+            <div class="wrapper flex justify-end">
+                <div class="hero-title-2 px-5 py-3 w-8/12 flex flex-col gap-1 md:w-3/12 rounded-tl-xl rounded-bl-xl bg-mydark/[.3] backdrop-blur-sm"
+                    data-aos="fade-left">
+                    <p class="text-xs lg:text-sm text-white">HETI Project</p>
+                    <p class="text-xs lg:text-sm text-white">University of Lampung</p>
+                    <hr class="w-full text-disabled">
+                    <p class="text-xs lg:text-sm text-white">Bandar Lampung</p>
+                    <p class="text-xs lg:text-sm text-white">28 - 29 November 2023</p>
+                </div>
+            </div>
         </div>
+    </div>
         </div>
     </header>
     <!-- Header End -->
@@ -105,7 +105,7 @@
 
     <!-- Section 3 Start -->
     <section id="home-section-3" class="w-full pt-10 pb-10 bg-fixed overflow-x-hidden"
-        style="background-image: url({{ asset('dist') }}/img/bg-section-3-home.png);">
+        style="background-image: url({{ asset('dist') }}/img/bg-section-3-home.png);" loading="lazy">
         <div data-aos="flip-down"
             class="container flex flex-wrap justify-center md:justify-between gap-10 md:gap-0 w-full">
 
@@ -149,7 +149,7 @@
                         d="M63.5833 26.6667V46.6667C69.25 46.6667 73.5833 42.3333 73.5833 36.6667C73.5833 31 69.25 26.6667 63.5833 26.6667ZM36.9167 23.3333H13.5833C9.91667 23.3333 6.91667 26.3333 6.91667 30V43.3333C6.91667 47 9.91667 50 13.5833 50H16.9167V60C16.9167 63.6667 19.9167 66.6667 23.5833 66.6667H30.25V50H36.9167L50.25 63.3333H56.9167V10H50.25L36.9167 23.3333Z"
                         fill="#FAFAFA" />
                 </svg>
-                <p class="text-white text-sm lg:text-xl">4</p>
+                <p class="text-white text-sm lg:text-xl">6</p>
                 <p class="text-white text-xs lg:text-lg">Keynote Speakers</p>
             </div>
 
