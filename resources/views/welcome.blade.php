@@ -7,10 +7,10 @@
         <!-- Navbar End -->
         <!-- Hero -->
         <div
-        class="home-hero w-full bg-[url('/dist/img/bg-home-hero.png')] md:h-3/4 lg:min-h-screen bg-cover bg-fixed py-10">
+        class="home-hero w-full bg-[url('/dist/img/bg-home-hero.png')] md:min-h-3/4 lg:min-h-screen bg-cover bg-fixed py-10">
         <div class="wrapper flex flex-col gap-10 w-full h-full justify-center">
             <div class="container px-2 pt-32 ">
-                <div class="hero-title-1 w-full lg:w-1/2 flex flex-col gap-3" data-aos="fade-up">
+                <div class="hero-title-1 w-full lg:w-1/2 flex flex-col gap-3 mt-7 md:mt-36 lg:mt-20" data-aos="fade-up">
                     <p class="text-white-full text-base md:text-base">New Event 2023</p>
                     <h1 class="text-white-full uppercase font-bold text-3xl sm:text-5xl">INTERNATIONAL
                         CONFERENCE ON
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
         </div>
     </header>
     <!-- Header End -->
@@ -157,7 +157,7 @@
                         fill="#FAFAFA" />
                 </svg>
                 <p class="text-white text-sm lg:text-xl">6</p>
-                <p class="text-white text-xs lg:text-lg">Keynote Speakers</p>
+                <p class="text-white text-xs lg:text-lg">International Keynote Speakers</p>
             </div>
 
             <!-- 5th Card -->
@@ -196,7 +196,7 @@
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-1.png" alt="photo of the speaker" loading="lazy">
+                            data-src="{{ asset('dist') }}/img/speaker-1.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Speaker 1</p>
@@ -204,7 +204,8 @@
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark">Indonesian goverment policies in tackling and preventing malnutrition as an effort to prevent degenerative diseases</p>
+                        <p class="text-sm md:text-base text-mydark">"Indonesian goverment policies in tackling and preventing
+                            malnutrition as an effort to prevent degenerative diseases"</p>
                     </div>
                 </div>
 
@@ -212,7 +213,7 @@
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-2.png" alt="photo of the speaker" loading="lazy">
+                            data-src="{{ asset('dist') }}/img/speaker-2.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Prof. dr. Nur Indrawati Lipoeto, M.Sc, Ph.D, Sp.GK</p>
@@ -220,7 +221,9 @@
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark">Malnutrition has been linked to various socioeconomic factors, including limited access to healthy foods and a general lack of awareness of healthy diets</p>
+                        <p class="text-sm md:text-base text-mydark">"Malnutrition has been linked to various socioeconomic factors,
+                            including limited access to healthy foods and a general lack of awareness of healthy diets"
+                        </p>
                     </div>
                 </div>
 
@@ -228,15 +231,16 @@
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-3.png" alt="photo of the speaker" loading="lazy"> 
+                            data-src="{{ asset('dist') }}/img/speaker-3.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Prof. Dr. Sazzli Shahlan Kasim</p>
-                        <p class="text-sm md:text-base text-mydark">University</p>
+                        <p class="text-sm md:text-base text-mydark">University in Malaysia</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark text-center">Inflammation in atherosclerotic cardiovascular disease, where we are and where are we going</p>
+                        <p class="text-sm md:text-base text-mydark">"Inflammation in atherosclerotic cardiovascular
+                            disease, where we are and where are we going"</p>
                     </div>
                 </div>
 
@@ -244,7 +248,7 @@
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-4.png" alt="photo of the speaker" loading="lazy">
+                            data-src="{{ asset('dist') }}/img/speaker-4.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Speaker 4</p>
@@ -252,15 +256,16 @@
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark">The Molecullar Aspects of Early Detection and Interception of Cancer</p>
+                        <p class="text-sm md:text-base text-mydark">"The Molecullar Aspects of Early Detection and Interception of
+                            Cancer"</p>
                     </div>
                 </div>
 
                 <!-- Speaker Card 5 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-5.png" alt="photo of the speaker" loading="lazy">
+                        <img class="lazyloadw-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            data-src="{{ asset('dist') }}/img/speaker-5.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Prof. Noboru Hattori, MD, Ph.D</p>
@@ -268,14 +273,15 @@
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark"> Environmental pollution effects in pulmonary inflamation process: the role of cytokine in chronic respiratory problem</p>
+                        <p class="text-sm md:text-base text-mydark">"Environmental pollution effects in pulmonary inflamation
+                            process: the role of cytokine in chronic respiratory problem"</p>
                     </div>
                 </div>
                 <!-- Speaker Card 6 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
                         <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-6.png" alt="photo of the speaker" loading="lazy">
+                            data-src="{{ asset('dist') }}/img/speaker-6.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Speaker 6</p>
@@ -283,7 +289,7 @@
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-xs text-mydark">The substance/drug abuse resulted in a loss of healthy life</p>
+                        <p class="text-sm md:text-base text-mydark">"The substance/drug abuse resulted in a loss of healthy life"</p>
                     </div>
                 </div>
             </div>

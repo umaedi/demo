@@ -7877,6 +7877,10 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 1.25rem;
 }
 
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -10264,12 +10268,16 @@ details.collapse summary::-webkit-details-marker {
     margin-top: 0px;
   }
 
-  .md\:flex {
-    display: flex;
+  .md\:mt-32 {
+    margin-top: 8rem;
   }
 
-  .md\:h-3\/4 {
-    height: 75%;
+  .md\:mt-36 {
+    margin-top: 9rem;
+  }
+
+  .md\:flex {
+    display: flex;
   }
 
   .md\:h-60 {
@@ -10435,6 +10443,14 @@ details.collapse summary::-webkit-details-marker {
 @media (min-width: 1024px) {
   .lg\:mt-10 {
     margin-top: 2.5rem;
+  }
+
+  .lg\:mt-28 {
+    margin-top: 7rem;
+  }
+
+  .lg\:mt-20 {
+    margin-top: 5rem;
   }
 
   .lg\:inline-block {
