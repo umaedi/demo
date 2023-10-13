@@ -172,17 +172,15 @@
 
     function persence(id, value)
     {
-        filterTable();
         var param = {
             method: 'POST',
             url: '/admin/persence/user/' + id,
             data: {value : value},
-            load: value,
+            load: 'table',
          
         }
-
         transAjax(param).then((res) => {
-           console.log('ok');
+            filterTable();
         });
     }
 </script>

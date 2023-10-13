@@ -138,8 +138,8 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{{ auth()->user()->zoom_id }}</td>
-                    <td>{{ auth()->user()->zoom_password }}</td>
+                    <td>{{ auth()->user()->zoom_id ?? '-'}}</td>
+                    <td>{{ auth()->user()->zoom_password ?? '-'}}</td>
                   </tr>
                   <tr>
                     <td>Background Video Conference (Online)</td> 
@@ -190,8 +190,8 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{{ auth()->user()->zoom_id }}</td>
-                    <td>{{ auth()->user()->zoom_password }}</td>
+                    <td>{{ auth()->user()->zoom_id ?? '-'}}</td>
+                    <td>{{ auth()->user()->zoom_password ?? '-'}}</td>
                   </tr>
                   <tr>
                     <td>Background Video Conference (Online)</td> 
