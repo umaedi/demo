@@ -172,6 +172,7 @@
 
     function persence(id, value)
     {
+        // $('.persence-'+value).html('Loading...');
         var param = {
             method: 'POST',
             url: '/admin/persence/user/' + id,
