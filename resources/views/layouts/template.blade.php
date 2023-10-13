@@ -9,6 +9,8 @@
     <title>{{ $title ?? 'ICOMESH 2023' }}</title>
     <meta name="description" content="international conferencce on medical science and health (ICOMESH 2023)">
     <meta name="keywords" content="icomesh, unila">
+    <meta name="google-site-verification" content="9V-CJWTkXfGWd7quRTXZ70C_WpSzKsepOgDYij5IQ9U" />
+    
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
