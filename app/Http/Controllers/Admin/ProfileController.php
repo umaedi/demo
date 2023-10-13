@@ -15,6 +15,7 @@ class ProfileController extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        $data['title'] = 'Profile';
+        return view('admin.profile.index', $data);
     }
 }
