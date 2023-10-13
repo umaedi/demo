@@ -16,20 +16,27 @@
                         CONFERENCE ON
                         MEDICAL SCIENCE AND
                         HEALTH (ICOMESH)</h1>
-                    <h3 class="text-white-full text-base lg:text-2xl">Topic : Biomolecular, Genetic, and Degenerative
+                    <h3 class="text-white-full text-base lg:text-2xl">Topic : Biomolecular, Genetic, and
+                        Degenerative
                         Desease
                     </h3>
-                    <div class="mt-5 lg:mt-10 flex flex-wrap gap-5 lg:gap-10">
+                    <button type="button"
+                        class="cursor-auto w-fit py-3 px-5 shadow-md inline-flex justify-center items-center rounded-xl font-semibold bg-white text-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                        Hybrid Event (Offline & Online)
+                        <div class="ms-2 py-5 px-5 badge badge-warning text-mydark text-xs lg:text-base">
+                            REGISTRATION FREE</div>
+                    </button>
+                    <div class="mt-5 lg:mt-10 flex flex-wrap gap-5 lg:gap-5">
                         <a href="/register">
                             <button type="button"
-                                class="py-3 px-5 shadow-md inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                class="py-3 px-5 shadow-md inline-flex justify-center items-center rounded-xl font-semibold bg-white text-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                 Register Now
-                                <div class="ms-2 badge badge-warning text-mydark text-xs lg:text-base">FREE</div>
+                                <!-- <div class="ms-2 badge badge-warning text-mydark text-xs lg:text-base">FREE</div> -->
                             </button>
                         </a>
                         <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
                             <button type="button"
-                                class="py-3 px-5 shadow-md inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                class="py-3 px-5 shadow-md inline-flex justify-center items-center rounded-xl font-semibold bg-white text-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
                                 Download Template
                             </button>
                         </a>
@@ -47,7 +54,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
         </div>
     </header>
     <!-- Header End -->
