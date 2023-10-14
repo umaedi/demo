@@ -21,10 +21,10 @@ class AccountJob implements ShouldQueue
      * @return void
      */
     public $timeout = 2 * 60 * 60;
-    protected $data;
-    public function __construct($data)
+    protected $account;
+    public function __construct($account)
     {
-        $this->data = $data;
+        $this->account = $account;
     }
 
     /**
@@ -34,6 +34,6 @@ class AccountJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->data['email'])->send(new SendAccount($this->data));
+        Mail::to($this->account['email'])->send(new SendAccount($this->account));
     }
 }
