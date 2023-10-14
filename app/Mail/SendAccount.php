@@ -18,7 +18,7 @@ class SendAccount extends Mailable
      *
      * @return void
      */
-    protected $account;
+    public $account;
     public function __construct($account)
     {
         $this->$account = $account;

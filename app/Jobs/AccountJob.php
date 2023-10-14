@@ -21,7 +21,7 @@ class AccountJob implements ShouldQueue
      * @return void
      */
     public $timeout = 2 * 60 * 60;
-    protected $account;
+    public $account;
     public function __construct($account)
     {
         $this->account = $account;
