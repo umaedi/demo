@@ -34,6 +34,7 @@ class AccountJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->account['email'])->send(new SendAccount($this->account));
+        $mail = new SendAccount($this->account);
+        Mail::to($this->account['email'])->send($mail);
     }
 }

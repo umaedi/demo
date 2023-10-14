@@ -35,8 +35,9 @@ class AccessZoom implements ShouldQueue
     public function handle()
     {
         $recipients = $this->data['email'];
+        $mail = new SendZoom($this->data);
         foreach ($recipients as $participant) {
-            Mail::to($participant)->send(new SendZoom($this->data));
+            Mail::to($participant)->send($mail);
         }
     }
 }
