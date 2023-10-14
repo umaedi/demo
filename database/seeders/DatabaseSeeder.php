@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::create([
-            'qrcode'    => 'SRSFS425',
+            'user_id'    => 'SRSFS425',
             'name'      => 'Admin',
             'email'     => 'dev@example.com',
             'password'  => bcrypt('devkh123'),
