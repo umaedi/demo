@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Submission Information</title>
+    <title>zoom information | icomesh 2023</title>
     <style>
         /* -------------------------------------
           GLOBAL RESETS
@@ -357,7 +357,7 @@
 </head>
 
 <body>
-    <span class="preheader">Submission Information</span>
+    <span class="preheader">zoom information - icomesh 2023</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
         <tr>
             <td>&nbsp;</td>
@@ -373,11 +373,13 @@
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                     <br>
                                     <br>
-                                    <h3>Hallo {{ $data['name'] }}</h3>
-                                    <br>
-                                    Kami baru saja memeriksa submission Anda. Silakan masuk ke dashboard Anda untuk
-                                    melihat hasilnya<br><br>
-
+                                    <h3>Access ZOOM</h3>
+                                    <p>
+                                        ID: {{ $data['zoom_id'] }}<br>
+                                        Password: {{ $data['zoom_password'] }}
+                                    </p>
+                                    <p></p>
+                                    Please join 15 minutes before the event starts<br><br>
                                     <table role="presentation" border="0" cellpadding="0" cellspacing="0"
                                         class="btn btn-primary">
                                         <tbody>
@@ -387,8 +389,8 @@
                                                         cellspacing="0">
                                                         <tbody>
                                                             <tr>
-                                                                <td> <a href="https://demo.icomesh-unila.com/user/dashboard"
-                                                                        target="_blank">Dashboard</a> </td>
+                                                                <td> <a href="https://zoom.us/" target="_blank">OPEN
+                                                                        ZOOM</a> </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -396,7 +398,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <p>Hormat Kami <br>Team Reviewer</p>
+                                    <p>regards <br>Admin</p>
                             </td>
                         </tr>
                     </table>

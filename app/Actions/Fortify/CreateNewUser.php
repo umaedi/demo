@@ -2,8 +2,9 @@
 
 namespace App\Actions\Fortify;
 
+use App\Jobs\AccountJob;
+use App\Mail\SendAccount;
 use App\Models\User;
-use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -45,7 +46,17 @@ class CreateNewUser implements CreatesNewUsers
                 return back()->with('msgPersence', 'Sorry, offline registration has been fulfilled!');
             }
         }
+
+        $userid = rand(0, 999999);
+        $account = [
+            'user_id'   => $userid,
+            'email' => $input['email'],
+            'password'  => $input['password'],
+        ];
+
+        dispatch(new AccountJob($account));
         return User::create([
+            'user_id'   => $userid,
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),

@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Submission Information</title>
+    <title>ICOMESH Account</title>
     <style>
         /* -------------------------------------
           GLOBAL RESETS
@@ -357,7 +357,7 @@
 </head>
 
 <body>
-    <span class="preheader">Submission Information</span>
+    <span class="preheader">Account Information</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
         <tr>
             <td>&nbsp;</td>
@@ -373,11 +373,14 @@
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                     <br>
                                     <br>
-                                    <h3>Hallo {{ $data['name'] }}</h3>
-                                    <br>
-                                    Kami baru saja memeriksa submission Anda. Silakan masuk ke dashboard Anda untuk
-                                    melihat hasilnya<br><br>
-
+                                    <h3>Hallo {{ $account['name'] }}</h3>
+                                    <p>This is your account registered in our system</p>
+                                    <p>
+                                        ID: {{ $account['user_id'] }}<br>
+                                        email: {{ $account['email'] }}<br>
+                                        Password: {{ $account['password'] }}
+                                    </p>
+                                    <p></p>
                                     <table role="presentation" border="0" cellpadding="0" cellspacing="0"
                                         class="btn btn-primary">
                                         <tbody>
@@ -387,8 +390,8 @@
                                                         cellspacing="0">
                                                         <tbody>
                                                             <tr>
-                                                                <td> <a href="https://demo.icomesh-unila.com/user/dashboard"
-                                                                        target="_blank">Dashboard</a> </td>
+                                                                <td> <a href="https://icomesh-unila.com/"
+                                                                        target="_blank">LOGIN</a> </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -396,7 +399,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <p>Hormat Kami <br>Team Reviewer</p>
+                                    <p>regards <br>Admin</p>
                             </td>
                         </tr>
                     </table>
