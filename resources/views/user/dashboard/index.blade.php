@@ -29,10 +29,10 @@
             </div>
             <div class="card-wrap">
               <div class="card-header">
-                <h4>Profile</h4>
+                <h4>User id</h4>
               </div>
               <div class="card-body">
-                {{ auth()->user()->name }}
+                {{ auth()->user()->user_id }}
               </div>
             </div>
           </div>
@@ -61,10 +61,10 @@
             </div>
             <div class="card-wrap">
               <div class="card-header">
-                <h4>Profile</h4>
+                <h4>User id</h4>
               </div>
               <div class="card-body">
-                {{ auth()->user()->name }}
+                {{ auth()->user()->user_id }}
               </div>
             </div>
           </div>
