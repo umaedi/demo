@@ -13,7 +13,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
-                    <input id="search" class="form-control" type="text" name="q" placeholder="Serach by name...">
+                    <input id="search" class="form-control" type="text" name="q" placeholder="Serach by id or name...">
                 </div>
                 <div class="col-md-3">
                     <select id="presence" class="form-control" name="presence">

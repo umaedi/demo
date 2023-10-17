@@ -24,7 +24,7 @@ class ParticipantController extends Controller
             $page = request('pagination', 15);
 
             if (request()->q) {
-                $users->where('name', 'like', '%' . request()->q . '%');
+                $users->where('name', 'like', '%' . request()->q . '%')->orWhere('user_id', 'like', '%' . request()->q . '%');
             }
 
             if (request()->presence) {
