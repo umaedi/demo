@@ -52,7 +52,7 @@
                         <label for="email" class="label">
                             <span class="label-text">Email</span>
                         </label>
-                        <input id="email" name="email" value="{{ old('email') }}" type="email" autocomplete="email" required
+                        <input id="email" name="email" type="email" autocomplete="email" required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Example: wahyuaji@gmail.com"
                             class="peer input input-bordered input-accent w-full text-sm @error('email') invalid:border-red-500 @enderror" />
                         @error('email')
