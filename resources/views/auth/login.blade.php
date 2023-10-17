@@ -50,7 +50,7 @@
                     <label for="password" class="label">
                         <span class="label-text">Password</span>
                     </label>
-                    <input name="password" id="password" type="password" placeholder="********" required pattern=".{8,}"
+                    <input name="password" id="password" type="password" placeholder="********" required pattern=".{6,}"
                         class="input input-bordered input-accent w-full text-sm" />
                     <label class="label">
                         <a href="/forgot-password"
