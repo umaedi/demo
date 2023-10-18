@@ -45,7 +45,9 @@ class ReviewerController extends Controller
             'password'  => 'required',
         ]);
 
+        $userid = rand(0, 999999);
         $data = $request->except('_token');
+        $data['user_id'] = $userid;
         $data['password'] = Hash::make($request->password);
         $data['institution'] = 'host';
         $data['salutation'] = 'host';
