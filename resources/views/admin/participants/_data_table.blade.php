@@ -3,7 +3,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">No Tlp/WhatsApp</th>
+            <th scope="col">WhatsApp</th>
             <th scope="col">Institution</th>
             <th scope="col">Country</th>
             <th scope="col" style="width: 19%">Action</th>
