@@ -6,7 +6,7 @@
             <th scope="col">No Tlp/WhatsApp</th>
             <th scope="col">Institution</th>
             <th scope="col">Country</th>
-            <th scope="col">Action</th>
+            <th scope="col" style="width: 19%">Action</th>
         </tr>
     </thead>
     <tbody>
