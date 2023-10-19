@@ -35,7 +35,7 @@ class DashboardController extends Controller
             }
         }
 
-        $data['submission'] = Submission::where('user_id', auth()->user()->id)->where('histories', '=', '1')->count();
+        $data['submission'] = Submission::where('user_id', auth()->user()->id)->where('histories', '1')->count();
         $data['loa'] = Submission::where('user_id', auth()->user()->id)->whereNotNull('loa')->count();
         return view('user.dashboard.index', $data);
     }
