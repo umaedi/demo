@@ -70,6 +70,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     //route for download
     Route::get('/download/submission/{id}', [Admin\DownloadController::class, 'index']);
+
+    //route for export users
+    Route::get('/export', Admin\ExportController::class);
 });
 
 //route viewer

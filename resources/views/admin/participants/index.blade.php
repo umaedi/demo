@@ -12,7 +12,7 @@
       <div class="card mb-3">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <input id="search" class="form-control" type="text" name="q" placeholder="Serach by id or name...">
                 </div>
                 <div class="col-md-3">
@@ -22,7 +22,7 @@
                         <option value="Offline">Participant Offline</option>
                     </select>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <select id="type_user" class="form-control" name="type_user">
                         <option value="">--User Type--</option>
                         <option value="Presenter">Presenter (Oral)</option>
@@ -36,6 +36,9 @@
                         <option value="50">50</option>
                         <option value="100">100</option>
                     </select>
+                </div>
+                <div class="col-md-2">
+                    <button onclick="exportUsers()" class="btn btn-primary btn-block btn-lg">EXPORT</button>
                 </div>
             </div>
         </div>
@@ -182,6 +185,14 @@
         transAjax(param).then((res) => {
             filterTable();
         });
+    }
+
+    function exportUsers() 
+    {
+        presence = $('#presence').val()
+        type_user = $('#type_user').val();
+
+        window.location.href = '/admin/export?persence='+persence+'&type_user='+type_user;
     }
 </script>
 @endpush
