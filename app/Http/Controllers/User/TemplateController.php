@@ -17,10 +17,10 @@ class TemplateController extends Controller
     public function __invoke(Request $request)
     {
         if ($request->q == "abstract") {
-            $template = public_path('template/abstract.docx');
+            $template = public_path('dist/docs/ICOMESH_2023_Template.docx');
             return Response::download($template);
         } elseif ($request->q == "full_paper") {
-            $template = public_path('template/full_paper.docx');
+            $template = public_path('dist/docs/ICOMESH_2023_Full_Paper.pdf');
             return Response::download($template);
         } elseif ($request->q == "ppt") {
             $template = public_path('template/ppt.pptx');
