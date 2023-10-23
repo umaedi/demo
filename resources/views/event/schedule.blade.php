@@ -28,8 +28,8 @@
                 <div data-aos="fade-up"
                     class="wrapper w-full h-40 md:h-80 lg:h-96 shadow-xl overflow-hidden group bg-fixed">
                     <img data-aos="fade-up"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                        src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">
+                        class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                        data-src="{{ asset('dist') }}/img/bg-about-event-2.jpg" alt="About Event Poster">
                 </div>
     
                 <!-- 1st -->

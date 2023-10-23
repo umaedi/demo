@@ -9227,6 +9227,10 @@ details.collapse summary::-webkit-details-marker {
   background-position: bottom;
 }
 
+.bg-center {
+  background-position: center;
+}
+
 .bg-repeat {
   background-repeat: repeat;
 }
