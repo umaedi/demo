@@ -65,6 +65,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/participants', [Admin\ParticipantController::class, 'index']);
     Route::get('/participant/show/{id}', [Admin\ParticipantController::class, 'show']);
     Route::post('/persence/user/{id}', [Admin\ParticipantController::class, 'persence']);
+    Route::delete('/participant/destroy/{id}', [Admin\ParticipantController::class, 'destroy']);
 
     Route::get('/profile', Admin\ProfileController::class);
 

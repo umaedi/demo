@@ -7,6 +7,7 @@ use App\Services\UserService;
 use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class ParticipantController extends Controller
 {
@@ -87,5 +88,13 @@ class ParticipantController extends Controller
 
         DB::commit();
         return $this->success();
+    }
+
+    public function destroy($id)
+    {
+        $participant = User::find($id);
+        $participant->destroy($id);
+        $participant->submission()->delete($id);
+        return redirect('/admin/participants')->with('msg_delete', 'Participant has been deleted!');
     }
 }

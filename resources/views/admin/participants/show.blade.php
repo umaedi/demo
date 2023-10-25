@@ -18,9 +18,9 @@
                 <h4>PROFILE</h4>
               </div>
               <div class="card-body">
-                  <form method="POST" action="/user/profile-information" class="needs-validation" novalidate="" enctype="multipart/form-data">
+                  {{-- <form method="POST" action="/user/profile-information" class="needs-validation" novalidate="" enctype="multipart/form-data">
                     @method('PUT')
-                      @csrf
+                      @csrf --}}
                     <div class="form-group">
                       <label for="img">Photo</label>
                       <img id="imgPreview" src="{{ \Illuminate\Support\Facades\Storage::url($participant->img) }}" loading="lazy" alt="photo" width="100%" >
@@ -67,11 +67,15 @@
                       <input id="persence" type="text" class="form-control" name="persence" tabindex="6" readonly value="{{ $participant->presence }}">
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-danger btn-lg btn-block" tabindex="4">
-                        DELETE PARTICIPANT
-                      </button>
+                      <form action="/admin/participant/destroy/{{ $participant->id }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button onclick="return confirm('Delete this data?')" type="submit" class="btn btn-danger btn-lg btn-block" tabindex="4">
+                          DELETE PARTICIPANT
+                        </button>
+                      </form>
                     </div>
-                  </form>
+                  {{-- </form> --}}
                 </div>
             </div>
           </div>

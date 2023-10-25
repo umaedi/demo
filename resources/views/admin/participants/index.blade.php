@@ -9,6 +9,9 @@
             <div class="breadcrumb-item">Participants</div>
           </div>
       </div>
+      @if (session('msg_delete'))
+      <div class="alert alert-success">{{ session('msg_delete') }}</div>
+      @endif
       <div class="card mb-3">
         <div class="card-body">
             <div class="row">
