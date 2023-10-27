@@ -36,376 +36,416 @@
                             <!-- head -->
                             <thead>
                                 <tr class="text-mydark">
-                                    <th>NO.</th>
+                                    <!-- <th>NO.</th> -->
                                     <th>NAME</th>
                                     <th>POSITION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th>1</th>
+                                    <!-- <th>1</th> -->
                                     <td>Prof. Dr. Ir. Lusmeilia Afriani, D.E.A., IPM</td>
-                                    <td>Pengarah</td>
+                                    <td>Chief Director</td>
                                 </tr>
                                 <tr>
-                                    <th>2</th>
+                                    <!-- <th>2</th> -->
                                     <td>Rudy, S.H., LL.M., LL.D.</td>
-                                    <td>Anggota Pengarah</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>3</th>
+                                    <!-- <th>3</th> -->
                                     <td>Dr. Anna Gustina Zainal, S.Sos., M.Si.</td>
-                                    <td>Anggota  Pengarah</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>4</th>
+                                    <!-- <th>4</th> -->
                                     <td>Dr. Ayi Ahadiat, S.E., M.B.A.</td>
-                                    <td>Anggota  Pengarah</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>5</th>
+                                    <!-- <th>5</th> -->
                                     <td>Dr. dr. Evi Kurniawaty, M.Sc</td>
-                                    <td>Anggota  Pengarah</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>6</th>
+                                    <!-- <th>6</th> -->
                                     <td>Prof. Dr. Jhon Hendri, M.S</td>
-                                    <td>Anggota  Pengarah</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>7</th>
+                                    <!-- <th>7</th> -->
                                     <td>Dr. Habibullah Jimad, S.E., M.M</td>
-                                    <td>Anggota  Pengarah</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>8</th>
-                                    <td>Prof. Dr.  Satria Bangsawan,   S.E.,   M.Si</td>
-                                    <td>Penanggung  Jawab</td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <th>9</th>
-                                    <td>Ir. Andius  Dasa Putra, S.T.,  M.T., Ph.D., IPM</td>
-                                    <td>Wakil Penanggung Jawab I</td>
+                                    <!-- <th>8</th> -->
+                                    <td>Prof. Dr. Satria Bangsawan, S.E., M.Si</td>
+                                    <td>Chairman of The Committee</td>
                                 </tr>
                                 <tr>
-                                    <th>10</th>
+                                    <!-- <th>9</th> -->
+                                    <td>Ir. Andius Dasa Putra, S.T., M.T., Ph.D., IPM</td>
+                                    <td>Vice Chairman of The Committee I</td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>10</th> -->
                                     <td>dr. Intanri Kurniati, Sp.PK</td>
-                                    <td>Wakil Penanggung Jawab II</td>
+                                    <td>Vice Chairman of The Committee II</td>
                                 </tr>
                                 <tr>
-                                    <th>11</th>
+                                    <!-- <th>11</th> -->
                                     <td>Dr. dr. Dian Isti Angraini, S. Ked., M.P.H.</td>
-                                    <td>Wakil Penanggung Jawab III</td>
+                                    <td>Vice Chairman of The Committee III</td>
                                 </tr>
                                 <tr>
-                                    <th>12</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>12</th> -->
                                     <td>Dr.si. dr. Syazili Mustofa, M.Biomed</td>
-                                    <td>Ketua</td>
+                                    <td>Chief Executive</td>
                                 </tr>
                                 <tr>
-                                    <th>13</th>
+                                    <!-- <th>13</th> -->
                                     <td>Ramadhana Komala, S.Gz., M.Si</td>
-                                    <td>Wakil Ketua I</td>
+                                    <td>Vice Chairman I</td>
                                 </tr>
                                 <tr>
-                                    <th>14</th>
+                                    <!-- <th>14</th> -->
                                     <td>Isroni Muhammad Miraj Mirza, SH, MH</td>
-                                    <td>Wakil Ketua II</td>
+                                    <td>Vice Chairman II</td>
                                 </tr>
                                 <tr>
-                                    <th>15</th>
+                                    <!-- <th>15</th> -->
                                     <td>dr. Diana Mayasari, MKK</td>
-                                    <td>Sekretaris</td>
+                                    <td>Secretary</td>
                                 </tr>
                                 <tr>
-                                    <th>16</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>16</th> -->
                                     <td>Suryadi Islami, S.Si., M. Biomed</td>
-                                    <td>Divisi  Acara</td>
+                                    <td>Head of Event Division</td>
                                 </tr>
                                 <tr>
-                                    <th>17</th>
+                                    <!-- <th>17</th> -->
                                     <td>Dr. dr. Khairunnisa, M.Kes AIFO</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>18</th>
+                                    <!-- <th>18</th> -->
                                     <td>dr. Agustyas Tjiptaningrum, SpPK</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>19</th>
+                                    <!-- <th>19</th> -->
                                     <td>dr. Novita Carolia, M.Sc</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>20</th>
+                                    <!-- <th>20</th> -->
                                     <td>dr. Hanna Mutiara, M.Kes, Sp.ParK</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>21</th>
+                                    <!-- <th>21</th> -->
                                     <td>Bayu Anggileo Pramesona, S.Kep, Ns., MMR, Ph.D</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>22</th>
+                                    <!-- <th>22</th> -->
                                     <td>Dr. Nuning Nurcahyani, M.Sc</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>23</th>
+                                    <!-- <th>23</th> -->
                                     <td>Apt. Dwi Aulia Ramdini, M.Farm</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>24</th>
+                                    <!-- <th>24</th> -->
                                     <td>dr. Anisa Nuraisa Djausal, MKM</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>25</th>
+                                    <!-- <th>25</th> -->
                                     <td>dr. Risti Graharti, M.Ling</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>26</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>26</th> -->
                                     <td>Ihsanti Dwi Rahayu, S.Farm., M.S.Farm</td>
-                                    <td>Divisi Ilmia</td>
+                                    <td>Head of The Scientific Division</td>
                                 </tr>
                                 <tr>
-                                    <th>27</th>
+                                    <!-- <th>27</th> -->
                                     <td>Dr. dr. Jhons Fatriyadi Suwandi, M.Kes, Sp.ParK</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>28</th>
+                                    <!-- <th>28</th> -->
                                     <td>Dr. dr. Betta Kurniawan, M.Kes, Sp.ParK</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>29</th>
+                                    <!-- <th>29</th> -->
                                     <td>Dr. dr. Ety Apriliana, M.Biomed</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>30</th>
+                                    <!-- <th>30</th> -->
                                     <td>Dr. dr. Susianti, M.Sc</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>31</th>
+                                    <!-- <th>31</th> -->
                                     <td>Dr. dr. Indri Windarti, Sp.PA</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>32</th>
+                                    <!-- <th>32</th> -->
                                     <td>dr. Waluyo Rudiyanto, M.Kes</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>33</th>
+                                    <!-- <th>33</th> -->
                                     <td>Dr. dr. Reni Zuraida, M.Si</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>34</th>
+                                    <!-- <th>34</th> -->
                                     <td>Dr. Suharmanto, S.Kep, MKM</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>35</th>
+                                    <!-- <th>35</th> -->
                                     <td>Dr. Endah Setyaningrum, M.Biomed</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>36</th>
+                                    <!-- <th>36</th> -->
                                     <td>Bayu Putra Danan Jaya, S.Si, M.Si</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>37</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>37</th> -->
                                     <td>Apt. Citra Yuliyanda Pardilawati, S.Farm., M.Farm.</td>
-                                    <td>Divisi Prosiding</td>
+                                    <td>Head of The Proceeding Division</td>
                                 </tr>
                                 <tr>
-                                    <th>38</th>
+                                    <!-- <th>38</th> -->
                                     <td>Dr. dr. Fitria Saftarina, M.Sc</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>39</th>
+                                    <!-- <th>39</th> -->
                                     <td>dr. Nisa Karima, M.Sc</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>40</th>
+                                    <!-- <th>40</th> -->
                                     <td>dr. Tri Umiana Soleha, M.Kes</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>41</th>
+                                    <!-- <th>41</th> -->
                                     <td>Sutarto, SKM, M.Epid</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>42</th>
+                                    <!-- <th>42</th> -->
                                     <td>Andi Nafisah Tendri Adjeng, S.Farm, M.Sc</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>43</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>43</th> -->
                                     <td>Selvi Marcellia, S.Si., M.Sc</td>
-                                    <td>Divisi Humas Publikasi</td>
+                                    <td>Head of The Public Relation and Publication Division</td>
                                 </tr>
                                 <tr>
-                                    <th>44</th>
+                                    <!-- <th>44</th> -->
                                     <td>dr. Anggraeni Janar Wulan, M.Sc</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>45</th>
+                                    <!-- <th>45</th> -->
                                     <td>Afriyani, S.Farm, M.Farm</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>46</th>
+                                    <!-- <th>46</th> -->
                                     <td>dr. Giska Tri Putri, M.Ling</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>47</th>
+                                    <!-- <th>47</th> -->
                                     <td>dr. Maya Ganda Ratna, M.Sc</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>48</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>48</th> -->
                                     <td>Sofyan Musyabiq Wijaya, S.Gz, M.Gz</td>
-                                    <td>Divisi Informasi & Teknologi</td>
+                                    <td>Head of Information and Technology DIvision</td>
                                 </tr>
                                 <tr>
-                                    <th>49</th>
+                                    <!-- <th>49</th> -->
                                     <td>Hermansyah, S.Kom</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>50</th>
+                                    <!-- <th>50</th> -->
                                     <td>Nahrowi</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>51</th>
+                                    <!-- <th>51</th> -->
                                     <td>Erik Riyandi</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>52</th>
+                                    <!-- <th>52</th> -->
                                     <td>Aji Kurniawan Irawan</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>53</th>
+                                    <!-- <th>53</th> -->
                                     <td>Rendi</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>54</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>54</th> -->
                                     <td>Linda Septiani, S.Si., M.Sc.</td>
-                                    <td>Divisi Sekretariatan</td>
+                                    <td>Head of The Secretary Division</td>
                                 </tr>
                                 <tr>
-                                    <th>55</th>
+                                    <!-- <th>55</th> -->
                                     <td>Dharmawanti, S.Sos</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>56</th>
+                                    <!-- <th>56</th> -->
                                     <td>Widya Wati, S.H., M.H</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>57</th>
+                                    <!-- <th>57</th> -->
                                     <td>M. Zaim Rozaan, S.Hub.In</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>58</th>
+                                    <!-- <th>58</th> -->
                                     <td>Ena, S.E</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>59</th>
+                                    <!-- <th>59</th> -->
                                     <td>Andri Okta Wijaya, S.H</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>60</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>60</th> -->
                                     <td>Apt. Ervina Damayanti, M.Clin, Pharm</td>
-                                    <td>Divisi Liaison officer (LO)</td>
+                                    <td>Head of Liaison Officer (LO)</td>
                                 </tr>
                                 <tr>
-                                    <th>61</th>
+                                    <!-- <th>61</th> -->
                                     <td>dr. Putu Ristya Ayu S, M.Kes, Sp.PK (K)</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>62</th>
+                                    <!-- <th>62</th> -->
                                     <td>Apt. Zulpakor Oktoba, S.Si, M.Farm</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>63</th>
+                                    <!-- <th>63</th> -->
                                     <td>Femmy Andrifianie, S.Farm, M.Farm</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>64</th>
+                                    <!-- <th>64</th> -->
                                     <td>Endah</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>65</th>
+                                    <!-- <th>65</th> -->
                                     <td>Ramadhan Triyandi, S.Farm, M.Si</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>66</th>
+                                    <!-- <th>66</th> -->
                                     <td>M Iqbal</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>67</th>
+                                    <!-- <th>67</th> -->
                                     <td>Apt. M Fitra Wardhana Sayoeti, S.Farm, M.Farm</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>68</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <!-- <th>68</th> -->
                                     <td>Nuriah, A.Md</td>
-                                    <td>Sie Konsumsi</td>
+                                    <td>Head of Consumtion Division</td>
                                 </tr>
                                 <tr>
-                                    <th>69</th>
+                                    <!-- <th>69</th> -->
                                     <td>Suharyani</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>70</th>
+                                    <!-- <th>70</th> -->
                                     <td>Agustina</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>71</th>
+                                    <!-- <th>71</th> -->
                                     <td>Vienda Redisti, Amd</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>72</th>
+                                    <!-- <th>72</th> -->
                                     <td>Romiani</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                                 <tr>
-                                    <th>73</th>
+                                    <!-- <th>73</th> -->
                                     <td>Eka</td>
-                                    <td>Anggota</td>
+                                    <td>Steering Member</td>
                                 </tr>
                             </tbody>
                         </table>

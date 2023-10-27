@@ -195,25 +195,24 @@
                 <!-- Speaker Card 1 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-1.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="./dist/img/speaker-1.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
-                        <p class="font-bold text-primary text-xl">Speaker 1</p>
+                        <p class="font-bold text-primary text-xl">Budi Gunadi Sadikin</p>
                         <p class="text-sm md:text-base text-mydark">Ministry of Health of the Republic of Indonesia</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-sm md:text-base text-mydark">"Indonesian goverment policies in tackling and preventing
-                            malnutrition as an effort to prevent degenerative diseases"</p>
+                        <p class="text-sm md:text-base text-mydark">"Indonesian goverment policies in tackling and preventing non communicable diseases"</p>
                     </div>
                 </div>
 
                 <!-- Speaker Card 2 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-2.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="./dist/img/speaker-2.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Prof. dr. Nur Indrawati Lipoeto, M.Sc, Ph.D, Sp.GK</p>
@@ -230,8 +229,8 @@
                 <!-- Speaker Card 3 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-3.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="./dist/img/speaker-3.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Prof. Dr. Sazzli Shahlan Kasim, MBBCh, MRCPI, CSCST, FNHAM, AM, FAsCC, FRCPI, FESC</p>
@@ -240,31 +239,31 @@
                             <hr class="w-full text-disabled">
                         </div>
                         <p class="text-sm md:text-base text-mydark">"Inflammation in atherosclerotic cardiovascular
-                            disease, where we are and where are we going"</p>
+                            disease, where we are and where are we going?"</p>
                     </div>
                 </div>
 
                 <!-- Speaker Card 4 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-4.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="./dist/img/speaker-4.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
-                        <p class="font-bold text-primary text-xl">Prof. Noboru Hattori, MD, Ph.D</p>
-                        <p class="text-sm md:text-base text-mydark">Hiroshima University, Japan</p>
+                        <p class="font-bold text-primary text-xl">Satoshi Matsusita, M.D, Ph.D</p>
+                        <p class="text-sm md:text-base text-mydark">Juntendo University School of Medicine, Japan</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-sm md:text-base text-mydark">"Environmental pollution effects in pulmonary inflamation process: the role of cytokine in chronic respiratory problem"</p>
+                        <p class="text-sm md:text-base text-mydark">"Regenerative medicine for severe heart failure"</p>
                     </div>
                 </div>
 
                 <!-- Speaker Card 5 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-5.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="./dist/img/speaker-5.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Endre Kristof, MD, Ph.D</p>
@@ -278,8 +277,8 @@
                 <!-- Speaker Card 6 -->
                 <div class="w-[320px] md:w-[300px] rounded-lg shadow-md overflow-hidden group hover:shadow-lg">
                     <div class="card-img w-full h-[380px] md:h-[340px] overflow-hidden">
-                        <img class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                            data-src="{{ asset('dist') }}/img/speaker-6.png" alt="photo of the speaker">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                            src="./dist/img/speaker-6.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
                         <p class="font-bold text-primary text-xl">Kalinaki Hanifar</p>
@@ -287,7 +286,7 @@
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-sm md:text-base text-mydark"></p>"On Going..."
+                        <p class="text-sm md:text-base text-mydark"></p>"Degenerative Disease from Nutrigenomic Aspect"
                     </div>
                 </div>
             </div>
