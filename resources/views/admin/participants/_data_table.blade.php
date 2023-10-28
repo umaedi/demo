@@ -14,7 +14,7 @@
             <tr>
                 <td>{{ $table->firstItem() + $key}}</td>
                 <td>{{ $tb->name }}</td>
-                <td>{{  $tb->no_tlp  }}</td>
+                <td><a href="https://api.whatsapp.com/send?phone={{  $tb->no_tlp  }}"></a>{{  $tb->no_tlp  }}</td>
                 <td>{{  $tb->institution  }}</td>
                 <td>{{  $tb->country  }}</td>
                 <td>
