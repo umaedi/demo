@@ -31,14 +31,15 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $categories = [
+            ['name'  => 'Genetic, degenerative and metabolic disease'],
+            ['name'  => 'Pharmacy and Nursing'],
+            ['name'  => 'Health Technology '],
             ['name'  => 'Immunology'],
             ['name'  => 'Nutrition and Public Health'],
-            ['name'  => 'Biochemistry and Biomoleculer'],
-            ['name'  => 'Woman and Child Health'],
-            ['name'  => 'Environmental Health'],
+            ['name'  => 'Biochemistry and Biomolecules'],
+            ['name'  => 'Women and Child Health'],
             ['name'  => 'Communicable Disease'],
-            ['name'  => 'Pharmacy and Nursing'],
-            ['name'  => 'Genetic and Degenerative Disease'],
+            ['name'  => 'Environment and Health'],
         ];
 
         foreach ($categories as $ct) {
