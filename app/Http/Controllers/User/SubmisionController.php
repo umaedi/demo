@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
 
 class SubmisionController extends Controller
@@ -33,6 +34,7 @@ class SubmisionController extends Controller
     public function create()
     {
         $data['title'] = "Create Submission";
+        $data['categories'] = Category::all();
         return view('user.submision.create', $data);
     }
 
@@ -94,6 +96,7 @@ class SubmisionController extends Controller
     {
         $data['submission'] = $this->submission->Query()->where('id', $id)->where('user_id', auth()->user()->id)->first();
         $data['title'] = "Edit Submission";
+        $data['categories'] = Category::all();
         return view('user.submision.edit', $data);
     }
 

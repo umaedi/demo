@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\SubmissionService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class DashboardController extends Controller
