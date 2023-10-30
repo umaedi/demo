@@ -51,12 +51,7 @@
                     </div>
                     <div class="form-group">
                       <label for="topic">Topic</label>
-                      <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" value="{{ old('topic') ?? $submission->topic}}">
-                      @error('topic')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
-                      @enderror
+                      <input type="text" class="form-control" id="topic" value="{{ old('topic') ?? $submission->topic}}">
                     </div>
                     <div class="form-group">
                       <label for="abstract_file">Abstract</label>
