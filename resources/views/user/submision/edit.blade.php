@@ -50,13 +50,8 @@
                       @enderror
                     </div>
                     <div class="form-group">
-                      <label for="topic">Topic (<span class="text-danger">*</span>)</label>
-                      <select name="topic" class="form-control  @error('topic') is-invalid @enderror" id="gender" name="topic" tabindex="4" value="{{ old('topic') ?? $submission->topic}}">
-                        <option value="">--Please select one--</option>
-                        @foreach ($categories as $ct)
-                        <option value="{{ $ct->name }}">{{ $ct->name }}</option>
-                        @endforeach
-                      </select>
+                      <label for="topic">Topic</label>
+                      <input type="text" class="form-control @error('topic') is-invalid @enderror" id="topic" name="topic" value="{{ old('topic') ?? $submission->topic}}">
                       @error('topic')
                       <div class="invalid-feedback">
                         {{ $message }}

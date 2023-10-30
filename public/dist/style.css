@@ -7804,6 +7804,14 @@ details.collapse summary::-webkit-details-marker {
   z-index: 1;
 }
 
+.z-20 {
+  z-index: 20;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
 .float-right {
   float: right;
 }
@@ -9130,6 +9138,11 @@ details.collapse summary::-webkit-details-marker {
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-blue-400 {
