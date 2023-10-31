@@ -82,7 +82,7 @@ class SubmissionController extends Controller
 
         $data['user_id'] = $submission->user_id;
         $data['reviewer_id'] = auth()->user()->id;
-        $data['histories'] = $submission->histories + 1;
+        $data['histories'] = $submission->histories;
         $data['abstract'] = $submission->abstract;
         $data['abstract_file'] = $submission->abstract_file;
         $data['paper'] = $submission->paper;
