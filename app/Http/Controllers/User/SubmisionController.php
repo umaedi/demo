@@ -107,7 +107,7 @@ class SubmisionController extends Controller
             'abstract'  => 'required',
             'abstract_file'  => 'mimes:pdf,docx|max:2048',
             'keyword'   => 'required|max:255',
-            'topic'     => 'required|max:255',
+            // 'topic'     => 'required|max:255',
         ]);
 
         $submission = $this->submission->Query()->whereId($id)->where('user_id', auth()->user()->id)->first();
