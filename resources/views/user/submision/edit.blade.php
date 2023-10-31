@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group">
                       <label for="topic">Topic</label>
-                      <input type="text" class="form-control" id="topic" value="{{ old('topic') ?? $submission->topic}}">
+                      <input type="text" class="form-control" id="topic" name="{{ $submission->topic }}" value="{{ old('topic') ?? $submission->topic}}">
                     </div>
                     <div class="form-group">
                       <label for="abstract_file">Abstract</label>
