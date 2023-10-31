@@ -86,6 +86,7 @@ class SubmissionController extends Controller
         $data['abstract'] = $submission->abstract;
         $data['abstract_file'] = $submission->abstract_file;
         $data['paper'] = $submission->paper;
+        $data['topic'] = $submission->topic;
 
         if (isset($data['rev_abstract_file'])) {
             $data['rev_abstract_file'] = Storage::putFile('public/paper', $data['rev_abstract_file']);
