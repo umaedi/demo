@@ -25,7 +25,7 @@ class DashboardController extends Controller
 
         $data['title'] = 'Reviewer Dashboard';
         $data['submission'] = $this->submission->Query()->whereNull('reviewer_id')->where('histories', '1')->count();
-        $data['submission_revised'] = $this->submission->Query()->where('acc', 1)->count();
+        $data['submission_revised'] = $this->submission->Query()->where('histories', '1')->where('status', '1')->count();
         $data['submission_accepted'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', '2')->count();
         $data['submission_rejected'] = $this->submission->Query()->where('reviewer_id', auth()->user()->id)->where('status', '3')->count();
         return view('reviewer.dashborad.index', $data);
