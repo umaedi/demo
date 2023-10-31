@@ -128,7 +128,7 @@ class SubmissionController extends Controller
         if (\request()->ajax()) {
             // $uniqueData = $this->submission->Query()->groupBy('registrasi_id')->get(['registrasi_id', DB::raw('MAX(id) as max_id')])->pluck('max_id');
             // $data['table'] = $this->submission->Query()->whereIn('id', $uniqueData)->where('reviewer_id', auth()->user()->id)->where('status', '1')->paginate(10);
-            $data['table'] = $this->submission->Query()->where('histories', '1')->where('status', '1')->paginate(10);
+            $data['table'] = $this->submission->Query()->where('status', '1')->where('acc', 1)->paginate(10);
             return view('reviewer.submission._data_table_show', $data);
         }
         $data['title'] = "Submission Revised";
