@@ -124,6 +124,7 @@ class SubmisionController extends Controller
         $data['reviewer_id'] = $submission->reviewer_id;
         $data['histories'] = $submission->histories + 1;
         $data['registrasi_id'] = $submission->registrasi_id;
+        $data['topic'] = $submission->topic;
 
         if ($request->file('abstract_file')) {
             $abstract_file = $request->file('abstract_file');
