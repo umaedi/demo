@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group">
                       <label for="topic">Topic (<span class="text-danger">*</span>)</label>
-                      <select name="topic" class="form-control  @error('topic') is-invalid @enderror" id="gender" name="topic" tabindex="4" value="{{ old('topic' ?? $submission->topic) }}">
+                      <select name="topic" class="form-control  @error('topic') is-invalid @enderror" id="gender" name="topic" tabindex="4" value="{{ $submission->topic) }}">
                         <option value="">--Please select one--</option>
                         @foreach ($categories as $ct)
                         <option value="{{ $ct->name }}">{{ $ct->name }}</option>
