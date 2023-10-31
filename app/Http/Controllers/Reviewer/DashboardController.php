@@ -19,7 +19,7 @@ class DashboardController extends Controller
     {
 
         if (\request()->ajax()) {
-            $data['table'] = $this->submission->Query()->where('histories', '1')->where('acc', '1')->get();
+            $data['table'] = $this->submission->Query()->where('histories', '1')->where('status', '1')->get();
             return view('reviewer.dashborad._data_table', $data);
         }
 
