@@ -50,12 +50,12 @@
                                     <li>November 29th, 2023 : Conference and Oral Presentation.</li>
                                 </ul>
                             </li>
-                            <li>Location : Bandar Lampung (Offline) and Online
+                            <li>Location : Swiss-Belhotel, Bandar Lampung, Indonesia (Offline) and Online
                                 via Zoom Meeting.</li>
                             <li>Zoom ID will be available in Participant Dashboard Page.</li>
-                            <li>3rd November 2023 : Abstract Submission Deadline.</li>
-                            <li>21st November 2023 : Participant Registration Deadline.</li>
-                            <li>13th December 2023 : Full Paper Submission Deadline.</li>
+                            <li>21<sup>st</sup> November 2023 : Abstract Submission Deadline.</li>
+                            <li>21<sup>st</sup> November 2023 : Participant Registration Deadline.</li>
+                            <li>13<sup>th</sup> December 2023 : Full Paper Submission Deadline.</li>
                         </ol>
                     </div>
     
