@@ -49,7 +49,7 @@
                     <p class="text-xs lg:text-sm text-white">HETI Project</p>
                     <p class="text-xs lg:text-sm text-white">University of Lampung</p>
                     <hr class="w-full text-disabled">
-                    <p class="text-xs lg:text-sm text-white">Bandar Lampung</p>
+                   <p class="text-xs lg:text-sm text-white">Swiss-Belhotel, Bandar Lampung</p>
                     <p class="text-xs lg:text-sm text-white">November 28<sup>th</sup> - 29<sup>th</sup> 2023</p>
                 </div>
             </div>
@@ -134,7 +134,7 @@
                         d="M40.75 38.3333C38.5399 38.3333 36.4203 37.4553 34.8574 35.8925C33.2946 34.3297 32.4167 32.2101 32.4167 30C32.4167 27.7898 33.2946 25.6702 34.8574 24.1074C36.4203 22.5446 38.5399 21.6666 40.75 21.6666C42.9601 21.6666 45.0798 22.5446 46.6426 24.1074C48.2054 25.6702 49.0833 27.7898 49.0833 30C49.0833 31.0943 48.8678 32.1779 48.449 33.189C48.0302 34.2 47.4164 35.1187 46.6426 35.8925C45.8687 36.6663 44.9501 37.2802 43.939 37.699C42.928 38.1177 41.8444 38.3333 40.75 38.3333ZM40.75 6.66663C34.5616 6.66663 28.6267 9.12495 24.2508 13.5008C19.875 17.8766 17.4167 23.8116 17.4167 30C17.4167 47.5 40.75 73.3333 40.75 73.3333C40.75 73.3333 64.0833 47.5 64.0833 30C64.0833 23.8116 61.625 17.8766 57.2492 13.5008C52.8733 9.12495 46.9384 6.66663 40.75 6.66663Z"
                         fill="#FAFAFA" />
                 </svg>
-                <p class="text-white text-sm lg:text-xl">Bandar Lampung</p>
+               <p class="text-white text-sm lg:text-xl">Swiss-Belhotel</p>
                 <p class="text-white text-xs lg:text-lg">Lampung, Indonesia</p>
             </div>
 
@@ -174,7 +174,7 @@
                         </clipPath>
                     </defs>
                 </svg>
-                <p class="text-white text-sm lg:text-xl">3</p>
+                <p class="text-white text-sm lg:text-xl">9</p>
                 <p class="text-white text-xs lg:text-lg">Topics</p>
             </div>
         </div>
@@ -199,12 +199,13 @@
                             src="./dist/img/speaker-1.png" alt="photo of the speaker">
                     </div>
                     <div class="py-3 px-3 flex flex-col justify-center items-center text-center">
-                        <p class="font-bold text-primary text-xl">Budi Gunadi Sadikin</p>
-                        <p class="text-sm md:text-base text-mydark">Ministry of Health of the Republic of Indonesia</p>
+                        <p class="font-bold text-primary text-xl">Dr. Eva Susanti, S.Kp., M.Kes.</p>
+                        <p class="text-sm md:text-base text-mydark">Director of Non-Communicable Diseases</p>
                         <div class="w-full py-3">
                             <hr class="w-full text-disabled">
                         </div>
-                        <p class="text-sm md:text-base text-mydark">"Indonesian goverment policies in tackling and preventing non communicable diseases"</p>
+                        <p class="text-sm md:text-base text-mydark">"Indonesian goverment policies in tackling and
+                            preventing non communicable diseases"</p>
                     </div>
                 </div>
 
@@ -297,7 +298,7 @@
     <!-- Section 5 Start -->
     <section id="home-section-5" class="overflow-x-hidden">
         <div class="container sm:rounded-md w-full flex flex-col gap-10 p-10 cover shadow-lg"
-            style="background-image: url({{ asset('dist') }}/img/bg-section-5-home.png);">
+            style="background-image: url(./dist/img/bg-section-5-home.png);">
             <div data-aos="fade-down" class="section-5-title flex flex-col gap-1 items-center">
                 <p class="uppercase text-secondary text-sm lg:text-base font-semibold">event timeline</p>
                 <h1 class="uppercase text-white font-bold text-3xl md:text-5xl">important dates</h1>
@@ -306,7 +307,7 @@
                 <ul class="steps steps-vertical lg:steps-horizontal text-white w-full">
                     <li class="step step-white text-white text-sm lg:text-base">
                         <div class="text-left lg:text-center pt-10 pb-10 px-2 lg:pt-0 lg:px-10">
-                            <p>September 22<sup>nd</sup> - November 3<sup>rd</sup> 2023</p>
+                            <p>September 22<sup>nd</sup> - November 21<sup>st</sup> 2023</p>
                             <p class="font-semibold text-lg">Registration</p>
                             <p>Event Registration and Paper Submission</p>
                         </div>

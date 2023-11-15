@@ -25,12 +25,12 @@
         <section id="about-event-section-2">
             <div class="container px-2 py-10 md:py-16 flex flex-col gap-10">
     
-                <div data-aos="fade-up"
-                    class="wrapper w-full h-40 md:h-80 lg:h-96 shadow-xl overflow-hidden group bg-fixed">
-                    <img data-aos="fade-up"
-                        class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                        data-src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">
-                </div>
+                <!--<div data-aos="fade-up"-->
+                <!--    class="wrapper w-full h-40 md:h-80 lg:h-96 shadow-xl overflow-hidden group bg-fixed">-->
+                <!--    <img data-aos="fade-up"-->
+                <!--        class="lazyload w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"-->
+                <!--        data-src="{{ asset('dist') }}/img/bg-about-event.jpg" alt="About Event Poster">-->
+                <!--</div>-->
     
                 <!-- 1st -->
                 <div class="container lg:px-52 flex flex-col gap-8 md:gap-12">
