@@ -36,7 +36,7 @@ class LoaController extends Controller
         $fontPath = public_path('fonts/Poppins-SemiBold.ttf');
 
         // The text to be centered
-        $title = $submission->title;
+        $title = '"' . $submission->title . '"';
 
         // Periksa apakah lebar teks melebihi batas kertas
         if ($title > $imageWidth) {
@@ -44,7 +44,7 @@ class LoaController extends Controller
             $title = wordwrap($title);
         }
 
-        $presensi = $submission->user->presence;
+        $presensi = '"' . $submission->user->presence . '"';
 
         // Get the size of the text bounding box
         $fontSize = 24;
