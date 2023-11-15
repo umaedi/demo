@@ -35,11 +35,12 @@ class LoaController extends Controller
         // $color = imagecolorallocate($image, 51, 51, 102);
         $fontPath = public_path('fonts/Poppins-SemiBold.ttf');
 
+        $margin = '1514';
         // The text to be centered
-        $title = '"' . $submission->title . '"';
+        $title = 'xxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxx xxxxxxxxx';
 
         // Periksa apakah lebar teks melebihi batas kertas
-        if ($title > $imageWidth) {
+        if ($title > $margin) {
             // Jika ya, tambahkan tag <br> untuk turun ke baris berikutnya
             $title = wordwrap($title);
         }
