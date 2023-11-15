@@ -37,7 +37,7 @@ class LoaController extends Controller
 
         $margin = '1514';
         // The text to be centered
-        $title = 'xxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxx xxxxxxxxx';
+        $title = $submission->title;
 
         // Periksa apakah lebar teks melebihi batas kertas
         if ($title > $margin) {
@@ -65,7 +65,7 @@ class LoaController extends Controller
         imagettftext($image, $fontSize, 0, $presensi_of_image, 1060, $textColor, $fontPath, $presensi);
 
         $authors = $submission->author;
-        imagettftext($image, 24, 0, 420, 600, $textColor, $fontPath, $authors);
+        imagettftext($image, 24, 0, 280, 600, $textColor, $fontPath, $authors);
 
         // Set the content type header and output the image
         header("Content-type: image/png");
