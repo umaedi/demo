@@ -62,7 +62,7 @@ class LoaController extends Controller
         $presensi_of_image = ($imageWidth - $textWidth1) / 2;
 
         // Add the centered text to the image
-        imagettftext($image, $fontSize, 0, $title_of_image, $position_title, $textColor, $fontPath, $title);
+        imagettftext($image, $fontSize, 0, $title_of_image, $position_title, $textColor, $fontPath, '"' . $title . '"');
 
         imagettftext($image, $fontSize, 0, $presensi_of_image, $position_presence, $textColor, $fontPath, $presensi);
 
