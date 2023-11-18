@@ -35,7 +35,7 @@ class LoaController extends Controller
             $position_presence = 965;
         } elseif (strlen($title) <= 137) {
             $image = imagecreatefromjpeg(public_path('loa/loa_2.jpg'));
-            $position_title = 720;
+            $position_title = 723;
             $position_presence = 1004;
         } else {
             $image = imagecreatefromjpeg(public_path('loa/loa_3.jpg'));
