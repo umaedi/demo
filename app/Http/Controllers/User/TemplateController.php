@@ -26,7 +26,7 @@ class TemplateController extends Controller
             $template = public_path('template/ppt.pptx');
             return Response::download($template);
         } else {
-            $template = public_path('template/vidcon.jpg');
+            $template = public_path('template/vidcon.jpeg');
             return Response::download($template);
         }
     }
