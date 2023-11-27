@@ -337,7 +337,7 @@
         <div class="container px-2 py-10 h-full w-full">
             <div class="flex flex-wrap gap-5 justify-center">
                 <div class="flex flex-col gap-1 items-center p-2 bg-primary rounded-box text-white">
-                    <h1 id="days" class="countdownx font-mono text-3xl md:text-8xl">
+                    <h1 id="daysx" class="countdownx font-mono text-3xl md:text-8xl">
                         <!-- Days Counting Here -->
                         0
                     </h1>
