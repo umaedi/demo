@@ -377,7 +377,7 @@
     <!-- Section 6 End -->
 @endsection
 @push('js')
-<script type="text/javascript">
+{{-- <script type="text/javascript">
    const targetDate = new Date("{{ $end_time }}").getTime();
 
     const x = setInterval(function() {
@@ -402,6 +402,6 @@
             document.getElementById('seconds').innerHTML = 0;
         }
     }, 1000);
-</script>    
+</script>     --}}
 @endpush
 
