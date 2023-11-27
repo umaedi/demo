@@ -57,6 +57,12 @@
                             <li>21<sup>st</sup> November 2023 : Participant Registration Deadline.</li>
                             <li>13<sup>th</sup> December 2023 : Full Paper Submission Deadline.</li>
                         </ol>
+                        <a href="{{ asset('dist') }}/docs/RUNDOWN_ICOMESH_2023.pdf">
+                            <button type="button"
+                                class="mt-3 py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                Download Event Rundown
+                            </button>
+                        </a>
                     </div>
     
     

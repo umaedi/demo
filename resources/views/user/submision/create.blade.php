@@ -48,7 +48,7 @@
             </div>
             <div class="card mt-3">
                 <div class="card-body">
-                    <form action="/user/submission/store" method="POST" enctype="multipart/form-data">
+                    {{-- <form action="/user/submission/store" method="POST" enctype="multipart/form-data"> --}}
                         @csrf
                         <div class="form-group">
                           <label for="title">Paper Title (<span class="text-danger">*</span>)</label>
@@ -122,8 +122,8 @@
                           <label for="message">Message (optional)</label>
                           <textarea class="form-control" id="message" name="message">{{ old('message') }}</textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">SUBMIT</button>
-                    </form>
+                        <button onclick="return confirm('Submission Closed!')" class="btn btn-primary">SUBMIT</button>
+                    {{-- </form> --}}
                 </div>
             </div>
         </div>
