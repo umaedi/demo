@@ -226,11 +226,11 @@
                     <td>Full Paper Template</td>
                     <td  class="text-center"><a href="/user/download/template?q=full_paper" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
                   </tr>
-                  <tr>
+                  {{-- <tr>
                     <th scope="row">3</th>
                     <td>PPT Template</td>
                     <td class="text-center"><a href="/user/download/template?q=ppt" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
-                  </tr>
+                  </tr> --}}
                   </tr>
                 </tbody>
               </table>
@@ -309,11 +309,11 @@
                   <td>Full Paper Template</td>
                   <td  class="text-center"><a href="/user/download/template?q=full_paper" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
                 </tr>
-                <tr>
+                {{-- <tr>
                   <th scope="row">3</th>
                   <td>PPT Template</td>
                   <td class="text-center"><a href="/user/download/template?q=ppt" class="btn btn-sm btn-success"><i class="fa fa-download"></i></a></td>
-                </tr>
+                </tr> --}}
                 </tr>
               </tbody>
             </table>
