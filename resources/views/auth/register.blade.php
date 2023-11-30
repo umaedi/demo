@@ -42,7 +42,7 @@
             </div>
             @endif
             
-            <form action="/register" method="POST" class="input-area group flex flex-col gap-10" novalidate>
+            {{-- <form action="/register" method="POST" class="input-area group flex flex-col gap-10" novalidate> --}}
                 @csrf
                 <!-- Input -->
                 <div class="wrapper flex flex-col gap-2">
@@ -223,12 +223,12 @@
 
                 <!-- Button Sign Up -->
                 <div class="wrapper flex flex-col gap-0">
-                    <button type="submit"
+                    <button type="submit" onclick="return confirm('Registration has closed!')"
                         class="w-full py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base group-invalid:pointer-events-none group-invalid:opacity-50">
                         Sign Up
                     </button>
                 </div>
-            </form>
+            {{-- </form> --}}
 
             <p class="text-sm text-mydark text-center">Already have an account? <span
                     class="text-primary hover:text-mydark"><a href="/login">Login</a></span></p>
