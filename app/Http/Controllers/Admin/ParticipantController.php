@@ -82,7 +82,7 @@ class ParticipantController extends Controller
 
         DB::beginTransaction();
         try {
-            $this->user->update($participant, $status, $id_sertifikat ?? '');
+            $this->user->update($participant, $status, $id_sertifikat ?? NULL);
         } catch (\Throwable $th) {
             DB::rollBack();
             return $this->error($th->getMessage());
