@@ -36,7 +36,7 @@ class DashboardController extends Controller
                 }
 
                 $fontPath = public_path('fonts/Poppins-SemiBold.ttf');
-                $fontSize = 86;
+                $fontSize = 60;
                 $textBoundingBox = imagettfbbox($fontSize, 0, $fontPath, $name);
                 $textWidth = $textBoundingBox[2] - $textBoundingBox[0];
 
