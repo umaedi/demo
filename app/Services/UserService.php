@@ -28,9 +28,12 @@ class UserService
         return $this->user->create($data);
     }
 
-    public function update($participant, $status)
+    public function update($participant, $status, $id_sertifikat)
     {
-        $model = $participant->update(['status' => $status]);
+        $model = $participant->update([
+            'status' => $status,
+            'sertifikat' => $id_sertifikat,
+        ]);
         return $model;
     }
 }

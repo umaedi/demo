@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use Illuminate\Support\Facades\DB;
 use App\Services\SubmissionService;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 
 class ParticipantController extends Controller
 {
@@ -75,12 +76,13 @@ class ParticipantController extends Controller
                 $status = '1';
             } else {
                 $status = '2';
+                $id_sertifikat = strtoupper(Str::random(16));
             }
         }
 
         DB::beginTransaction();
         try {
-            $this->user->update($participant, $status);
+            $this->user->update($participant, $status, $id_sertifikat ?? '');
         } catch (\Throwable $th) {
             DB::rollBack();
             return $this->error($th->getMessage());

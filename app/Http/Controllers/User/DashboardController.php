@@ -46,7 +46,7 @@ class DashboardController extends Controller
                 //no sertifikat
                 imagettftext($image, 36, 0, 1475, 807, $textColor, $fontPath, $no_sertifikat);
 
-                // Aname
+                //name
                 imagettftext($image, $fontSize, 0, $textX,  1020, $textColor, $fontPath, $name);
 
                 imagejpeg($image, "sertifikat/$id_sertifikat.jpg");

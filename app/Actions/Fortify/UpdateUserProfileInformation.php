@@ -3,11 +3,12 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
@@ -45,7 +46,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         } else {
             $img = $user->img;
         }
-
+        $id_sertifikat = strtoupper(Str::random(16));
         if (
             $input['email'] !== $user->email &&
             $user instanceof MustVerifyEmail
@@ -61,6 +62,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'country' => $input['country'],
                 'no_tlp' => $input['no_tlp'],
                 'type_user' => $input['type_user'],
+                'sertifikat'    => $id_sertifikat,
                 'img'   => $img,
             ])->save();
         }
