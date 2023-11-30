@@ -163,7 +163,10 @@
             </div>
             <div class="card-body">
               @if (auth()->user()->sertifikat !== NULL)
-              <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" 		alt="Sertifikat">
+              <div class="src_sertifikat">
+             
+              </div>
+              {{-- <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" 		alt="Sertifikat"> --}}
               @else
               <img data-src="{{ asset('sertifikat/sertifikat.png') }}" class="lazyload img-fluid" alt="Sertifikat">
               @endif
@@ -249,7 +252,10 @@
             </div>
             <div class="card-body">
               @if (auth()->user()->sertifikat !== NULL)
-              <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" alt="Sertifikat">
+              <div class="src_sertifikat">
+             
+              </div>
+              {{-- <img class="src_sertifikat" src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" alt="Sertifikat"> --}}
               @else
               <img data-src="{{ asset('sertifikat/sertifikat.png') }}" class="lazyload img-fluid" alt="Sertifikat">
               @endif
@@ -272,7 +278,10 @@
           </div>
           <div class="card-body">
             @if (auth()->user()->sertifikat !== NULL)
-            <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" alt="Sertifikat">
+            <div class="src_sertifikat">
+             
+            </div>
+            {{-- <img class="src_sertifikat" src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" alt="Sertifikat"> --}}
             @else
             <img data-src="{{ asset('sertifikat/sertifikat.png') }}" class="lazyload img-fluid" alt="Sertifikat">
             @endif
@@ -332,7 +341,9 @@
           </div>
           <div class="card-body">
             @if (auth()->user()->sertifikat !== NULL)
-            <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" alt="Sertifikat">
+            <div class="src_sertifikat">
+             
+            </div>
             @else
             <img data-src="{{ asset('sertifikat/sertifikat.png') }}" class="lazyload img-fluid" alt="Sertifikat">
             @endif
@@ -367,6 +378,7 @@
 
           await transAjax(param).then((result) => {
             console.log('sertifikat successfully generate');
+            $('.src_sertifikat').html(` <img src="{{ asset('sertifikat/' . auth()->user()->sertifikat  . '.jpg') }}" class="img-fluid" alt="Sertifikat">`);
           });
       }
     </script>
