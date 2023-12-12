@@ -456,4 +456,83 @@
             </div>
         </section>
         <!-- Section 2 End -->
+
+        <!-- Section 3 Start -->
+    <section id="steering-committee-section-2">
+        <div class="container px-2 lg:px-52 py-10 md:py-16 flex flex-col gap-10">
+            <div data-aos="fade-up" class="content-1 flex flex-col gap-5">
+                <h1 class="text-center text-lg md:text-2xl font-medium">SCIENTIFIC COMMITTEE
+                </h1>
+                <p>
+                    <span><b>Chair</b> : <br>
+                        Prof. Dr. Sutopo Hadi, S. Si., M. Sc. <br>
+                        (Faculty of Mathematics and Natural Sciences, University of Lampung, Indonesia)</span>
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="table text-sm md:text-base">
+                        <!-- head -->
+                        <thead>
+                            <tr class="text-mydark">
+                                <th>NO.</th>
+                                <th>NAME</th>
+                                <th>INSTITUTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Prof. Dr. Sazzli Shahlan Kasim, MBBCh, MRCPI, CSCST, FNHAM, AM, FAsCC, FRCPI, FESC</td>
+                                <td>Universiti Teknologi MARA, Malaysia</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Prof. dr. Nur Indrawati Lipoeto, M.Sc, Ph.D, Sp.GK</td>
+                                <td>Faculty of Medicine, Andalas University, Indonesia</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Prof. Dr. Dyah Wulan Sumekar R.W., SKM., M.Kes</td>
+                                <td>Medical Faculty, University of Lampung , Indonesia</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Satoshi Matsusita, M.D., Ph.D.</td>
+                                <td>Juntendo University School of Medicine, Japan</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Endre Kristof, MD, Ph.D.</td>
+                                <td>University of Debrecen, Hongaria</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Rini arianti, Ph.D.</td>
+                                <td>University of Debrecen, Hongaria</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Ns. Bayu Anggileo Pramesona, S.Kep., MMR., Ph.D.</td>
+                                <td>Faculty of Medicine, University of Lampung, Indonesia</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Dr. dr. Khairun Nisa Berawi, M.Kes.</td>
+                                <td>Faculty of Medicine, University of Lampung, Indonesia</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Dr. Mahfut, S.Si., M.Sc.</td>
+                                <td>Faculty of Mathematics and Natural Sciences, University of Lampung, Indonesia</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Andi Nafisah Tendri Adjeng, S.Farm., M.Farm.</td>
+                                <td>Faculty of Medicine, University of Lampung, Indonesia</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </section>
+    <!-- Section 3 End -->
 @endsection

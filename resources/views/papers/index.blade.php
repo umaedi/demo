@@ -103,6 +103,13 @@
                                     Download Manual Book
                                 </button>
                             </a>
+                            <a href="{{ asset('dist') }}/docs/Template_Icomesh_Scitepress.docx">
+                                <button type="button"
+                                    class="py-3 px-5 shadow-sm inline-flex justify-center items-center rounded-xl font-semibold bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                    Download Template Proceeding
+                                </button>
+                            </a>
+                            
                         </div>
                         <p class="text-mydark text-xs">*The committee has the right to review and decide whether the paper
                             is
@@ -111,4 +118,52 @@
                 </div>
         </section>
         <!-- Section 2 End -->
+
+        <!-- Section 3 Start -->
+    <section id="call-for-papers-section-3">
+        <div class="container px-2 py-10 md:py-16 flex flex-col gap-10">
+
+            <!-- 1st -->
+            <div class="container lg:px-52 flex flex-col gap-8 md:gap-12">
+                <h1 data-aos="fade-down" class="text-xl md:text-5xl font-semibold text-mydark text-center md:text-left">
+                    Editorial Policy ICOMESH
+                </h1>
+
+                <hr class="border-disabled">
+                <div class="flex flex-col gap-8">
+                    <p class="text-mydark text-justify text-sm md:text-base">
+                        All new manuscripts to ICOMESH should be submitted directly via website on
+                        <a href="https://icomesh-unila.com/user/submission"
+                            target="_blank">https://icomesh-unila.com/user/submission</a> After you submit via the
+                        website, you will be
+                        notified via email that you registered via the previous website.
+                    </p>
+                    <div>
+                        <ol class="list-disc list-inside">
+                            <li>Step 1. To maintain scientific integrity, one of our editors will run Turnitin on every
+                                new submission to see if there are any potential plagiarism issues (maximum similarity
+                                20%). Papers that do not pass the plagiarism check will be rejected immediately.</li>
+                            <li>Step 2. Then the lead publication will conduct a preliminary check on the new submission
+                                to determine if it falls within the scope of the conference and decide whether it needs
+                                further review. If a new manuscript passes the initial vetting, it will be assigned to
+                                reviewers for double-blind peer review.</li>
+                            <li>Step 3. Each selected paper will be reviewed by at least one/two independent experts
+                                with related research backgrounds, especially originality, validity, quality, and
+                                readability. Review Reports received from experts will be assessed by one of the editors
+                                with international scientific standards.</li>
+                            <li>Step 4. If logical, then Review Reports will be sent to the authors to modify the
+                                manuscript accordingly. If it is illogical, the editor can assign a new reviewer or
+                                assess it himself.</li>
+                            <li>Step 5. Authors will be asked to revise their paper according to the points raised.</li>
+                            <li>Step 6. The revised version will then be evaluated by the editor whether the points
+                                submitted by the reviewer have been responded to or not, and the editor will send back
+                                the revised manuscript to the reviewer for re-evaluation.</li>
+                            <li>Step 7. If the reviewers approve the revised version of the manuscript, the Chief Editor
+                                will make the final decision on publication. </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Section 3 End -->
 @endsection
