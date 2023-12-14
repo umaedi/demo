@@ -89,6 +89,27 @@
                                 “icomesh-unila.com” website in September 2023. Participants will register directly on the
                                 ICOMESH website and upload all the required documents.</p>
                         </div>
+                        <div>
+                            <p class="font-semibold text-base md:text-lg mb-2">Topic : Biomolecular, Genetic and
+                                Degenerative Disease</p>
+                            <p class="text-sm md:text-base">
+                                <span class="font-semibold text-base md:text-lg mb-2">Sub Topic :</span>
+                            <ol class="list-disc list-inside">
+                                <li>Biomolecular and Biotechnology</li>
+                                <li>Biochemistry and Molecular biology</li>
+                                <li>Communicable disease</li>
+                                <li>Genetic disease</li>
+                                <li>Degenerative disease</li>
+                                <li>Metabolic disease</li>
+                                <li>Pharmacy and nursing</li>
+                                <li>Health technology</li>
+                                <li>Immunology</li>
+                                <li>Nutrition and public health</li>
+                                <li>Environment and health</li>
+                                <li>Women and child health</li>
+                            </ol>
+                            </p>
+                        </div>
     
                         <div class="w-fit h-fit flex flex-wrap gap-3">
                             <a href="{{ asset('dist') }}/docs/ICOMESH_2023_Template.docx">
