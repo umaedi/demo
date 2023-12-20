@@ -62,12 +62,12 @@
                                          <!-- row 1 -->
                                          <tr>
                                              <td>Date</td>
-                                             <td>: November 2023</td>
+                                             <td>: 28<sup>th</sup> - 29<sup>th</sup> November 2023</td>
                                          </tr>
                                          <!-- row 2 -->
                                          <tr>
                                              <td>Venue</td>
-                                             <td>: Lampung, Indonesia</td>
+                                             <td>: Swiss-Belhotel, Lampung, Indonesia</td>
                                          </tr>
                                          <!-- row 3 -->
                                          <tr>
@@ -120,6 +120,16 @@
                              </a>
                          </div>
                          <hr class="border-disabled">
+                         <div class="wrapper flex justify-between">
+                            <p class="text-sm md:text-base text-mydark">Full e-Proceeding Document</p>
+                            <a href="{{ asset('dist/docs/ICOMESH_2023_Table_of_Content.pdf') }}">
+                                <button type="button"
+                                    class="py-1 px-3 shadow-sm inline-flex justify-center rounded-md font-medium bg-primary text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all text-xs lg:text-base">
+                                    Download
+                                </button>
+                            </a>
+                        </div>
+                        <hr class="border-disabled">
                      </div>
                  </div>
  
@@ -144,14 +154,22 @@
                                  </tr>
                                  <!-- row 2 -->
                                  <tr>
-                                     <td><a href="/proceeding/topic2" class="block">Topic 2 :
-                                             Genetic</a></td>
+                                     <td>
+                                        {{-- <a href="/proceeding/topic2" class="block"> --}}
+                                            Topic 2 :
+                                             Genetic
+                                            {{-- </a> --}}
+                                        </td>
                                  </tr>
                                  <!-- row 3 -->
                                  <tr>
-                                     <td><a href="/proceeding/topic3" class="block">Topic 3 :
+                                     <td>
+                                        {{-- <a href="/proceeding/topic3" class="block"> --}}
+                                            Topic 3 :
                                              Degenerative
-                                             Desease</a></td>
+                                             Desease
+                                            {{-- </a> --}}
+                                        </td>
                                  </tr>
                                  <tr></tr>
                              </tbody>

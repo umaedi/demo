@@ -40,9 +40,9 @@
                                     <td class="flex justify-between items-center">
                                         <div class="wrapper text-mydark flex flex-col gap-2">
                                             <p class="font-semibold text-base md:text-lg">
-                                                <a href="/proceeding/topic1/show">
+                                                {{-- <a href="/proceeding/topic1/show"> --}}
                                                     Paper Title
-                                                </a>
+                                                {{-- </a> --}}
                                             </p>
                                             <p>Author 1, Author 2, Author 3</p>
                                         </div>
@@ -58,9 +58,9 @@
                                     <td class="flex justify-between items-center">
                                         <div class="wrapper text-mydark flex flex-col gap-2">
                                             <p class="font-semibold text-base md:text-lg">
-                                                <a href="/proceeding/topic1/show">
+                                                {{-- <a href="/proceeding/topic1/show"> --}}
                                                     Paper Title
-                                                </a>
+                                                {{-- </a> --}}
                                             </p>
                                             <p>Author 1, Author 2, Author 3</p>
                                         </div>
@@ -76,9 +76,9 @@
                                     <td class="flex justify-between items-center">
                                         <div class="wrapper text-mydark flex flex-col gap-2">
                                             <p class="font-semibold text-base md:text-lg">
-                                                <a href="/proceeding/topic1/show">
+                                                {{-- <a href="/proceeding/topic1/show"> --}}
                                                     Paper Title
-                                                </a>
+                                                {{-- </a> --}}
                                             </p>
                                             <p>Author 1, Author 2, Author 3</p>
                                         </div>
@@ -94,9 +94,9 @@
                                     <td class="flex justify-between items-center">
                                         <div class="wrapper text-mydark flex flex-col gap-2">
                                             <p class="font-semibold text-base md:text-lg">
-                                                <a href="/proceeding/topic1/show">
+                                                {{-- <a href="/proceeding/topic1/show"> --}}
                                                     Paper Title
-                                                </a>
+                                                {{-- </a> --}}
                                             </p>
                                             <p>Author 1, Author 2, Author 3</p>
                                         </div>
@@ -112,9 +112,9 @@
                                     <td class="flex justify-between items-center">
                                         <div class="wrapper text-mydark flex flex-col gap-2">
                                             <p class="font-semibold text-base md:text-lg">
-                                                <a href="/proceeding/topic1/show">
+                                                {{-- <a href="/proceeding/topic1/show"> --}}
                                                     Paper Title
-                                                </a>
+                                                {{-- </a> --}}
                                             </p>
                                             <p>Author 1, Author 2, Author 3</p>
                                         </div>
